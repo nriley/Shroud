@@ -9,8 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface FocusAppDelegate : NSObject {
-    NSPanel *panel;
+    NSPanel *screenPanel;
+    NSPanel *menuBarPanel;
 }
 
+- (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
 
 @end

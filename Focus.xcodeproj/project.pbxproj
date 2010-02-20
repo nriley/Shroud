@@ -14,6 +14,8 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Focus.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Focus.icns */; };
+		E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* FocusMenuBarView.m */; };
+		E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BD4114112F7B6300DE639A /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; };
 		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; };
 		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Focus.icns; path = ../../../Desktop/Focus.icns; sourceTree = SOURCE_ROOT; };
+		E1BD40EC112F753000DE639A /* FocusMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusMenuBarView.h; sourceTree = "<group>"; };
+		E1BD40ED112F753000DE639A /* FocusMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusMenuBarView.m; sourceTree = "<group>"; };
+		E1BD4114112F7B6300DE639A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,8 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */,
+				E1BD40EC112F753000DE639A /* FocusMenuBarView.h */,
+				E1BD40ED112F753000DE639A /* FocusMenuBarView.m */,
 				E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */,
 				E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */,
 			);
@@ -61,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				E1BD4114112F7B6300DE639A /* Carbon.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */,
 				E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */,
+				E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
