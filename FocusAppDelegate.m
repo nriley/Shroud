@@ -67,7 +67,7 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     [menuBarPanel setHasShadow:NO];
 
     [menuBarPanel setIgnoresMouseEvents:YES];
-    [menuBarPanel setLevel:NSScreenSaverWindowLevel - 1];
+    [menuBarPanel setLevel:kCGStatusWindowLevel + 1];
 
     FocusMenuBarView *menuBarView = [[[FocusMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
     [menuBarView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
