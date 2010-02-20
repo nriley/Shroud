@@ -13,12 +13,13 @@
 
 - (BOOL)shouldDelayWindowOrderingForEvent:(NSEvent *)theEvent;
 {
-    return YES;
+    return !([theEvent modifierFlags] & NSAlternateKeyMask);
 }
 
 - (void)mouseDown:(NSEvent *)theEvent;
 {
-    [NSApp preventWindowOrdering];
+    if ([self shouldDelayWindowOrderingForEvent:theEvent])
+	[NSApp preventWindowOrdering];
 }
 
 @end
