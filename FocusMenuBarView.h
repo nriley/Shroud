@@ -10,7 +10,8 @@
 
 
 @interface FocusMenuBarView : NSView {
-
+    BOOL mouseInMenuBar;
+    BOOL menuTrackingInProgress;
 }
 
 @end
