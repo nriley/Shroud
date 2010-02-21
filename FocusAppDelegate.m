@@ -53,6 +53,8 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     [screenPanel setBackgroundColor:backgroundColor];
     [screenPanel setHasShadow:NO];
     
+    [screenPanel setCollectionBehavior:1 << 3 /*NSWindowCollectionBehaviorTransient*/];
+
     FocusNonactivatingView *view = [[[FocusNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
     [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
     
