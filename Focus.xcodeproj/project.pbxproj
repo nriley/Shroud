@@ -33,7 +33,7 @@
 		8D1107320486CEB800E47090 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; };
 		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; };
-		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Focus.icns; path = ../../../Desktop/Focus.icns; sourceTree = SOURCE_ROOT; };
+		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Focus.icns; sourceTree = "<group>"; };
 		E1BD40EC112F753000DE639A /* FocusMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusMenuBarView.h; sourceTree = "<group>"; };
 		E1BD40ED112F753000DE639A /* FocusMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusMenuBarView.m; sourceTree = "<group>"; };
 		E1BD4114112F7B6300DE639A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
