@@ -13,14 +13,18 @@
 
 - (void)mouseEntered:(NSEvent *)theEvent;
 {
+    [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.1];
-    [[[self window] animator] setAlphaValue:0];  
+    [[[self window] animator] setAlphaValue:0];
+    [NSAnimationContext endGrouping];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent;
 {
+    [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.1];
-    [[[self window] animator] setAlphaValue:1];  
+    [[[self window] animator] setAlphaValue:1];
+    [NSAnimationContext endGrouping];
 }
 
 @end

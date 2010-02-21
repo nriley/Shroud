@@ -98,8 +98,11 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     // The OS will be fading in, so we do as well.
     [menuBarPanel setAlphaValue:0];
     [menuBarPanel orderFront:nil];
+
+    [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.2];
     [[menuBarPanel animator] setAlphaValue:1];
+    [NSAnimationContext endGrouping];
 }
 
 - (void)applicationDidChangeScreenParameters:(NSNotification *)notification;
