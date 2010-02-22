@@ -36,28 +36,42 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 @implementation FocusAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [NSApp hide:nil];
+
+    [self performSelector:@selector(setUp) withObject:nil afterDelay:0];
+}
+
+- (void)setUp;
+{
+    // Place Focus behind the frontmost application at launch.
+    ProcessSerialNumber frontProcess;
+    GetFrontProcess(&frontProcess);
+    [NSApp unhideWithoutActivation];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
 					     selector:@selector(applicationDidChangeScreenParameters:)
-						 name:NSApplicationDidChangeScreenParametersNotification 
+						 name:NSApplicationDidChangeScreenParametersNotification
 					       object:NSApp];
-    
+
     NSRect screenFrame, menuBarFrame;
     FocusGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
 
     screenPanel = [[NSPanel alloc] initWithContentRect:screenFrame
-				       styleMask:NSBorderlessWindowMask|NSNonactivatingPanelMask
-					 backing:NSWindowBackingLocationDefault
-					   defer:NO];
+					     styleMask:NSBorderlessWindowMask|NSNonactivatingPanelMask
+					       backing:NSWindowBackingLocationDefault
+						 defer:NO];
 
     NSColor *backgroundColor = [NSColor colorWithCalibratedWhite:0.239 alpha:1.000];
     [screenPanel setBackgroundColor:backgroundColor];
     [screenPanel setHasShadow:NO];
-    
-    [screenPanel setCollectionBehavior:1 << 3 /*NSWindowCollectionBehaviorTransient*/];
+
+    [screenPanel setCollectionBehavior:
+     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
+     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
 
     FocusNonactivatingView *view = [[[FocusNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
     [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-    
+
     [screenPanel setContentView:view];
     [screenPanel orderFront:nil];
 
@@ -86,6 +100,12 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     InstallApplicationEventHandler(NewEventHandlerUPP(FocusSystemUIModeChanged),
 				   GetEventTypeCount(eventSpecs),
 				   eventSpecs, self, NULL);
+
+    // To avoid menubar flashing, we launch as a UIElement and transform ourselves when we're finished.
+    ProcessSerialNumber currentProcess = { 0, kCurrentProcess };
+    TransformProcessType(&currentProcess, kProcessTransformToForegroundApplication);
+
+    SetFrontProcessWithOptions(&frontProcess, 0);
 }
 
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
