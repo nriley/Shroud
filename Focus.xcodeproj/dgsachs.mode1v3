@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>21BCACC911F20C5F0084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>FocusAppDelegate.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCACCA11F20C5F0084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>FocusAppDelegate.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777511F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>2155776511F21CEF006A15EC</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {928, 947}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>38 164 928 988 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>21BCACE611F210100084995F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>PrefController.m</string>
@@ -256,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2155777611F21D2E006A15EC</string>
+						<string>215577AD11F23D6C006A15EC</string>
 						<key>history</key>
 						<array>
 							<string>2155774811F21A40006A15EC</string>
@@ -282,206 +242,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>21BCACEA11F210100084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRCommon.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCACEB11F210100084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRCommon.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777711F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>21BCADC511F219830084995F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {876, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>38 430 876 722 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>21BCAD3111F214EB0084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRRecorderCell.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCAD3211F214EB0084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRRecorderCell.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777811F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>21BCADC611F219830084995F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {876, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>245 241 876 722 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>21BCACF311F210100084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRRecorderControl.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCACF411F210100084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRRecorderControl.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777911F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>21BCADC711F219830084995F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {876, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>268 220 876 722 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>21BCACF011F210100084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRCommon.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCACF111F210100084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRCommon.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777A11F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>21BCADC811F219830084995F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {876, 734}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>153 272 876 775 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>21BCACED11F210100084995F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRValidator.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>21BCACEE11F210100084995F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRValidator.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2155777B11F21D2E006A15EC</string>
-						<key>history</key>
-						<array>
-							<string>21BCADC911F219830084995F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {876, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>61 409 876 722 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>21BCACCC11F20C5F0084995F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CarbonEvents.h</string>
@@ -496,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2155777C11F21D2E006A15EC</string>
+						<string>215577AE11F23D6C006A15EC</string>
 						<key>history</key>
 						<array>
 							<string>21BCADCA11F219830084995F</string>
@@ -607,7 +367,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 235}, {257, 972}}</string>
+							<string>{{0, 0}, {257, 972}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -654,7 +414,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2155777411F21D2E006A15EC</string>
+										<string>215577AC11F23D6C006A15EC</string>
 										<key>history</key>
 										<array>
 											<string>216B36C8114C6828002E2818</string>
@@ -670,12 +430,8 @@
 											<string>2177FE601172850D0019F55A</string>
 											<string>2177FE9711741B450019F55A</string>
 											<string>21BCACE211F210100084995F</string>
-											<string>21BCAD4F11F215440084995F</string>
 											<string>21BCAD6011F2161A0084995F</string>
 											<string>21BCAD6111F2161A0084995F</string>
-											<string>21BCAD6211F2161A0084995F</string>
-											<string>21BCAD6311F2161A0084995F</string>
-											<string>21BCAD6411F2161A0084995F</string>
 											<string>21BCAD9111F218B20084995F</string>
 											<string>2155774411F21A40006A15EC</string>
 											<string>2155776311F21CEF006A15EC</string>
@@ -879,23 +635,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2155777D11F21D2E006A15EC</string>
+		<string>2155776E11F21CEF006A15EC</string>
 		<string>2155773311F219A7006A15EC</string>
 		<string>2155773411F219A7006A15EC</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>21BCACCC11F20C5F0084995F</string>
-		<string>21BCACED11F210100084995F</string>
-		<string>21BCACF011F210100084995F</string>
-		<string>21BCACF311F210100084995F</string>
-		<string>21BCAD3111F214EB0084995F</string>
-		<string>21BCACEA11F210100084995F</string>
 		<string>21BCACE611F210100084995F</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/dgsachs/Documents/Cocoa/Focus/Focus.xcodeproj</string>
 		<string>21AD5439114B482D00DD1380</string>
-		<string>2155776E11F21CEF006A15EC</string>
-		<string>21BCACC911F20C5F0084995F</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>30 126 1067 1031 0 0 1920 1178 </string>
@@ -1534,7 +1283,7 @@
 			<key>WindowToolGUID</key>
 			<string>2155776E11F21CEF006A15EC</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
