@@ -7,12 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
 
 @interface FocusAppDelegate : NSObject {
     NSPanel *screenPanel;
     NSPanel *menuBarPanel;
+	EventHotKeyRef hotKeyRef;
 }
 
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
-
+- (void)handleHotKey:(EventHotKeyID)hotKeyID;
+- (void)applicationDidChangeScreenParameters:(NSNotification *)notification;
+- (void)applicationDidChangeWindowColor:(NSNotification *)notification;
+- (void)applicationDidChangeHideMenu:(NSNotification *)notification;
+- (void)applicationDidChangeShortcut:(NSNotification *)notification;
 @end

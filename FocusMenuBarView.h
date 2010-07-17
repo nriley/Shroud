@@ -13,5 +13,4 @@
     BOOL mouseInMenuBar;
     BOOL menuTrackingInProgress;
 }
-
 @end

@@ -22,4 +22,11 @@
 	[NSApp preventWindowOrdering];
 }
 
+- (void)drawRect:(NSRect)rect
+{
+	NSLog(@"redraw %@", [[self window] backgroundColor]);
+	[[[self window] backgroundColor] set];
+	[NSBezierPath fillRect:rect];
+}
+
 @end

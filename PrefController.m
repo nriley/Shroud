@@ -11,8 +11,13 @@
 
 NSString * const NJRWindowColorKey = @"FocusWindowColor";
 NSString * const NJRHideMenuKey = @"FocusHideMenuBar";
+NSString * const NJRShortcutKeyCode = @"FocusShortcutKeyCode";
+NSString * const NJRShortcutKeyFlags = @"FocusShortcutKeyFlags";
 NSString * const NJRWindowColorChangedNotification = @"FocusWindowColorChangedNotification";
 NSString * const NJRHideMenuChangedNotification = @"FocusHideMenuChangedNotification";
+NSString * const NJRShortcutChangedNotification = @"FocusShortcutChangedNotification";
+
+const EventHotKeyID focusActivateID = {'focu', 1};
 
 @implementation PrefController
 
@@ -37,11 +42,21 @@ NSString * const NJRHideMenuChangedNotification = @"FocusHideMenuChangedNotifica
 	return [defaults boolForKey:NJRHideMenuKey];
 }
 
+- (KeyCombo)shortcutKey;
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	int hotKeyFlags = [defaults integerForKey:NJRShortcutKeyFlags];
+	int hotKeyCode = [defaults integerForKey:NJRShortcutKeyCode];
+	KeyCombo shortcut = { hotKeyFlags, hotKeyCode };
+	return shortcut;
+}
+
 - (void)windowDidLoad
 {
 	NSLog(@"Preferences panel nib loaded");
 	[windowColorWell setColor:[self windowColor]];
 	[hideMenuCheckbox setState:[self hideMenu]];
+	[shortcutBox setKeyCombo:[self shortcutKey]];
 }
 
 - (IBAction)changeWindowColor:(id)sender
@@ -74,4 +89,21 @@ NSString * const NJRHideMenuChangedNotification = @"FocusHideMenuChangedNotifica
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc postNotificationName:NJRHideMenuChangedNotification object:self];
 }
+
+- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo
+
+{	
+	// Save the new value in prefs
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];	
+	[defaults setInteger:newKeyCombo.flags forKey:NJRShortcutKeyFlags];
+	[defaults setInteger:newKeyCombo.code forKey:NJRShortcutKeyCode];
+	
+	NSLog(@"Shortcut changed %@ %d %d",[aRecorder keyComboString], newKeyCombo.flags, newKeyCombo.code);
+
+	// Send a notification
+	NSLog(@"Sending shortcut change notification");
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName:NJRShortcutChangedNotification object:self];
+}
+
 @end

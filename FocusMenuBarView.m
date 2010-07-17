@@ -25,7 +25,7 @@
 				      selector:@selector(menuTrackingDidEnd:)
 					  name:@"com.apple.HIToolbox.endMenuTrackingNotification"
 					object:nil];
-    
+
     return self;
 }
 
@@ -76,5 +76,4 @@
     // Immediately hide the menu bar so you don't see a flicker when the menu highlight disappears.
     [[self window] setAlphaValue:1];
 }
-
 @end
