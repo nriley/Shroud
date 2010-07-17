@@ -9,23 +9,78 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		216B3690114C59EF002E2818 /* PrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B368F114C59EF002E2818 /* PrefController.m */; };
-		216BEE8C115FDF6C000A6E5A /* SR_LeopardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE81115FDF6C000A6E5A /* SR_LeopardView.m */; };
-		216BEE8D115FDF6C000A6E5A /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE83115FDF6C000A6E5A /* SRCommon.m */; };
-		216BEE8E115FDF6C000A6E5A /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE85115FDF6C000A6E5A /* SRKeyCodeTransformer.m */; };
-		216BEE8F115FDF6C000A6E5A /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE87115FDF6C000A6E5A /* SRRecorderCell.m */; };
-		216BEE90115FDF6C000A6E5A /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE89115FDF6C000A6E5A /* SRRecorderControl.m */; };
-		216BEE91115FDF6C000A6E5A /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 216BEE8B115FDF6C000A6E5A /* SRValidator.m */; };
 		21AE5B04114C06C10096A903 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21AE5B02114C06C10096A903 /* Preferences.xib */; };
 		21AE5B17114C0C620096A903 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AE5B16114C0C620096A903 /* AppController.m */; };
 		256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
+		E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
 		E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Focus.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Focus.icns */; };
 		E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* FocusMenuBarView.m */; };
 		E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BD4114112F7B6300DE639A /* Carbon.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E11DFE4611F247DB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */;
+			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
+		};
+		E11DFE4811F247DB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939838A50DA4300F007F53F3 /* ShortcutRecorder.ibplugin */;
+			remoteInfo = "ShortcutRecorder.ibplugin - for embedding in framework";
+		};
+		E11DFE4A11F247DB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93983B220DA43C4E007F53F3 /* ShortcutRecorder.app */;
+			remoteInfo = ShortcutRecorderFramework_Tester;
+		};
+		E11DFE4C11F247DB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA /* ShortcutRecorder.ibplugin */;
+			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
+		};
+		E11DFE4E11F247DB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342E0104109CCC36009AD8CA /* ShortcutRecorder.framework */;
+			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
+		};
+		E11DFE5011F247FB001DCDED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9398377F0DA42965007F53F3 /* ShortcutRecorder.framework - with embedded ibplugin */;
+			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E11DFE6211F248AE001DCDED /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -34,19 +89,6 @@
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		216B368E114C59EF002E2818 /* PrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefController.h; sourceTree = "<group>"; };
 		216B368F114C59EF002E2818 /* PrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefController.m; sourceTree = "<group>"; };
-		216BEE7F115FDF6C000A6E5A /* ShortcutRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutRecorder.h; path = ShortcutRecorder/ShortcutRecorder.h; sourceTree = "<group>"; };
-		216BEE80115FDF6C000A6E5A /* SR_LeopardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SR_LeopardView.h; path = ShortcutRecorder/SR_LeopardView.h; sourceTree = "<group>"; };
-		216BEE81115FDF6C000A6E5A /* SR_LeopardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SR_LeopardView.m; path = ShortcutRecorder/SR_LeopardView.m; sourceTree = "<group>"; };
-		216BEE82115FDF6C000A6E5A /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRCommon.h; path = ShortcutRecorder/SRCommon.h; sourceTree = "<group>"; };
-		216BEE83115FDF6C000A6E5A /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCommon.m; path = ShortcutRecorder/SRCommon.m; sourceTree = "<group>"; };
-		216BEE84115FDF6C000A6E5A /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRKeyCodeTransformer.h; path = ShortcutRecorder/SRKeyCodeTransformer.h; sourceTree = "<group>"; };
-		216BEE85115FDF6C000A6E5A /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRKeyCodeTransformer.m; path = ShortcutRecorder/SRKeyCodeTransformer.m; sourceTree = "<group>"; };
-		216BEE86115FDF6C000A6E5A /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRRecorderCell.h; path = ShortcutRecorder/SRRecorderCell.h; sourceTree = "<group>"; };
-		216BEE87115FDF6C000A6E5A /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRRecorderCell.m; path = ShortcutRecorder/SRRecorderCell.m; sourceTree = "<group>"; };
-		216BEE88115FDF6C000A6E5A /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRRecorderControl.h; path = ShortcutRecorder/SRRecorderControl.h; sourceTree = "<group>"; };
-		216BEE89115FDF6C000A6E5A /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRRecorderControl.m; path = ShortcutRecorder/SRRecorderControl.m; sourceTree = "<group>"; };
-		216BEE8A115FDF6C000A6E5A /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRValidator.h; path = ShortcutRecorder/SRValidator.h; sourceTree = "<group>"; };
-		216BEE8B115FDF6C000A6E5A /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRValidator.m; path = ShortcutRecorder/SRValidator.m; sourceTree = "<group>"; };
 		21AE5B03114C06C10096A903 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		21AE5B15114C0C620096A903 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		21AE5B16114C0C620096A903 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
@@ -58,6 +100,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Focus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Focus-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; };
 		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; };
 		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Focus.icns; sourceTree = "<group>"; };
@@ -71,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */,
 			);
@@ -82,7 +126,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				216B37AC114C8501002E2818 /* ShortcutRecorder */,
 				256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */,
 				E1BD40EC112F753000DE639A /* FocusMenuBarView.h */,
@@ -124,26 +167,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		216B37AC114C8501002E2818 /* ShortcutRecorder */ = {
-			isa = PBXGroup;
-			children = (
-				216BEE7F115FDF6C000A6E5A /* ShortcutRecorder.h */,
-				216BEE80115FDF6C000A6E5A /* SR_LeopardView.h */,
-				216BEE81115FDF6C000A6E5A /* SR_LeopardView.m */,
-				216BEE82115FDF6C000A6E5A /* SRCommon.h */,
-				216BEE83115FDF6C000A6E5A /* SRCommon.m */,
-				216BEE84115FDF6C000A6E5A /* SRKeyCodeTransformer.h */,
-				216BEE85115FDF6C000A6E5A /* SRKeyCodeTransformer.m */,
-				216BEE86115FDF6C000A6E5A /* SRRecorderCell.h */,
-				216BEE87115FDF6C000A6E5A /* SRRecorderCell.m */,
-				216BEE88115FDF6C000A6E5A /* SRRecorderControl.h */,
-				216BEE89115FDF6C000A6E5A /* SRRecorderControl.m */,
-				216BEE8A115FDF6C000A6E5A /* SRValidator.h */,
-				216BEE8B115FDF6C000A6E5A /* SRValidator.m */,
-			);
-			name = ShortcutRecorder;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* Focus */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +203,23 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11DFE3E11F247DB001DCDED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */,
+				E11DFE4911F247DB001DCDED /* ShortcutRecorder.ibplugin */,
+				E11DFE4B11F247DB001DCDED /* ShortcutRecorder.app */,
+				E11DFE4D11F247DB001DCDED /* ShortcutRecorder.ibplugin */,
+				E11DFE4F11F247DB001DCDED /* ShortcutRecorder.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Focus" */;
 			buildPhases = (
+				E11DFE6211F248AE001DCDED /* Copy Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -200,6 +237,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E11DFE5111F247FB001DCDED /* PBXTargetDependency */,
 			);
 			name = Focus;
 			productInstallPath = "$(HOME)/Applications";
@@ -225,12 +263,56 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Focus */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E11DFE3E11F247DB001DCDED /* Products */;
+					ProjectRef = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Focus */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = E11DFE4611F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DFE4911F247DB001DCDED /* ShortcutRecorder.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ShortcutRecorder.ibplugin;
+			remoteRef = E11DFE4811F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DFE4B11F247DB001DCDED /* ShortcutRecorder.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ShortcutRecorder.app;
+			remoteRef = E11DFE4A11F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DFE4D11F247DB001DCDED /* ShortcutRecorder.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ShortcutRecorder.ibplugin;
+			remoteRef = E11DFE4C11F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DFE4F11F247DB001DCDED /* ShortcutRecorder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShortcutRecorder.framework;
+			remoteRef = E11DFE4E11F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -257,16 +339,18 @@
 				E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */,
 				21AE5B17114C0C620096A903 /* AppController.m in Sources */,
 				216B3690114C59EF002E2818 /* PrefController.m in Sources */,
-				216BEE8C115FDF6C000A6E5A /* SR_LeopardView.m in Sources */,
-				216BEE8D115FDF6C000A6E5A /* SRCommon.m in Sources */,
-				216BEE8E115FDF6C000A6E5A /* SRKeyCodeTransformer.m in Sources */,
-				216BEE8F115FDF6C000A6E5A /* SRRecorderCell.m in Sources */,
-				216BEE90115FDF6C000A6E5A /* SRRecorderControl.m in Sources */,
-				216BEE91115FDF6C000A6E5A /* SRValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E11DFE5111F247FB001DCDED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ShortcutRecorder.framework - with embedded ibplugin";
+			targetProxy = E11DFE5011F247FB001DCDED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -303,7 +387,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Debug\"",
+					"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
