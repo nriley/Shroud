@@ -15,7 +15,7 @@
 {
     if ( (self = [super initWithFrame:frameRect]) == nil)
 	return nil;
-    
+
     NSDistributedNotificationCenter *distributedNotificationCenter = [NSDistributedNotificationCenter defaultCenter];
     [distributedNotificationCenter addObserver:self
 				      selector:@selector(menuTrackingDidBegin:)
@@ -35,7 +35,7 @@
 
     if (menuTrackingInProgress)
 	return;
-    
+
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.1];
     [[[self window] animator] setAlphaValue:0];
@@ -48,7 +48,7 @@
 
     if (menuTrackingInProgress)
 	return;
-    
+
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.1];
     [[[self window] animator] setAlphaValue:1];
@@ -59,7 +59,7 @@
 {
     if (!mouseInMenuBar)
 	return;
-    
+
     menuTrackingInProgress = YES;
 }
 
@@ -67,12 +67,12 @@
 {
     if (!menuTrackingInProgress)
 	return;
-    
+
     menuTrackingInProgress = NO;
 
     if (mouseInMenuBar)
 	return;
-    
+
     // Immediately hide the menu bar so you don't see a flicker when the menu highlight disappears.
     [[self window] setAlphaValue:1];
 }

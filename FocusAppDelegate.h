@@ -8,17 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
+#import "FocusPreferencesController.h"
 
 @interface FocusAppDelegate : NSObject {
     NSPanel *screenPanel;
     NSPanel *menuBarPanel;
-	EventHotKeyRef hotKeyRef;
+
+    EventHotKeyRef hotKeyRef;
+    BOOL shouldCoverMenuBar;
+
+    FocusPreferencesController *preferencesController;
 }
 
-- (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
-- (void)handleHotKey:(EventHotKeyID)hotKeyID;
-- (void)applicationDidChangeScreenParameters:(NSNotification *)notification;
-- (void)applicationDidChangeWindowColor:(NSNotification *)notification;
-- (void)applicationDidChangeHideMenu:(NSNotification *)notification;
-- (void)applicationDidChangeShortcut:(NSNotification *)notification;
+- (IBAction)focusFrontmostApplication:(id)sender;
+- (IBAction)focusFrontmostWindow:(id)sender;
+- (IBAction)orderFrontPreferencesPanel:(id)sender;
+
 @end

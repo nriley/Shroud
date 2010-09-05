@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		216B3690114C59EF002E2818 /* PrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B368F114C59EF002E2818 /* PrefController.m */; };
+		216B3690114C59EF002E2818 /* FocusPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B368F114C59EF002E2818 /* FocusPreferencesController.m */; };
 		21AE5B04114C06C10096A903 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21AE5B02114C06C10096A903 /* Preferences.xib */; };
-		21AE5B17114C0C620096A903 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AE5B16114C0C620096A903 /* AppController.m */; };
 		256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
 		E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
+		E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */; };
+		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
+		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
 		E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Focus.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Focus.icns */; };
 		E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* FocusMenuBarView.m */; };
 		E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BD4114112F7B6300DE639A /* Carbon.framework */; };
+		E1D8F35612336ECF0019122A /* FocusDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* FocusDockTileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,42 +31,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */;
+			remoteGlobalIDString = 939837800DA42965007F53F3;
 			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
 		};
 		E11DFE4811F247DB001DCDED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 939838A50DA4300F007F53F3 /* ShortcutRecorder.ibplugin */;
+			remoteGlobalIDString = 939838A50DA4300F007F53F3;
 			remoteInfo = "ShortcutRecorder.ibplugin - for embedding in framework";
 		};
 		E11DFE4A11F247DB001DCDED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 93983B220DA43C4E007F53F3 /* ShortcutRecorder.app */;
+			remoteGlobalIDString = 93983B220DA43C4E007F53F3;
 			remoteInfo = ShortcutRecorderFramework_Tester;
 		};
 		E11DFE4C11F247DB001DCDED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA /* ShortcutRecorder.ibplugin */;
+			remoteGlobalIDString = 342E00CF109CCBF5009AD8CA;
 			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
 		};
 		E11DFE4E11F247DB001DCDED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 342E0104109CCC36009AD8CA /* ShortcutRecorder.framework */;
+			remoteGlobalIDString = 342E0104109CCC36009AD8CA;
 			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
 		E11DFE5011F247FB001DCDED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9398377F0DA42965007F53F3 /* ShortcutRecorder.framework - with embedded ibplugin */;
+			remoteGlobalIDString = 9398377F0DA42965007F53F3;
 			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
 		};
 /* End PBXContainerItemProxy section */
@@ -87,13 +90,11 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		216B368E114C59EF002E2818 /* PrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefController.h; sourceTree = "<group>"; };
-		216B368F114C59EF002E2818 /* PrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefController.m; sourceTree = "<group>"; };
+		216B368E114C59EF002E2818 /* FocusPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusPreferencesController.h; sourceTree = "<group>"; tabWidth = 8; };
+		216B368F114C59EF002E2818 /* FocusPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusPreferencesController.m; sourceTree = "<group>"; tabWidth = 8; };
 		21AE5B03114C06C10096A903 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
-		21AE5B15114C0C620096A903 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		21AE5B16114C0C620096A903 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusAppDelegate.h; sourceTree = "<group>"; };
-		256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusAppDelegate.m; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusAppDelegate.h; sourceTree = "<group>"; tabWidth = 8; };
+		256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusAppDelegate.m; sourceTree = "<group>"; tabWidth = 8; };
 		256AC3F00F4B6AF500CF3369 /* Focus_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Focus_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -101,12 +102,20 @@
 		8D1107310486CEB800E47090 /* Focus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Focus-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; };
-		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; };
+		E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRHotKeyManager.m; sourceTree = "<group>"; };
+		E14B6F4A123416DA00BA58AB /* NJRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRHotKeyManager.h; sourceTree = "<group>"; };
+		E14B6FDD12341D5600BA58AB /* NJRHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRHotKey.h; sourceTree = "<group>"; };
+		E14B6FDE12341D5600BA58AB /* NJRHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRHotKey.m; sourceTree = "<group>"; };
+		E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRDictionaryToHotKeyTransformer.h; sourceTree = "<group>"; };
+		E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRDictionaryToHotKeyTransformer.m; sourceTree = "<group>"; };
+		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Focus.icns; sourceTree = "<group>"; };
-		E1BD40EC112F753000DE639A /* FocusMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusMenuBarView.h; sourceTree = "<group>"; };
-		E1BD40ED112F753000DE639A /* FocusMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusMenuBarView.m; sourceTree = "<group>"; };
+		E1BD40EC112F753000DE639A /* FocusMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusMenuBarView.h; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD40ED112F753000DE639A /* FocusMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusMenuBarView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4114112F7B6300DE639A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		E1D8F35412336ECF0019122A /* FocusDockTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusDockTileView.h; sourceTree = "<group>"; };
+		E1D8F35512336ECF0019122A /* FocusDockTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusDockTileView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +137,20 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */,
+				216B368E114C59EF002E2818 /* FocusPreferencesController.h */,
+				216B368F114C59EF002E2818 /* FocusPreferencesController.m */,
 				E1BD40EC112F753000DE639A /* FocusMenuBarView.h */,
 				E1BD40ED112F753000DE639A /* FocusMenuBarView.m */,
 				E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */,
 				E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */,
-				21AE5B15114C0C620096A903 /* AppController.h */,
-				21AE5B16114C0C620096A903 /* AppController.m */,
-				216B368E114C59EF002E2818 /* PrefController.h */,
-				216B368F114C59EF002E2818 /* PrefController.m */,
+				E1D8F35412336ECF0019122A /* FocusDockTileView.h */,
+				E1D8F35512336ECF0019122A /* FocusDockTileView.m */,
+				E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */,
+				E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */,
+				E14B6FDD12341D5600BA58AB /* NJRHotKey.h */,
+				E14B6FDE12341D5600BA58AB /* NJRHotKey.m */,
+				E14B6F4A123416DA00BA58AB /* NJRHotKeyManager.h */,
+				E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -193,9 +208,9 @@
 			children = (
 				E1BD40D3112E76C200DE639A /* Focus.icns */,
 				8D1107310486CEB800E47090 /* Focus-Info.plist */,
-				21AE5B02114C06C10096A903 /* Preferences.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				21AE5B02114C06C10096A903 /* Preferences.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -337,8 +352,11 @@
 				256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */,
 				E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */,
 				E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */,
-				21AE5B17114C0C620096A903 /* AppController.m in Sources */,
-				216B3690114C59EF002E2818 /* PrefController.m in Sources */,
+				216B3690114C59EF002E2818 /* FocusPreferencesController.m in Sources */,
+				E1D8F35612336ECF0019122A /* FocusDockTileView.m in Sources */,
+				E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */,
+				E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */,
+				E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
