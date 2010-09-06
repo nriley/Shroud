@@ -367,7 +367,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name \\*.h -delete";
+			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name Headers -exec rm -rf '{}' \\; || /usr/bin/true";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
