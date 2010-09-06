@@ -437,7 +437,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../shortcutrecorder-read-only/build/Debug\"",
+					"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
