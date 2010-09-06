@@ -136,7 +136,11 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
                                    eventSpecs, self, NULL);
 
     // Register for shortcut changes.
-    NSDictionary *hotKeyBindingOptions = [NSDictionary dictionaryWithObject:@"NJRDictionaryToHotKeyTransformer" forKey:NSValueTransformerNameBindingOption];
+    NSDictionary *hotKeyBindingOptions = [NSDictionary dictionaryWithObjectsAndKeys:@"NJRDictionaryToHotKeyTransformer", NSValueTransformerNameBindingOption,
+        [NSNumber numberWithBool:YES], NSAllowsNullArgumentBindingOption,
+        [NJRHotKey noHotKey], NSNullPlaceholderBindingOption,
+        nil];
+    // XXX whichever of these is first, the set method gets invoked twice at startup - why?
     [self bind:@"focusFrontmostApplicationShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostApplicationShortcutPreferenceKey] options:hotKeyBindingOptions];
     [self bind:@"focusFrontmostWindowShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostWindowShortcutPreferenceKey] options:hotKeyBindingOptions];
 }
@@ -223,11 +227,10 @@ static ProcessSerialNumber frontProcess;
 - (void)setShortcutWithPreferenceKey:(NSString *)preferenceKey hotKey:(NJRHotKey *)hotKey action:(SEL)action;
 {
     NJRHotKeyManager *hotKeyManager = [NJRHotKeyManager sharedManager];
-    [hotKeyManager removeShortcutWithIdentifier:preferenceKey];
     if ([hotKeyManager addShortcutWithIdentifier:preferenceKey hotKey:hotKey target:self action:action])
         return;
 
-    [[NSUserDefaultsController sharedUserDefaultsController] removeObjectForKey:preferenceKey];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:preferenceKey];
     NSRunAlertPanel(NSLocalizedString(@"Can't reserve shortcut", "Hot key set failure"),
                     NSLocalizedString(@"Focus was unable to reserve the shortcut %@. Please select another in Focus's Preferences.", "Hot key set failure"), nil, nil, nil, [hotKey keyGlyphs]);
     [self performSelector:@selector(orderFrontPreferencesPanel:) withObject:nil afterDelay:0.1];
@@ -235,7 +238,6 @@ static ProcessSerialNumber frontProcess;
 
 - (void)setFocusFrontmostApplicationShortcut:(NJRHotKey *)hotKey;
 {
-    // XXX why are we getting invoked twice?
     [self setShortcutWithPreferenceKey:FocusFrontmostApplicationShortcutPreferenceKey hotKey:hotKey action:@selector(focusFrontmostApplication:)];
 }
 

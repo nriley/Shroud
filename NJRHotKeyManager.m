@@ -106,6 +106,9 @@ pascal OSErr keyEventHandler(EventHandlerCallRef inHandlerRef, EventRef inEvent,
     if ([shortcuts objectForKey: identifier] != nil)
         [self removeShortcutWithIdentifier: identifier];
 
+    if (hotKey == [NJRHotKey noHotKey])
+        return YES;
+
     _NJRHotKeyShortcut *newShortcut = [[_NJRHotKeyShortcut alloc] init];
     newShortcut->isRegistered = NO;
     newShortcut->hotKeyRef = nil;

@@ -15,6 +15,16 @@
 
 #pragma mark initialize-release
 
++ (NJRHotKey *)noHotKey;
+{
+    static NJRHotKey *noHotKey = nil;
+
+    if (noHotKey == nil)
+        noHotKey = [[self alloc] initWithCharacters: nil modifierFlags: 0 keyCode: 0xFFFF];
+
+    return noHotKey;
+}
+
 + (NJRHotKey *)hotKeyWithCharacters:(NSString *)characters modifierFlags:(unsigned)modifierFlags keyCode:(unsigned short)keyCode;
 {
     return [[[self alloc] initWithCharacters: characters modifierFlags: modifierFlags keyCode: keyCode] autorelease];
@@ -76,6 +86,12 @@
 - (NSString *)keyGlyphs;
 {
     return SRStringForCocoaModifierFlagsAndKeyCode(hotKeyModifierFlags, hotKeyCode);
+}
+
+- (NSString *)description;
+{
+    if (hotKeyCharacters == nil) return [NSString stringWithFormat: @"<%@: none>", [self class]];
+    return [NSString stringWithFormat: @"<%@: %x + %@ (%d) = %@>", [self class], hotKeyModifierFlags, hotKeyCharacters, hotKeyCode, [self keyGlyphs]];
 }
 
 @end
