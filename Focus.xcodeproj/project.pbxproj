@@ -19,6 +19,7 @@
 		E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */; };
 		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
 		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
+		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
 		E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Focus.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Focus.icns */; };
 		E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* FocusMenuBarView.m */; };
@@ -107,6 +108,7 @@
 		E14B6FDE12341D5600BA58AB /* NJRHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRHotKey.m; sourceTree = "<group>"; };
 		E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRDictionaryToHotKeyTransformer.h; sourceTree = "<group>"; };
 		E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRDictionaryToHotKeyTransformer.m; sourceTree = "<group>"; };
+		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Focus.icns; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				E1BD40D3112E76C200DE639A /* Focus.icns */,
 				8D1107310486CEB800E47090 /* Focus-Info.plist */,
+				E19F3CD4123593F500DFD7BA /* Credits.html */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				21AE5B02114C06C10096A903 /* Preferences.xib */,
@@ -336,6 +339,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				E1BD40D4112E76C200DE639A /* Focus.icns in Resources */,
 				21AE5B04114C06C10096A903 /* Preferences.xib in Resources */,
+				E19F3CD5123593F500DFD7BA /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,14 @@
 			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
+		E19F3CD4123593F500DFD7BA /* Credits.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E19F3CD1123593E700DFD7BA /* English */,
+			);
+			name = Credits.html;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -441,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = 4.2;
@@ -449,6 +462,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -456,12 +470,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

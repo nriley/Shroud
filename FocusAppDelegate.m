@@ -7,7 +7,6 @@
 //
 
 #import "FocusAppDelegate.h"
-#import "FocusDockTileView.h"
 #import "FocusNonactivatingView.h"
 #import "FocusMenuBarView.h"
 #import "FocusPreferencesController.h"
@@ -110,8 +109,8 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 
     // Create dock tile.
     NSDockTile *dockTile = [NSApp dockTile];
-    FocusDockTileView *dockTileView = [[FocusDockTileView alloc] initWithFrame:
-                                       NSMakeRect(0, 0, dockTile.size.width, dockTile.size.height)];
+    dockTileView = [[FocusDockTileView alloc] initWithFrame:
+                    NSMakeRect(0, 0, dockTile.size.width, dockTile.size.height)];
     [dockTile setContentView:dockTileView];
     [dockTileView bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
 
@@ -203,6 +202,19 @@ static ProcessSerialNumber frontProcess;
 - (IBAction)focusFrontmostWindow:(id)sender;
 {
     [self focusFrontmostApplicationWindowOnly:YES];
+}
+
+- (IBAction)orderFrontAboutPanel:(id)sender;
+{
+    NSRect bounds = [dockTileView bounds];
+    NSBitmapImageRep *imageRep = [dockTileView bitmapImageRepForCachingDisplayInRect:bounds];
+    [dockTileView cacheDisplayInRect:bounds toBitmapImageRep:imageRep];
+    NSImage *image = [[NSImage alloc] init];
+    [image addRepresentation: imageRep];
+
+    [NSApp orderFrontStandardAboutPanelWithOptions:
+     [NSDictionary dictionaryWithObject:image forKey:@"ApplicationIcon"]];
+    [image release];
 }
 
 - (IBAction)orderFrontPreferencesPanel:(id)sender;

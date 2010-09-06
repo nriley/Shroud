@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
+#import "FocusDockTileView.h"
 #import "FocusPreferencesController.h"
 
 @interface FocusAppDelegate : NSObject {
     NSPanel *screenPanel;
     NSPanel *menuBarPanel;
+    FocusDockTileView *dockTileView;
 
     BOOL shouldCoverMenuBar;
 
@@ -21,6 +23,7 @@
 
 - (IBAction)focusFrontmostApplication:(id)sender;
 - (IBAction)focusFrontmostWindow:(id)sender;
+- (IBAction)orderFrontAboutPanel:(id)sender;
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 
 @end
