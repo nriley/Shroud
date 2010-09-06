@@ -19,11 +19,11 @@
 	<key>CFBundleSignature</key>
 	<string>FoCS</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0a1</string>
+	<string>1.0b1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2010 Nicholas Riley</string>
 	<key>NSSupportsSuddenTermination</key>
