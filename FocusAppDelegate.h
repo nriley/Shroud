@@ -14,7 +14,6 @@
     NSPanel *screenPanel;
     NSPanel *menuBarPanel;
 
-    EventHotKeyRef hotKeyRef;
     BOOL shouldCoverMenuBar;
 
     FocusPreferencesController *preferencesController;

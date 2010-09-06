@@ -44,14 +44,6 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 
 @implementation FocusAppDelegate
 
-/*
-+ (void)initialize;
-{
-    [self exposeBinding:@"focusFrontmostApplicationShortcut"];
-    [self exposeBinding:@"focusFrontmostWindowShortcut"];
-}
-*/
-
 - (void)setUp;
 {
     // Place Focus behind the frontmost application at launch.
