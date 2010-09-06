@@ -6,3 +6,5 @@ build
 *~.nib
 #*
 .OABK
+Focus *
+Focus-*.dmg
