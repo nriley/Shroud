@@ -278,3 +278,18 @@ static ProcessSerialNumber frontProcess;
 }
 
 @end
+
+@implementation FocusAppDelegate (NSMenuValidation)
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+{
+    SEL action = [menuItem action];
+
+    if (action == @selector(focusFrontmostApplication:) ||
+        action == @selector(focusFrontmostWindow:))
+        return ![NSApp isActive];
+
+    return YES;
+}
+
+@end
