@@ -63,12 +63,19 @@
 			remoteGlobalIDString = 342E0104109CCC36009AD8CA;
 			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
-		E11DFE5011F247FB001DCDED /* PBXContainerItemProxy */ = {
+		E11F558812359F8600A0A964 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9398377F0DA42965007F53F3;
 			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
+		};
+		E11F558A12359F8D00A0A964 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 342E00BA109CCBF5009AD8CA;
+			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -124,9 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */,
+				E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,14 +253,15 @@
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Focus" */;
 			buildPhases = (
 				E11DFE6211F248AE001DCDED /* Copy Frameworks */,
-				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				8D1107290486CEB800E47090 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E11DFE5111F247FB001DCDED /* PBXTargetDependency */,
+				E11F558912359F8600A0A964 /* PBXTargetDependency */,
+				E11F558B12359F8D00A0A964 /* PBXTargetDependency */,
 			);
 			name = Focus;
 			productInstallPath = "$(HOME)/Applications";
@@ -335,11 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19F3CD5123593F500DFD7BA /* Credits.html in Resources */,
+				E1BD40D4112E76C200DE639A /* Focus.icns in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				E1BD40D4112E76C200DE639A /* Focus.icns in Resources */,
 				21AE5B04114C06C10096A903 /* Preferences.xib in Resources */,
-				E19F3CD5123593F500DFD7BA /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,10 +373,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E11DFE5111F247FB001DCDED /* PBXTargetDependency */ = {
+		E11F558912359F8600A0A964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ShortcutRecorder.framework - with embedded ibplugin";
-			targetProxy = E11DFE5011F247FB001DCDED /* PBXContainerItemProxy */;
+			targetProxy = E11F558812359F8600A0A964 /* PBXContainerItemProxy */;
+		};
+		E11F558B12359F8D00A0A964 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ShortcutRecorder.ibplugin - standalone";
+			targetProxy = E11F558A12359F8D00A0A964 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,6 +472,7 @@
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
@@ -475,6 +489,7 @@
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 				VERSIONING_SYSTEM = "apple-generic";
