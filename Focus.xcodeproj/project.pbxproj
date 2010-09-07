@@ -383,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Focus Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\n";
+			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Focus Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\ninstall -m 644 \"${help_src}/mail.scpt\" \"${help_dest}/${help_dir}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
