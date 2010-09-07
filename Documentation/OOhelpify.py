@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2008 Omni Development, Inc.  All rights reserved.
 #
@@ -372,6 +372,9 @@ def findSubNodes(theParent, kind):              # get all child nodes with certa
 
 
 def itemText(theItem, style=None):              # find out the text of an item and send it back nicely formatted for html and css
+    itemStyles = findStyles(theItem)
+    if itemStyles and u'Variables' in itemStyles[0]:
+        return ''
     constructedText = u''
     for valuesNode in findSubNodes(theItem, 'values'):
         for textNode in findSubNodes(valuesNode, 'text'):
