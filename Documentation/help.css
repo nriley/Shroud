@@ -44,12 +44,20 @@ p {
 div.top-title {
     padding: 16px 16px 0;
 	border-right: gray 1px solid;
+    display: table-cell;
+    text-align: center;
+}
+
+div.top-title p {
+    font-size: 80%;
 }
 	
 .top-contents {
 	padding: 16px;
 	font-weight: bold;
 	text-align: left;
+    display: table-cell;
+    vertical-align: top;
 }
 	
 .toc-left {
