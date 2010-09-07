@@ -61,7 +61,7 @@ def fileHeader(theFile, title, robots="", isTop=False, url="", description=""):
     topString = ""
     if isTop:
         topString = """<meta name="AppleTitle" content="%(title)s">
-        <meta name="AppleIcon" content="%(title)s/../../Icon.icns">
+        <meta name="AppleIcon" content="%(title)s/HelpImages/Icon.png">
         """ % {
         'title': title
         }
