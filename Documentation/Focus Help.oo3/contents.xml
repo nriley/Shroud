@@ -153,10 +153,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="eVd_6Fipgix"/>
-    <selected-rows ids="jYwzHMGIYGU"/>
+    <hoisted-rows ids="ftDBf-ySLe5"/>
+    <selected-rows ids="ln_zdCoCWfN"/>
     <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{8, 0}"/>
+    <selected-characters range="{0, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -838,7 +838,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit><cell href="http://sabi.net/nriley/software/" name="sabi.net—software" type="link"/></lit>
+                          <lit>sabi.net/nriley/software/</lit>
                         </run>
                       </p>
                     </text>
