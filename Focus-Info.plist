@@ -34,5 +34,9 @@
 	<string>NSApplication</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Focus Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Focus Help</string>
 </dict>
 </plist>

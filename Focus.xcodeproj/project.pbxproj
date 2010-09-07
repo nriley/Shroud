@@ -256,6 +256,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
+				E15375F41236010200714C5D /* Build Help Book */,
 				E11F55E91235A35E00A0A964 /* Remove Framework Headers */,
 			);
 			buildRules = (
@@ -357,7 +358,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E11F55E91235A35E00A0A964 /* Remove Framework Headers */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -365,9 +366,24 @@
 			name = "Remove Framework Headers";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name Headers -exec rm -rf '{}' \\; || /usr/bin/true";
+			showEnvVarsInLog = 0;
+		};
+		E15375F41236010200714C5D /* Build Help Book */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Help Book";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Focus Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
