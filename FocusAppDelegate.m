@@ -171,9 +171,9 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 
 static ProcessSerialNumber frontProcess;
 
-- (void)restoreFrontProcessWindowOnly;
+- (void)restoreFrontProcessWindowOnly:(NSNumber *)windowOnly;
 {
-    SetFrontProcessWithOptions(&frontProcess, kSetFrontProcessFrontWindowOnly);
+    SetFrontProcessWithOptions(&frontProcess, [windowOnly boolValue] ? kSetFrontProcessFrontWindowOnly : 0);
 }
 
 - (void)focusFrontmostApplicationWindowOnly:(BOOL)windowOnly;
@@ -186,12 +186,16 @@ static ProcessSerialNumber frontProcess;
     if (windowOnly) {
         [NSApp unhideWithoutActivation];
         [NSApp activateIgnoringOtherApps:YES];
-        // XXX can we get rid of this delay by using Carbon for unhiding ourself?
-        [self performSelector:@selector(restoreFrontProcessWindowOnly) withObject:nil afterDelay: 0.05];
     } else {
+        BOOL wasHidden = [NSApp isHidden];
         [NSApp unhideWithoutActivation];
-        SetFrontProcessWithOptions(&frontProcess, 0);
+        if (!wasHidden) {
+            SetFrontProcessWithOptions(&frontProcess, 0);
+            return;
+        }
     }
+    // XXX can we get rid of this delay by using Carbon for unhiding ourself?
+    [self performSelector:@selector(restoreFrontProcessWindowOnly:) withObject:[NSNumber numberWithBool:windowOnly] afterDelay: 0.05];
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;
