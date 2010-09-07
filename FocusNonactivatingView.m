@@ -20,6 +20,8 @@
 {
     if ([self shouldDelayWindowOrderingForEvent:theEvent])
 	[NSApp preventWindowOrdering];
+    else
+        [NSApp activateIgnoringOtherApps:YES]; // only necessary the first time
 }
 
 @end
