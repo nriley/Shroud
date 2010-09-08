@@ -25,7 +25,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# $Header: svn+ssh://source.omnigroup.com/Source/svn/Omni/trunk/Staff/wvh/Helpify/OOhelpify.py 137209 2010-08-12 01:38:10Z wvh $
+# $Header: svn+ssh://source.omnigroup.com/Source/svn/Omni/trunk/Staff/wvh/Helpify/OOhelpify.py 137210 2010-08-12 01:42:01Z wvh $
 
 import sys, os, shutil, re, commands, codecs
 from xml.dom.minidom import parseString
@@ -132,7 +132,7 @@ def digItem(theItem, level, inheritedStyle=[], destReached=False):
     if itemStyles[0]: applicableStyles.extend(itemStyles[0])
     if inheritedStyle: applicableStyles.extend(inheritedStyle) 
     
-    possibleDivStyles = ['Pro', 'List', 'ListItem', 'Steps', 'Destination', 'Anchor', 'Pre', 'Variables']
+    possibleDivStyles = ['Pro', 'List', 'ListItem', 'Steps', 'Box', 'Destination', 'Anchor', 'Pre', 'Variables']
     for oneStyle in possibleDivStyles:
         if oneStyle in applicableStyles:
             divStyles.append(oneStyle)
