@@ -271,6 +271,16 @@ static ProcessSerialNumber frontProcess;
 
     [self bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusShouldCoverMenuBarPreferenceKey] options:nil];
 
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    float currentVersion = [[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey] floatValue];
+    float priorVersion = [userDefaults floatForKey:@"FocusHighestVersionRun"];
+    if (priorVersion < currentVersion)
+        [userDefaults setFloat:currentVersion forKey:@"FocusHighestVersionRun"];
+    if (priorVersion < 7.) {
+        NSString *helpBookName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleHelpBookName"];
+        [[NSHelpManager sharedHelpManager] openHelpAnchor:@"introduction" inBook:helpBookName];
+    }
+
     [NSApp hide:nil];
 
     [self performSelector:@selector(setUp) withObject:nil afterDelay:0];
