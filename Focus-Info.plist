@@ -38,5 +38,13 @@
 	<string>Focus Help</string>
 	<key>CFBundleHelpBookName</key>
 	<string>Focus Help</string>
+    <key>SUFeedURL</key>
+    <string>http://sabi.net/nriley/software/Focus/updates.xml</string>
+    <key>SUEnableSystemProfiling</key>
+    <true/>
+    <key>SUScheduledCheckInterval</key>
+    <integer>86400</integer>
+    <key>SUPublicDSAKeyFile</key>
+    <string>dsa_pub.pem</string>
 </dict>
 </plist>
