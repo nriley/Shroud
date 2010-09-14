@@ -153,8 +153,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="jj3Kw0ND2KJ"/>
-    <selected-rows ids="b8LncQ9KFBv"/>
+    <hoisted-rows ids="gXgiyJ1Adlj"/>
+    <selected-rows ids="kXxBnup5Xg6"/>
+    <selected-columns ids="jFqHUGd_Dg1"/>
+    <selected-characters range="{293, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -632,7 +634,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Trying to support multiple screens would add considerable complexity to Focus, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
+                          <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Support for multiple screens would entail making Focus considerably more complex, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
                         </run>
                         <run>
                           <lit><cell href="http://github.com/nriley/Focus" name="source code is available" type="link"/></lit>
@@ -737,6 +739,33 @@
                       <p>
                         <run>
                           <lit>Focus can’t always tell if there’s actually a menu bar at the top of the screen, or if a menu is pulled down if you didn’t use the mouse. These are limitations in the information Mac OS X provides to applications.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
+            </item>
+            <item id="nwaIz9ZbDQJ" expanded="yes">
+              <style>
+                <inherited-style name="Bold" idref="bMbdsrPBbNQ"/>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>The screen flashes when I show or hide the Dock.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="iObiRbSaDQn">
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Mac OS X is moving Focus’s menu bar-covering window to the middle of the screen for no particularly good reason, as far as I can tell. As soon as Focus detects this, it moves it back where it belongs.</lit>
                         </run>
                       </p>
                     </text>
