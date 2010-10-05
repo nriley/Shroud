@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
-    <title>Focus</title>
-    <link>http://sabi.net/nriley/software/#focus</link>
-    <description>Appcast for Focus updates.</description>
+    <title>Shroud</title>
+    <link>http://sabi.net/nriley/software/#shroud</link>
+    <description>Appcast for Shroud updates.</description>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
     <pubDate></pubDate>
     <lastBuildDate></lastBuildDate>
     
-    <atom:link href="http://sabi.net/nriley/software/Focus/updates.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Focus 1.0b3</title>
-      <link>http://sabi.net/nriley/software/#focus</link>
-      <author>focus@sabi.net (Nicholas Riley)</author>
+      <title>Shroud 1.0b3</title>
+      <link>http://sabi.net/nriley/software/#shroud</link>
+      <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate></pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Focus-1.0b3.dmg" length="" type="application/x-apple-diskimage" sparkle:version="" sparkle:shortVersionString="" sparkle:dsaSignature=""/>
-      <guid isPermaLink="false">focus-10b3</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Focus/release-notes.html</sparkle:releaseNotesLink>
+      <enclosure url="http://sabi.net/nriley/software/Shrodu-1.0b3.dmg" length="" type="application/x-apple-diskimage" sparkle:version="" sparkle:shortVersionString="" sparkle:dsaSignature=""/>
+      <guid isPermaLink="false">shroud-10b3</guid>
+      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
   </channel>
 </rss>

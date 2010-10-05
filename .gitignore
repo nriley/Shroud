@@ -6,5 +6,5 @@ build
 *~.nib
 #*
 .OABK
-Focus ?.*
-Focus-*.dmg
+Shroud ?.*
+Shroud-*.dmg

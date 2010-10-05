@@ -1,15 +1,15 @@
 //
-//  FocusMenuBarView.m
-//  Focus
+//  ShroudMenuBarView.m
+//  Shroud
 //
 //  Created by Nicholas Riley on 2/19/10.
 //  Copyright 2010 Nicholas Riley. All rights reserved.
 //
 
-#import "FocusMenuBarView.h"
+#import "ShroudMenuBarView.h"
 
 
-@implementation FocusMenuBarView
+@implementation ShroudMenuBarView
 
 - (id)initWithFrame:(NSRect)frameRect;
 {

@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>Focus</string>
+	<string>Shroud</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.sabi.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -35,16 +35,16 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>CFBundleHelpBookFolder</key>
-	<string>Focus Help</string>
+	<string>Shroud Help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>Focus Help</string>
-    <key>SUFeedURL</key>
-    <string>http://sabi.net/nriley/software/Focus/updates.xml</string>
-    <key>SUEnableSystemProfiling</key>
-    <true/>
-    <key>SUScheduledCheckInterval</key>
-    <integer>86400</integer>
-    <key>SUPublicDSAKeyFile</key>
-    <string>dsa_pub.pem</string>
+	<string>Shroud Help</string>
+	<key>SUFeedURL</key>
+	<string>http://sabi.net/nriley/software/Shroud/updates.xml</string>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

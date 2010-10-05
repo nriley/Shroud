@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		216B3690114C59EF002E2818 /* FocusPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B368F114C59EF002E2818 /* FocusPreferencesController.m */; };
+		216B3690114C59EF002E2818 /* ShroudPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B368F114C59EF002E2818 /* ShroudPreferencesController.m */; };
 		21AE5B04114C06C10096A903 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21AE5B02114C06C10096A903 /* Preferences.xib */; };
-		256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */; };
+		256AC3DA0F4B6AC300CF3369 /* ShroudAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -20,11 +20,11 @@
 		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
 		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
-		E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */; };
-		E1BD40D4112E76C200DE639A /* Focus.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Focus.icns */; };
-		E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* FocusMenuBarView.m */; };
+		E1BD4006112E6D4800DE639A /* ShroudNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */; };
+		E1BD40D4112E76C200DE639A /* Shroud.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Shroud.icns */; };
+		E1BD40EE112F753000DE639A /* ShroudMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */; };
 		E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BD4114112F7B6300DE639A /* Carbon.framework */; };
-		E1D8F35612336ECF0019122A /* FocusDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* FocusDockTileView.m */; };
+		E1D8F35612336ECF0019122A /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
 		E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
 		E1D9435C123F793A005DA161 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E1D9435B123F793A005DA161 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
@@ -83,42 +83,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Sparkle.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
 		E1D94337123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 61B5F90209C4CEE200B25A18 /* Sparkle Test App.app */;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
 			remoteInfo = "Sparkle Test App";
 		};
 		E1D94339123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DAAEFC960DA571DF0051E0D0 /* relaunch */;
+			remoteGlobalIDString = DAAEFC960DA571DF0051E0D0;
 			remoteInfo = "relaunch tool";
 		};
 		E1D9433B123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 612279D90DB5470200AB99EA /* Sparkle Unit Tests.octest */;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
 			remoteInfo = "Sparkle Unit Tests";
 		};
 		E1D9433D123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6 /* BinaryDelta */;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
 			remoteInfo = BinaryDelta;
 		};
 		E1D94340123F75F5005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Sparkle */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
 /* End PBXContainerItemProxy section */
@@ -142,17 +142,17 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		216B368E114C59EF002E2818 /* FocusPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusPreferencesController.h; sourceTree = "<group>"; tabWidth = 8; };
-		216B368F114C59EF002E2818 /* FocusPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusPreferencesController.m; sourceTree = "<group>"; tabWidth = 8; };
+		216B368E114C59EF002E2818 /* ShroudPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudPreferencesController.h; sourceTree = "<group>"; tabWidth = 8; };
+		216B368F114C59EF002E2818 /* ShroudPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudPreferencesController.m; sourceTree = "<group>"; tabWidth = 8; };
 		21AE5B03114C06C10096A903 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusAppDelegate.h; sourceTree = "<group>"; tabWidth = 8; };
-		256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusAppDelegate.m; sourceTree = "<group>"; tabWidth = 8; };
-		256AC3F00F4B6AF500CF3369 /* Focus_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Focus_Prefix.pch; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudAppDelegate.h; sourceTree = "<group>"; tabWidth = 8; };
+		256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudAppDelegate.m; sourceTree = "<group>"; tabWidth = 8; };
+		256AC3F00F4B6AF500CF3369 /* Shroud_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shroud_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		8D1107310486CEB800E47090 /* Focus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Focus-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107310486CEB800E47090 /* Shroud-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shroud-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Shroud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shroud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShortcutRecorder.xcodeproj; path = shortcutrecorder/ShortcutRecorder.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRHotKeyManager.m; sourceTree = "<group>"; };
 		E14B6F4A123416DA00BA58AB /* NJRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRHotKeyManager.h; sourceTree = "<group>"; };
@@ -161,14 +161,14 @@
 		E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRDictionaryToHotKeyTransformer.h; sourceTree = "<group>"; };
 		E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRDictionaryToHotKeyTransformer.m; sourceTree = "<group>"; };
 		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
-		E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
-		E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
-		E1BD40D3112E76C200DE639A /* Focus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Focus.icns; sourceTree = "<group>"; };
-		E1BD40EC112F753000DE639A /* FocusMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusMenuBarView.h; sourceTree = "<group>"; tabWidth = 8; };
-		E1BD40ED112F753000DE639A /* FocusMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusMenuBarView.m; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD40D3112E76C200DE639A /* Shroud.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Shroud.icns; sourceTree = "<group>"; };
+		E1BD40EC112F753000DE639A /* ShroudMenuBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudMenuBarView.h; sourceTree = "<group>"; tabWidth = 8; };
+		E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4114112F7B6300DE639A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		E1D8F35412336ECF0019122A /* FocusDockTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusDockTileView.h; sourceTree = "<group>"; };
-		E1D8F35512336ECF0019122A /* FocusDockTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusDockTileView.m; sourceTree = "<group>"; };
+		E1D8F35412336ECF0019122A /* ShroudDockTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudDockTileView.h; sourceTree = "<group>"; };
+		E1D8F35512336ECF0019122A /* ShroudDockTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudDockTileView.m; sourceTree = "<group>"; };
 		E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		E1D9435B123F793A005DA161 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,16 +190,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				256AC3D80F4B6AC300CF3369 /* FocusAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* FocusAppDelegate.m */,
-				216B368E114C59EF002E2818 /* FocusPreferencesController.h */,
-				216B368F114C59EF002E2818 /* FocusPreferencesController.m */,
-				E1BD40EC112F753000DE639A /* FocusMenuBarView.h */,
-				E1BD40ED112F753000DE639A /* FocusMenuBarView.m */,
-				E1BD4004112E6D4800DE639A /* FocusNonactivatingView.h */,
-				E1BD4005112E6D4800DE639A /* FocusNonactivatingView.m */,
-				E1D8F35412336ECF0019122A /* FocusDockTileView.h */,
-				E1D8F35512336ECF0019122A /* FocusDockTileView.m */,
+				256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */,
+				216B368E114C59EF002E2818 /* ShroudPreferencesController.h */,
+				216B368F114C59EF002E2818 /* ShroudPreferencesController.m */,
+				E1BD40EC112F753000DE639A /* ShroudMenuBarView.h */,
+				E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */,
+				E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */,
+				E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */,
+				E1D8F35412336ECF0019122A /* ShroudDockTileView.h */,
+				E1D8F35512336ECF0019122A /* ShroudDockTileView.m */,
 				E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */,
 				E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */,
 				E14B6FDD12341D5600BA58AB /* NJRHotKey.h */,
@@ -231,12 +231,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Focus.app */,
+				8D1107320486CEB800E47090 /* Shroud.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Focus */ = {
+		29B97314FDCFA39411CA2CEA /* Shroud */ = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -245,13 +245,13 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = Focus;
+			name = Shroud;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				256AC3F00F4B6AF500CF3369 /* Focus_Prefix.pch */,
+				256AC3F00F4B6AF500CF3369 /* Shroud_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -261,8 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				E1D9435B123F793A005DA161 /* dsa_pub.pem */,
-				E1BD40D3112E76C200DE639A /* Focus.icns */,
-				8D1107310486CEB800E47090 /* Focus-Info.plist */,
+				E1BD40D3112E76C200DE639A /* Shroud.icns */,
+				8D1107310486CEB800E47090 /* Shroud-Info.plist */,
 				E19F3CD4123593F500DFD7BA /* Credits.html */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -309,9 +309,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Focus */ = {
+		8D1107260486CEB800E47090 /* Shroud */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Focus" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Shroud" */;
 			buildPhases = (
 				E11DFE6211F248AE001DCDED /* Copy Frameworks */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -327,10 +327,10 @@
 				E11F558B12359F8D00A0A964 /* PBXTargetDependency */,
 				E1D94341123F75F5005DA161 /* PBXTargetDependency */,
 			);
-			name = Focus;
+			name = Shroud;
 			productInstallPath = "$(HOME)/Applications";
-			productName = Focus;
-			productReference = 8D1107320486CEB800E47090 /* Focus.app */;
+			productName = Shroud;
+			productReference = 8D1107320486CEB800E47090 /* Shroud.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -338,7 +338,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Focus" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shroud" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -349,7 +349,7 @@
 				Dutch,
 				sv,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Focus */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Shroud */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -363,7 +363,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Focus */,
+				8D1107260486CEB800E47090 /* Shroud */,
 			);
 		};
 /* End PBXProject section */
@@ -447,7 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19F3CD5123593F500DFD7BA /* Credits.html in Resources */,
-				E1BD40D4112E76C200DE639A /* Focus.icns in Resources */,
+				E1BD40D4112E76C200DE639A /* Shroud.icns in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				21AE5B04114C06C10096A903 /* Preferences.xib in Resources */,
@@ -485,7 +485,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Focus Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\ninstall -m 644 \"${help_src}/mail.scpt\" \"${help_dest}/${help_dir}\"\n";
+			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Shroud Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\ninstall -m 644 \"${help_src}/mail.scpt\" \"${help_dest}/${help_dir}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -496,11 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				256AC3DA0F4B6AC300CF3369 /* FocusAppDelegate.m in Sources */,
-				E1BD4006112E6D4800DE639A /* FocusNonactivatingView.m in Sources */,
-				E1BD40EE112F753000DE639A /* FocusMenuBarView.m in Sources */,
-				216B3690114C59EF002E2818 /* FocusPreferencesController.m in Sources */,
-				E1D8F35612336ECF0019122A /* FocusDockTileView.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* ShroudAppDelegate.m in Sources */,
+				E1BD4006112E6D4800DE639A /* ShroudNonactivatingView.m in Sources */,
+				E1BD40EE112F753000DE639A /* ShroudMenuBarView.m in Sources */,
+				216B3690114C59EF002E2818 /* ShroudPreferencesController.m in Sources */,
+				E1D8F35612336ECF0019122A /* ShroudDockTileView.m in Sources */,
 				E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */,
 				E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */,
 				E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */,
@@ -578,10 +578,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Focus_Prefix.pch;
-				INFOPLIST_FILE = "Focus-Info.plist";
+				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
+				INFOPLIST_FILE = "Shroud-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Focus;
+				PRODUCT_NAME = Shroud;
 			};
 			name = Debug;
 		};
@@ -597,10 +597,10 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Focus_Prefix.pch;
-				INFOPLIST_FILE = "Focus-Info.plist";
+				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
+				INFOPLIST_FILE = "Shroud-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Focus;
+				PRODUCT_NAME = Shroud;
 			};
 			name = Release;
 		};
@@ -641,7 +641,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Focus" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Shroud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -650,7 +650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Focus" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shroud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

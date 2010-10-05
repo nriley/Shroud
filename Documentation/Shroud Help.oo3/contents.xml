@@ -146,17 +146,15 @@
       </first-page-headers>
     </page-adornment>
     <print-info>
-      <print-info-key name="NSPaperName" type="string">US Letter</print-info-key>
       <print-info-key name="OOScaleDocumentToFitPageWidth" type="boolean">true</print-info-key>
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="gXgiyJ1Adlj"/>
-    <selected-rows ids="kXxBnup5Xg6"/>
+    <selected-rows ids="k2f5GirCi2V"/>
     <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{293, 0}"/>
+    <selected-characters range="{80, 5}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -214,7 +212,7 @@
         <text>
           <p>
             <run>
-              <lit>Focus Help</lit>
+              <lit>Shroud Help</lit>
             </run>
           </p>
         </text>
@@ -253,7 +251,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Focus places a solid-color backdrop behind windows on your Mac to allow you to, well, focus.</lit>
+                      <lit>Shroud places a solid-color backdrop behind windows on your Mac to allow you to focus on what you’re doing.</lit>
                     </run>
                   </p>
                 </text>
@@ -267,7 +265,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Focus features</lit>
+                      <lit>Shroud features</lit>
                     </run>
                   </p>
                 </text>
@@ -278,7 +276,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Focus lets you place its backdrop behind the frontmost window or application from the keyboard or its Dock menu.</lit>
+                          <lit>Shroud lets you place its backdrop behind the frontmost window or application from the keyboard or its Dock menu.</lit>
                         </run>
                       </p>
                     </text>
@@ -289,7 +287,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Focus (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move your mouse over the menu bar to use it if you need it.</lit>
+                          <lit>Shroud (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move your mouse over the menu bar to use it if you need it.</lit>
                         </run>
                       </p>
                     </text>
@@ -300,7 +298,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Focus ignores clicks on the backdrop so you don’t accidentally destroy your carefully arranged workspace.</lit>
+                          <lit>Shroud ignores clicks on the backdrop so you don’t accidentally destroy your carefully arranged workspace.</lit>
                         </run>
                       </p>
                     </text>
@@ -311,7 +309,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Focus adapts to a dynamic display environment: monitors which change size, applications which display using the full screen, and so forth.</lit>
+                          <lit>Shroud adapts to a dynamic display environment: monitors which change size, applications which display using the full screen, and so forth.</lit>
                         </run>
                       </p>
                     </text>
@@ -324,7 +322,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>To read more about using Focus, click the right arrow (</lit>
+                      <lit>To read more about using Shroud, click the right arrow (</lit>
                     </run>
                     <run>
                       <lit>→</lit>
@@ -346,7 +344,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Using Focus</lit>
+                  <lit>Using Shroud</lit>
                 </run>
               </p>
             </text>
@@ -357,7 +355,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>When you start Focus, its backdrop appears behind the frontmost application.</lit>
+                      <lit>When you start Shroud, its backdrop appears behind the frontmost application.</lit>
                     </run>
                   </p>
                 </text>
@@ -368,7 +366,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>To activate Focus, switch to it, or Option-click on the backdrop if it is visible.</lit>
+                      <lit>To activate Shroud, switch to it, or Option-click on the backdrop if it is visible.</lit>
                     </run>
                   </p>
                 </text>
@@ -390,7 +388,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Hide or quit Focus to remove the backdrop.</lit>
+                      <lit>Hide or quit Shroud to remove the backdrop.</lit>
                     </run>
                   </p>
                 </text>
@@ -415,7 +413,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>From Focus’s Dock menu, you can place Focus behind the frontmost (nonfloating) window or application.</lit>
+                          <lit>From Shroud’s Dock menu, you can place Shroud behind the frontmost (nonfloating) window or application.</lit>
                         </run>
                       </p>
                     </text>
@@ -439,7 +437,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>In Focus’s Preferences, you can set systemwide keyboard shortcuts for the same two operations.</lit>
+                          <lit>In Shroud’s Preferences, you can set systemwide keyboard shortcuts for the same two operations.</lit>
                         </run>
                       </p>
                     </text>
@@ -466,7 +464,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Access Preferences from Focus’s Dock menu or the Focus menu when it is in front.</lit>
+                          <lit>Access Preferences from Shroud’s Dock menu or the Shroud menu when it is in front.</lit>
                         </run>
                       </p>
                     </text>
@@ -477,7 +475,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>In addition to configuring keyboard shortcuts, you can change the Focus backdrop color and choose whether Focus should cover the menu bar.</lit>
+                          <lit>In addition to configuring keyboard shortcuts, you can change the Shroud backdrop color and choose whether Shroud should cover the menu bar.</lit>
                         </run>
                       </p>
                     </text>
@@ -506,7 +504,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>If you use Focus a lot, consider setting Focus to open at login so its keyboard shortcuts are always available.</lit>
+                      <lit>If you use Shroud a lot, consider setting Shroud to open at login so its keyboard shortcuts are always available.</lit>
                     </run>
                   </p>
                 </text>
@@ -517,7 +515,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>If you don’t want the backdrop to appear initially, set Focus to be hidden.</lit>
+                      <lit>If you don’t want the backdrop to appear initially, set Shroud to be hidden.</lit>
                     </run>
                   </p>
                 </text>
@@ -553,7 +551,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Start by focusing on the first window, or just bring Focus to the front.</lit>
+                          <lit>Start by focusing on the first window, or just bring Shroud to the front.</lit>
                         </run>
                       </p>
                     </text>
@@ -596,7 +594,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>The Focus backdrop shows up in Exposé.</lit>
+                      <lit>The Shroud backdrop shows up in Exposé.</lit>
                     </run>
                   </p>
                 </text>
@@ -623,7 +621,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Focus only covers the main screen.</lit>
+                      <lit>Shroud only covers the main screen.</lit>
                     </run>
                   </p>
                 </text>
@@ -634,7 +632,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Support for multiple screens would entail making Focus considerably more complex, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
+                          <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Support for multiple screens would entail making Shroud considerably more complex, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
                         </run>
                         <run>
                           <lit><cell href="http://github.com/nriley/Focus" name="source code is available" type="link"/></lit>
@@ -656,7 +654,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Focus interacts poorly with Spaces.</lit>
+                      <lit>Shroud interacts poorly with Spaces.</lit>
                     </run>
                   </p>
                 </text>
@@ -667,7 +665,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is somewhat to be expected; Focus and Spaces try to do some of the same things. For several years before writing Focus, I tried and failed at using Spaces to accomplish the same tasks; I found it too confusing and flaky to use on a regular basis.</lit>
+                          <lit>This is somewhat to be expected; Shroud and Spaces try to do some of the same things. For several years before writing Shroud, I tried and failed at using Spaces to accomplish the same tasks; I found it too confusing and flaky to use on a regular basis.</lit>
                         </run>
                       </p>
                     </text>
@@ -678,7 +676,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>If you have any ideas about how Focus could interact better with Spaces, please </lit>
+                          <lit>If you have any ideas about how Shroud could interact better with Spaces, please </lit>
                         </run>
                         <run>
                           <lit><cell href="help:runscript=&apos;Focus%20Help/mail.scpt&apos;%20string=&apos;focus@sabi.net?subject=Focus%20interaction%20with%20Spaces&apos;" name="let me know" type="link"/></lit>
@@ -700,7 +698,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>The running indicator (white dot) does not appear below Focus’s icon in the Dock.</lit>
+                      <lit>The running indicator (white dot) does not appear below Shroud’s icon in the Dock.</lit>
                     </run>
                   </p>
                 </text>
@@ -711,7 +709,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is a bug in the Dock which I trigger through the unique way Focus starts up behind the frontmost application without flickering. You can cause the running indicator to appear by restarting the Dock—but this has undesirable side effects such as restoring minimized windows.</lit>
+                          <lit>This is a bug in the Dock which I trigger through the unique way Shroud starts up behind the frontmost application without flickering. You can cause the running indicator to appear by restarting the Dock—but this has undesirable side effects such as restoring minimized windows.</lit>
                         </run>
                       </p>
                     </text>
@@ -727,7 +725,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Focus sometimes covers the menu bar at inappropriate times.</lit>
+                      <lit>Shroud sometimes covers the menu bar at inappropriate times.</lit>
                     </run>
                   </p>
                 </text>
@@ -738,7 +736,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Focus can’t always tell if there’s actually a menu bar at the top of the screen, or if a menu is pulled down if you didn’t use the mouse. These are limitations in the information Mac OS X provides to applications.</lit>
+                          <lit>Shroud can’t always tell if there’s actually a menu bar at the top of the screen, or if a menu is pulled down if you didn’t use the mouse. These are limitations in the information Mac OS X provides to applications.</lit>
                         </run>
                       </p>
                     </text>
@@ -765,7 +763,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Mac OS X is moving Focus’s menu bar-covering window to the middle of the screen for no particularly good reason, as far as I can tell. As soon as Focus detects this, it moves it back where it belongs.</lit>
+                          <lit>Mac OS X is moving Shroud’s menu bar-covering window to the middle of the screen for no particularly good reason, as far as I can tell. As soon as Shroud detects this, it moves it back where it belongs.</lit>
                         </run>
                       </p>
                     </text>

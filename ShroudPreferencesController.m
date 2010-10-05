@@ -1,21 +1,21 @@
 //
-//  FocusPreferencesController.m
-//  Focus
+//  ShroudPreferencesController.m
+//  Shroud
 //
 //  Created by Daniel Grobe Sachs on 3/13/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
-#import "FocusPreferencesController.h"
+#import "ShroudPreferencesController.h"
 #import "NJRHotKeyManager.h"
 
-NSString * const FocusBackdropColorPreferenceKey = @"FocusBackdropColor";
-NSString * const FocusShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuBar";
+NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
+NSString * const ShroudShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuBar";
 NSString * const FocusFrontmostApplicationShortcutPreferenceKey = @"FocusFrontmostApplicationShortcut";
 NSString * const FocusFrontmostWindowShortcutPreferenceKey = @"FocusFrontmostWindowShortcut";
 
-@implementation FocusPreferencesController
+@implementation ShroudPreferencesController
 
 - (id)init;
 {
@@ -27,7 +27,7 @@ NSString * const FocusFrontmostWindowShortcutPreferenceKey = @"FocusFrontmostWin
 
 - (IBAction)resetBackdropColor:(id)sender;
 {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:FocusBackdropColorPreferenceKey];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ShroudBackdropColorPreferenceKey];
 }
 
 @end

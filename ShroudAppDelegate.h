@@ -8,17 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
-#import "FocusDockTileView.h"
-#import "FocusPreferencesController.h"
+#import "ShroudDockTileView.h"
+#import "ShroudPreferencesController.h"
 
-@interface FocusAppDelegate : NSObject {
+@interface ShroudAppDelegate : NSObject {
     NSPanel *screenPanel;
     NSPanel *menuBarPanel;
-    FocusDockTileView *dockTileView;
+    ShroudDockTileView *dockTileView;
 
     BOOL shouldCoverMenuBar;
 
-    FocusPreferencesController *preferencesController;
+    ShroudPreferencesController *preferencesController;
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;

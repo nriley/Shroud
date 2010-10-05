@@ -1,15 +1,15 @@
 //
-//  FocusDockTileView.m
-//  Focus
+//  ShroudDockTileView.m
+//  Shroud
 //
 //  Created by Nicholas Riley on 9/5/10.
 //  Copyright 2010 Nicholas Riley. All rights reserved.
 //
 
-#import "FocusDockTileView.h"
+#import "ShroudDockTileView.h"
 
 
-@implementation FocusDockTileView
+@implementation ShroudDockTileView
 
 + (void)initialize;
 {

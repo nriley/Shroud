@@ -1,37 +1,37 @@
 //
-//  FocusAppDelegate.m
-//  Focus
+//  ShroudAppDelegate.m
+//  Shroud
 //
 //  Created by Nicholas Riley on 2/19/10.
 //  Copyright 2010 Nicholas Riley. All rights reserved.
 //
 
-#import "FocusAppDelegate.h"
-#import "FocusNonactivatingView.h"
-#import "FocusMenuBarView.h"
-#import "FocusPreferencesController.h"
+#import "ShroudAppDelegate.h"
+#import "ShroudNonactivatingView.h"
+#import "ShroudMenuBarView.h"
+#import "ShroudPreferencesController.h"
 #import "NJRHotKey.h"
 #import "NJRHotKeyManager.h"
 
 #include <Carbon/Carbon.h>
 
-@interface FocusAppDelegate ()
+@interface ShroudAppDelegate ()
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
 @end
 
-static OSStatus FocusSystemUIModeChanged(EventHandlerCallRef callRef, EventRef event, void *delegate) {
+static OSStatus ShroudSystemUIModeChanged(EventHandlerCallRef callRef, EventRef event, void *delegate) {
     UInt32 newMode = 0;
     OSStatus err;
     err = GetEventParameter(event, kEventParamSystemUIMode, typeUInt32, NULL, sizeof(UInt32), NULL, &newMode);
     if (err != noErr)
 	return err;
 
-    [(FocusAppDelegate *)delegate systemUIElementsDidBecomeVisible:newMode == kUIModeNormal];
+    [(ShroudAppDelegate *)delegate systemUIElementsDidBecomeVisible:newMode == kUIModeNormal];
 
     return noErr;
 }
 
-static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
+static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
     NSRect visibleFrame = [mainScreen visibleFrame];
@@ -41,11 +41,11 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     menuBarFrame->size.height -= menuBarHeight;
 }
 
-@implementation FocusAppDelegate
+@implementation ShroudAppDelegate
 
 - (void)setUp;
 {
-    // Place Focus behind the frontmost application at launch.
+    // Place Shroud behind the frontmost application at launch.
     ProcessSerialNumber frontProcess;
     GetFrontProcess(&frontProcess);
     [NSApp unhideWithoutActivation];
@@ -58,10 +58,10 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     // Bind the background color of windows & the Dock icon to the default.
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
     NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
-    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:FocusBackdropColorPreferenceKey];
+    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
 
     NSRect screenFrame, menuBarFrame;
-    FocusGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
+    ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
 
     // Create screen panel.
     screenPanel = [[NSPanel alloc] initWithContentRect:screenFrame
@@ -76,7 +76,7 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
      (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
      (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
 
-    FocusNonactivatingView *view = [[[FocusNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
+    ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
     [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 
     [screenPanel setContentView:view];
@@ -95,7 +95,7 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
     [menuBarPanel setIgnoresMouseEvents:YES];
     [menuBarPanel setLevel:NSStatusWindowLevel + 1];
 
-    FocusMenuBarView *menuBarView = [[[FocusMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
+    ShroudMenuBarView *menuBarView = [[[ShroudMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
     [menuBarView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 
     NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[menuBarView frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:menuBarView userInfo:nil];
@@ -109,7 +109,7 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 
     // Create dock tile.
     NSDockTile *dockTile = [NSApp dockTile];
-    dockTileView = [[FocusDockTileView alloc] initWithFrame:
+    dockTileView = [[ShroudDockTileView alloc] initWithFrame:
                     NSMakeRect(0, 0, dockTile.size.width, dockTile.size.height)];
     [dockTile setContentView:dockTileView];
     [dockTileView bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
@@ -122,7 +122,7 @@ static void FocusGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarF
 
     static const EventTypeSpec eventSpecs[] = {{kEventClassApplication, kEventAppSystemUIModeChanged}};
 
-    InstallApplicationEventHandler(NewEventHandlerUPP(FocusSystemUIModeChanged),
+    InstallApplicationEventHandler(NewEventHandlerUPP(ShroudSystemUIModeChanged),
                                    GetEventTypeCount(eventSpecs),
                                    eventSpecs, self, NULL);
 
@@ -224,7 +224,7 @@ static ProcessSerialNumber frontProcess;
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 {
     if (preferencesController == nil)
-        preferencesController = [[FocusPreferencesController alloc] init];
+        preferencesController = [[ShroudPreferencesController alloc] init];
 
     [preferencesController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
@@ -240,7 +240,7 @@ static ProcessSerialNumber frontProcess;
 
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:preferenceKey];
     NSRunAlertPanel(NSLocalizedString(@"Can't reserve shortcut", "Hot key set failure"),
-                    NSLocalizedString(@"Focus was unable to reserve the shortcut %@. Please select another in Focus's Preferences.", "Hot key set failure"), nil, nil, nil, [hotKey keyGlyphs]);
+                    NSLocalizedString(@"Shroud was unable to reserve the shortcut %@. Please select another in Shroud's Preferences.", "Hot key set failure"), nil, nil, nil, [hotKey keyGlyphs]);
     [self performSelector:@selector(orderFrontPreferencesPanel:) withObject:nil afterDelay:0.1];
 }
 
@@ -260,22 +260,22 @@ static ProcessSerialNumber frontProcess;
 
 @end
 
-@implementation FocusAppDelegate (NSApplicationNotifications)
+@implementation ShroudAppDelegate (NSApplicationNotifications)
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
 
     [userDefaultsController setInitialValues:
      [NSDictionary dictionaryWithObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0.239 alpha:1.000]]
-                                 forKey:FocusBackdropColorPreferenceKey]];
+                                 forKey:ShroudBackdropColorPreferenceKey]];
 
-    [self bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusShouldCoverMenuBarPreferenceKey] options:nil];
+    [self bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     float currentVersion = [[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey] floatValue];
-    float priorVersion = [userDefaults floatForKey:@"FocusHighestVersionRun"];
+    float priorVersion = [userDefaults floatForKey:@"ShroudHighestVersionRun"];
     if (priorVersion < currentVersion)
-        [userDefaults setFloat:currentVersion forKey:@"FocusHighestVersionRun"];
+        [userDefaults setFloat:currentVersion forKey:@"ShroudHighestVersionRun"];
     if (priorVersion < 7.) {
         NSString *helpBookName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleHelpBookName"];
         [[NSHelpManager sharedHelpManager] openHelpAnchor:@"introduction" inBook:helpBookName];
@@ -289,7 +289,7 @@ static ProcessSerialNumber frontProcess;
 - (void)applicationDidChangeScreenParameters:(NSNotification *)notification;
 {
     NSRect screenFrame, menuBarFrame;
-    FocusGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
+    ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
 
     [screenPanel setFrame:screenFrame display:YES];
     [menuBarPanel setFrame:menuBarFrame display:YES];
@@ -297,7 +297,7 @@ static ProcessSerialNumber frontProcess;
 
 @end
 
-@implementation FocusAppDelegate (NSMenuValidation)
+@implementation ShroudAppDelegate (NSMenuValidation)
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
 {
