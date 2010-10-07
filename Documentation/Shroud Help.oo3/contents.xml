@@ -679,7 +679,7 @@
                           <lit>If you have any ideas about how Shroud could interact better with Spaces, please </lit>
                         </run>
                         <run>
-                          <lit><cell href="help:runscript=&apos;Focus%20Help/mail.scpt&apos;%20string=&apos;focus@sabi.net?subject=Focus%20interaction%20with%20Spaces&apos;" name="let me know" type="link"/></lit>
+                          <lit><cell href="help:runscript=&apos;Shroud%20Help/mail.scpt&apos;%20string=&apos;shroud@sabi.net?subject=Shroud%20interaction%20with%20Spaces&apos;" name="let me know" expanded="yes" type="link"/></lit>
                         </run>
                         <run>
                           <lit>.</lit>
@@ -809,7 +809,7 @@
                           <lit>Please </lit>
                         </run>
                         <run>
-                          <lit><cell href="help:runscript=&apos;Focus%20Help/mail.scpt&apos;%20string=&apos;focus@sabi.net&apos;" name="email me" expanded="yes" type="link"/></lit>
+                          <lit><cell href="help:runscript=&apos;Shroud%20Help/mail.scpt&apos;%20string=&apos;shroud@sabi.net&apos;" name="email me" expanded="yes" type="link"/></lit>
                         </run>
                         <run>
                           <lit>.</lit>
