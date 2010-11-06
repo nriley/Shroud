@@ -150,9 +150,9 @@
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
-  <editor content-size="{876, 738}" scroll-position="{0, 1427}" column-titles-display-mode="off" status-visible="no">
+  <editor content-size="{876, 738}" scroll-position="{0, 990}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <selected-rows ids="kJePv4ld-2M"/>
+    <selected-rows ids="fxPDqD6bO6c"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -639,7 +639,7 @@
                           <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Support for multiple screens would entail making Shroud considerably more complex, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
                         </run>
                         <run>
-                          <lit><cell href="http://github.com/nriley/Focus" name="source code is available" type="link"/></lit>
+                          <lit><cell href="http://github.com/nriley/Shroud" name="source code is available" expanded="yes" type="link"/></lit>
                         </run>
                         <run>
                           <lit>.</lit>
