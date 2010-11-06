@@ -223,10 +223,7 @@ static ProcessSerialNumber frontProcess;
 
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 {
-    if (preferencesController == nil)
-        preferencesController = [[ShroudPreferencesController alloc] init];
-
-    [preferencesController showWindow:self];
+    [[ShroudPreferencesController sharedPreferencesController] showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
 }
 

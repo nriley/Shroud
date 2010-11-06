@@ -16,6 +16,8 @@ extern NSString * const FocusFrontmostWindowShortcutPreferenceKey;
 @interface ShroudPreferencesController : NSWindowController {
 }
 
++ (ShroudPreferencesController *)sharedPreferencesController;
+
 - (IBAction)resetBackdropColor:(id)sender;
 
 @end

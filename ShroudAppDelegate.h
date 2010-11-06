@@ -17,8 +17,6 @@
     ShroudDockTileView *dockTileView;
 
     BOOL shouldCoverMenuBar;
-
-    ShroudPreferencesController *preferencesController;
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;

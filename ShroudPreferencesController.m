@@ -15,19 +15,31 @@ NSString * const ShroudShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuB
 NSString * const FocusFrontmostApplicationShortcutPreferenceKey = @"FocusFrontmostApplicationShortcut";
 NSString * const FocusFrontmostWindowShortcutPreferenceKey = @"FocusFrontmostWindowShortcut";
 
+static ShroudPreferencesController *sharedController = nil;
+
 @implementation ShroudPreferencesController
 
-- (id)init;
++ (ShroudPreferencesController *)sharedPreferencesController;
 {
-    if ( (self = [super initWithWindowNibName:@"Preferences"]) == nil)
-        return nil;
+    if (sharedController == nil)
+        sharedController = [[self alloc] initWithWindowNibName:@"Preferences"];
 
-    return self;
+    return sharedController;
 }
 
 - (IBAction)resetBackdropColor:(id)sender;
 {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:ShroudBackdropColorPreferenceKey];
+}
+
+@end
+
+@implementation ShroudPreferencesController (NSWindowNotifications)
+
+- (void)windowWillClose:(NSNotification *)notification;
+{
+    sharedController = nil;
+    [self autorelease];
 }
 
 @end
