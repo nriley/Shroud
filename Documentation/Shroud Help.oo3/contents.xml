@@ -150,11 +150,9 @@
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
-  <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
+  <editor content-size="{876, 738}" scroll-position="{0, 1427}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <selected-rows ids="k2f5GirCi2V"/>
-    <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{80, 5}"/>
+    <selected-rows ids="kJePv4ld-2M"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -366,7 +364,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>To activate Shroud, switch to it, or Option-click on the backdrop if it is visible.</lit>
+                      <lit>To activate Shroud, switch to it, or Option (</lit>
+                    </run>
+                    <run>
+                      <lit>⌥</lit>
+                    </run>
+                    <run>
+                      <lit>)-click on the backdrop if it is visible.</lit>
                     </run>
                   </p>
                 </text>
