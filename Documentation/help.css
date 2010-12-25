@@ -31,9 +31,11 @@ p {
 	font-weight: bold;
 }
 
-.Verbatim {
+.Pre {
+        white-space: pre;
 	font-weight: bold;
 	font-family: Menlo, Monaco, monospace;
+        font-size: 80%;
 }
 
 .UI {

@@ -202,9 +202,6 @@ def digItem(theItem, level, inheritedStyle=[], destReached=False):
                     
             output += "        " + "    "*level + "</div>\n"
             
-        if 'Pre' in divStyles:
-            output = "<pre>" + output + "</pre>"
-            
         text = output       #send back all of the text of the contained nodes, formatted properly
     
     else:                   #we're not at the destination yet
