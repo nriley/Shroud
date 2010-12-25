@@ -29,6 +29,7 @@
 		E1D8F35612336ECF0019122A /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
 		E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
 		E1D9435C123F793A005DA161 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E1D9435B123F793A005DA161 /* dsa_pub.pem */; };
+		E1E578A0125BB5A2001985D3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 				E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */,
 				E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */,
 				E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */,
+				E1E578A0125BB5A2001985D3 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +503,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E11F55E91235A35E00A0A964 /* Remove Framework Headers */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -509,9 +511,9 @@
 			name = "Remove Framework Headers";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name Headers -exec rm -rf '{}' \\; || /usr/bin/true";
+			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name Headers -print0 | xargs -0 rm -rf || /usr/bin/true";
 			showEnvVarsInLog = 0;
 		};
 		E15375F41236010200714C5D /* Build Help Book */ = {
@@ -527,6 +529,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# can just go into UNLOCALIZED_RESOURCES_FOLDER_PATH in 10.6\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Shroud Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\ninstall -m 644 \"${help_src}/mail.scpt\" \"${help_dest}/${help_dir}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove Non-English Framework Resource Localizations";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
