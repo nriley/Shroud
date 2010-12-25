@@ -19,6 +19,8 @@
 		E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */; };
 		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
 		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
+		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
+		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
 		E1BD4006112E6D4800DE639A /* ShroudNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Shroud.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Shroud.icns */; };
@@ -79,6 +81,20 @@
 			remoteGlobalIDString = 342E00BA109CCBF5009AD8CA;
 			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
 		};
+		E186F45B12C3C3D10051E025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = SFBCrashReporter;
+		};
+		E186F46112C3C4030051E025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = SFBCrashReporter;
+		};
 		E1D94335123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
@@ -130,6 +146,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */,
 				E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */,
 				E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */,
 			);
@@ -160,6 +177,7 @@
 		E14B6FDE12341D5600BA58AB /* NJRHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRHotKey.m; sourceTree = "<group>"; };
 		E14B72A812344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJRDictionaryToHotKeyTransformer.h; sourceTree = "<group>"; };
 		E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRDictionaryToHotKeyTransformer.m; sourceTree = "<group>"; };
+		E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFBCrashReporter.xcodeproj; path = SFBCrashReporter/SFBCrashReporter.xcodeproj; sourceTree = "<group>"; };
 		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
@@ -180,6 +198,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */,
+				E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */,
 				E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +293,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */,
 				E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */,
 				E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
@@ -290,6 +310,14 @@
 				E11DFE4B11F247DB001DCDED /* ShortcutRecorder.app */,
 				E11DFE4D11F247DB001DCDED /* ShortcutRecorder.ibplugin */,
 				E11DFE4F11F247DB001DCDED /* ShortcutRecorder.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E186F45812C3C3D10051E025 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,10 +347,12 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				E15375F41236010200714C5D /* Build Help Book */,
 				E11F55E91235A35E00A0A964 /* Remove Framework Headers */,
+				E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E186F46212C3C4030051E025 /* PBXTargetDependency */,
 				E11F558912359F8600A0A964 /* PBXTargetDependency */,
 				E11F558B12359F8D00A0A964 /* PBXTargetDependency */,
 				E1D94341123F75F5005DA161 /* PBXTargetDependency */,
@@ -352,6 +382,10 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Shroud */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = E186F45812C3C3D10051E025 /* Products */;
+					ProjectRef = E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */;
+				},
 				{
 					ProductGroup = E11DFE3E11F247DB001DCDED /* Products */;
 					ProjectRef = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
@@ -402,6 +436,13 @@
 			fileType = wrapper.framework;
 			path = ShortcutRecorder.framework;
 			remoteRef = E11DFE4E11F247DB001DCDED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SFBCrashReporter.framework;
+			remoteRef = E186F45B12C3C3D10051E025 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E1D94336123F75DF005DA161 /* Sparkle.framework */ = {
@@ -519,6 +560,11 @@
 			isa = PBXTargetDependency;
 			name = "ShortcutRecorder.ibplugin - standalone";
 			targetProxy = E11F558A12359F8D00A0A964 /* PBXContainerItemProxy */;
+		};
+		E186F46212C3C4030051E025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SFBCrashReporter;
+			targetProxy = E186F46112C3C4030051E025 /* PBXContainerItemProxy */;
 		};
 		E1D94341123F75F5005DA161 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

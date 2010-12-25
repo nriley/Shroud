@@ -6,6 +6,8 @@
 //  Copyright 2010 Nicholas Riley. All rights reserved.
 //
 
+#import <SFBCrashReporter/SFBCrashReporter.h>
+
 #import "ShroudAppDelegate.h"
 #import "ShroudNonactivatingView.h"
 #import "ShroudMenuBarView.h"
@@ -134,6 +136,10 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // XXX whichever of these is first, the set method gets invoked twice at startup - why?
     [self bind:@"focusFrontmostApplicationShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostApplicationShortcutPreferenceKey] options:hotKeyBindingOptions];
     [self bind:@"focusFrontmostWindowShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostWindowShortcutPreferenceKey] options:hotKeyBindingOptions];
+
+    // Check for and send crash reports.
+    // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
+    [SFBCrashReporter performSelector:@selector(checkForNewCrashes) withObject:nil afterDelay:0.01];
 }
 
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;

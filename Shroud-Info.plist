@@ -46,5 +46,7 @@
 	<integer>86400</integer>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SFBCrashReporterCrashSubmissionURL</key>
+	<string>https://crashpool.com/reporter/kn8yyrctia21/sfbcr</string>
 </dict>
 </plist>
