@@ -1,7 +1,7 @@
 #!/bin/zsh -e
 
 PACKAGEDIR="$PWD"
-PRODUCT="Focus"
+PRODUCT="Shroud"
 
 # gather information
 VERSION=`agvtool mvers -terse1`
@@ -12,10 +12,12 @@ DSTROOT="$PACKAGEDIR/$VOL"
 # clean and build
 sudo rm -rf "$DSTROOT"
 find . -name \*~ -exec rm '{}' \;
-rm -rf build/
-xcodebuild -target Focus -configuration Release DSTROOT="$DSTROOT" \
+rm -rf **/build/(N)
+# can't have INSTALL_PATH=/ for bundled frameworks because it'll override @executable_path etc.
+xcodebuild -target "$PRODUCT" -configuration Release
+xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
     INSTALL_PATH=/ DEPLOYMENT_LOCATION=YES install
-rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"*
+rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"*
 
 # create disk image
 cd "$PACKAGEDIR"
