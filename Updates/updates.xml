@@ -6,17 +6,17 @@
     <description>Appcast for Shroud updates.</description>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate></pubDate>
-    <lastBuildDate></lastBuildDate>
+    <pubDate>Sat, 25 Dec 2010 22:06:01 -0600</pubDate>
+    <lastBuildDate>Sat, 25 Dec 2010 22:06:01 -0600</lastBuildDate>
     
     <atom:link href="http://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Shroud 1.0b3</title>
+      <title>Shroud 1.0</title>
       <link>http://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
-      <pubDate></pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shrodu-1.0b3.dmg" length="" type="application/x-apple-diskimage" sparkle:version="" sparkle:shortVersionString="" sparkle:dsaSignature=""/>
-      <guid isPermaLink="false">shroud-10b3</guid>
+      <pubDate>Sat, 25 Dec 2010 22:06:01 -0600</pubDate>
+      <enclosure url="http://sabi.net/nriley/software/Shroud-1.0.dmg" length="625010" type="application/x-apple-diskimage" sparkle:version="8" sparkle:shortVersionString="1.0" sparkle:dsaSignature="MCwCFF1nCMembhvvZV/VX3OzdNtER0CkAhRmnvgVsnIdynVbPZhpBhJ23gTz5g=="/>
+      <guid isPermaLink="false">shroud-10</guid>
       <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
   </channel>
