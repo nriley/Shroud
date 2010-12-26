@@ -41,7 +41,7 @@
 	<key>SUFeedURL</key>
 	<string>http://sabi.net/nriley/software/Shroud/updates.xml</string>
 	<key>SUEnableSystemProfiling</key>
-	<true/>
+	<false/>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 	<key>SUPublicDSAKeyFile</key>
