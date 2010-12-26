@@ -265,7 +265,29 @@ static ProcessSerialNumber frontProcess;
 
 @implementation ShroudAppDelegate (NSApplicationNotifications)
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
+{
+    // Migrate preferences from Focus if needed.
+    const CFStringRef FocusApplicationID = CFSTR("net.sabi.Focus");
+    CFArrayRef focusPreferenceKeys = CFPreferencesCopyKeyList(FocusApplicationID, kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    if (focusPreferenceKeys != NULL) {
+        CFArrayRef shroudPreferenceKeys = CFPreferencesCopyKeyList(kCFPreferencesCurrentApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+        if (shroudPreferenceKeys == NULL) {
+            CFDictionaryRef focusPreferences = CFPreferencesCopyMultiple(focusPreferenceKeys, FocusApplicationID, kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+            CFMutableDictionaryRef shroudPreferences = CFDictionaryCreateMutableCopy(NULL, CFDictionaryGetCount(focusPreferences) + 1, focusPreferences);
+            CFRelease(focusPreferences);
+
+            CFDictionarySetValue(shroudPreferences, CFSTR("ShroudHighestVersionRun"),
+                                 CFDictionaryGetValue(shroudPreferences, CFSTR("FocusHighestVersionRun")));
+            CFDictionaryRemoveValue(shroudPreferences, CFSTR("FocusHighestVersionRun"));
+            CFPreferencesSetMultiple(shroudPreferences, NULL, kCFPreferencesCurrentApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+            CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
+            CFRelease(shroudPreferences);
+        } else CFRelease(shroudPreferenceKeys);
+        CFRelease(focusPreferenceKeys);
+    }
+
+    // Initialize preferences.
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
 
     [userDefaultsController setInitialValues:
