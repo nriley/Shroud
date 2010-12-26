@@ -150,9 +150,9 @@
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
-  <editor content-size="{876, 738}" scroll-position="{0, 2139}" column-titles-display-mode="off" status-visible="no">
+  <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <selected-rows ids="mF4pbj0OheA"/>
+    <hoisted-rows ids="eZiWRg7oWft"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -675,18 +675,12 @@
                     </text>
                   </values>
                 </item>
-                <item id="kw23PplSqeK">
+                <item id="d8Nza_lEIux">
                   <values>
                     <text>
                       <p>
                         <run>
-                          <lit>If you have any ideas about how Shroud could interact better with Spaces, please </lit>
-                        </run>
-                        <run>
-                          <lit><cell href="help:runscript=&apos;Shroud%20Help/mail.scpt&apos;%20string=&apos;shroud@sabi.net?subject=Shroud%20interaction%20with%20Spaces&apos;" name="let me know" expanded="yes" type="link"/></lit>
-                        </run>
-                        <run>
-                          <lit>.</lit>
+                          <lit>If you would like to Spaces with Shroud, use the Spaces System Preferences pane to set Shroud to “live” in a single space. (Thanks to Nelson Bonner for the suggestion.)</lit>
                         </run>
                       </p>
                     </text>
