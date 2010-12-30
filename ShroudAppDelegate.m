@@ -301,7 +301,7 @@ static ProcessSerialNumber frontProcess;
     float priorVersion = [userDefaults floatForKey:@"ShroudHighestVersionRun"];
     if (priorVersion < currentVersion)
         [userDefaults setFloat:currentVersion forKey:@"ShroudHighestVersionRun"];
-    if (priorVersion < 7.) {
+    if (priorVersion < 7. || priorVersion == 8.) {
         NSString *helpBookName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleHelpBookName"];
         [[NSHelpManager sharedHelpManager] openHelpAnchor:@"introduction" inBook:helpBookName];
     }
