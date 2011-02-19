@@ -74,6 +74,9 @@
 	return;
 
     // Immediately hide the menu bar so you don't see a flicker when the menu highlight disappears.
-    [[self window] setAlphaValue:1];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0.01];
+    [[[self window] animator] setAlphaValue:1];
+    [NSAnimationContext endGrouping];
 }
 @end
