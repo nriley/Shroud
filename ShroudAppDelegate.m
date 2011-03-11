@@ -17,22 +17,6 @@
 
 #include <Carbon/Carbon.h>
 
-@interface ShroudAppDelegate ()
-- (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
-@end
-
-static OSStatus ShroudSystemUIModeChanged(EventHandlerCallRef callRef, EventRef event, void *delegate) {
-    UInt32 newMode = 0;
-    OSStatus err;
-    err = GetEventParameter(event, kEventParamSystemUIMode, typeUInt32, NULL, sizeof(UInt32), NULL, &newMode);
-    if (err != noErr)
-	return err;
-
-    [(ShroudAppDelegate *)delegate systemUIElementsDidBecomeVisible:newMode == kUIModeNormal];
-
-    return noErr;
-}
-
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
@@ -100,14 +84,11 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     ShroudMenuBarView *menuBarView = [[[ShroudMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
     [menuBarView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 
-    NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[menuBarView frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:menuBarView userInfo:nil];
-    [menuBarView addTrackingArea:area];
-    [area release];
-
     [menuBarPanel setContentView:menuBarView];
 
-    if (shouldCoverMenuBar)
-        [menuBarPanel orderFront:nil];
+    // Note: the menuBarView itself reacts to internal triggers on showing/hiding the menu bar (menu tracking & mouse entry/exit).  The visibility controller reacts to external triggers (full screen mode and keyboard control).
+    ShroudMenuBarVisibilityController *menuBarVisibilityController = [[ShroudMenuBarVisibilityController alloc] initWithWindow:menuBarPanel];
+    [menuBarVisibilityController bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
 
     // Create dock tile.
     NSDockTile *dockTile = [NSApp dockTile];
@@ -122,12 +103,6 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
     SetFrontProcessWithOptions(&frontProcess, 0);
 
-    static const EventTypeSpec eventSpecs[] = {{kEventClassApplication, kEventAppSystemUIModeChanged}};
-
-    InstallApplicationEventHandler(NewEventHandlerUPP(ShroudSystemUIModeChanged),
-                                   GetEventTypeCount(eventSpecs),
-                                   eventSpecs, self, NULL);
-
     // Register for shortcut changes.
     NSDictionary *hotKeyBindingOptions = [NSDictionary dictionaryWithObjectsAndKeys:@"NJRDictionaryToHotKeyTransformer", NSValueTransformerNameBindingOption,
         [NSNumber numberWithBool:YES], NSAllowsNullArgumentBindingOption,
@@ -140,37 +115,6 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // Check for and send crash reports.
     // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
     [SFBCrashReporter performSelector:@selector(checkForNewCrashes) withObject:nil afterDelay:0.01];
-}
-
-- (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
-{
-    if (!shouldCoverMenuBar)
-        return;
-
-    if (!visible) {
-	[menuBarPanel orderOut:nil];
-	return;
-    }
-
-    // The OS will be fading in, so we do as well.
-    [menuBarPanel setAlphaValue:0];
-    [menuBarPanel orderFront:nil];
-
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.2];
-    [[menuBarPanel animator] setAlphaValue:1];
-    [NSAnimationContext endGrouping];
-}
-
-
-- (void)setShouldCoverMenuBar:(BOOL)shouldCover;
-{
-    shouldCoverMenuBar = shouldCover;
-
-    if (shouldCover)
-        [menuBarPanel orderFront:nil];
-    else
-        [menuBarPanel orderOut:nil];
 }
 
 #pragma mark actions
@@ -293,8 +237,6 @@ static ProcessSerialNumber frontProcess;
     [userDefaultsController setInitialValues:
      [NSDictionary dictionaryWithObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0.239 alpha:1.000]]
                                  forKey:ShroudBackdropColorPreferenceKey]];
-
-    [self bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     float currentVersion = [[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey] floatValue];

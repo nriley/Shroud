@@ -12,5 +12,9 @@
 @interface ShroudMenuBarView : NSView {
     BOOL mouseInMenuBar;
     BOOL menuTrackingInProgress;
+    BOOL peekInProgress;
 }
+
+- (void)setPeeking:(BOOL)peeking;
+
 @end

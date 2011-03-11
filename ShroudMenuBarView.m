@@ -16,6 +16,10 @@
     if ( (self = [super initWithFrame:frameRect]) == nil)
 	return nil;
 
+    NSTrackingArea *area = [[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingActiveAlways owner:self userInfo:nil];
+    [self addTrackingArea:area];
+    [area release];
+
     NSDistributedNotificationCenter *distributedNotificationCenter = [NSDistributedNotificationCenter defaultCenter];
     [distributedNotificationCenter addObserver:self
 				      selector:@selector(menuTrackingDidBegin:)
@@ -29,30 +33,42 @@
     return self;
 }
 
+- (void)coverMenuBar:(BOOL)cover;
+{
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0.1];
+    [[[self window] animator] setAlphaValue:cover ? 1 : 0];
+    [NSAnimationContext endGrouping];
+}
+
+- (void)setPeeking:(BOOL)peeking;
+{
+    peekInProgress = peeking;
+
+    if (mouseInMenuBar || menuTrackingInProgress)
+        return;
+
+    [self coverMenuBar:!peeking];
+}
+
 - (void)mouseEntered:(NSEvent *)theEvent;
 {
     mouseInMenuBar = YES;
 
-    if (menuTrackingInProgress)
+    if (menuTrackingInProgress || peekInProgress)
 	return;
 
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.1];
-    [[[self window] animator] setAlphaValue:0];
-    [NSAnimationContext endGrouping];
+    [self coverMenuBar:NO];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent;
 {
     mouseInMenuBar = NO;
 
-    if (menuTrackingInProgress)
+    if (menuTrackingInProgress || peekInProgress)
 	return;
 
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.1];
-    [[[self window] animator] setAlphaValue:1];
-    [NSAnimationContext endGrouping];
+    [self coverMenuBar:YES];
 }
 
 - (void)menuTrackingDidBegin:(NSNotification *)notification;
@@ -70,7 +86,7 @@
 
     menuTrackingInProgress = NO;
 
-    if (mouseInMenuBar)
+    if (mouseInMenuBar || peekInProgress)
 	return;
 
     // Immediately hide the menu bar so you don't see a flicker when the menu highlight disappears.
