@@ -152,7 +152,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="eZiWRg7oWft"/>
+    <hoisted-rows ids="b9708GcW34s"/>
+    <selected-rows ids="kVW6IBa1H8I"/>
+    <selected-columns ids="jFqHUGd_Dg1"/>
+    <selected-characters range="{75, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -285,7 +288,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Shroud (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move your mouse over the menu bar to use it if you need it.</lit>
+                          <lit>Shroud (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move the mouse pointer over the menu bar to use it if you need it, or “peek” at the menu bar by holding down keys.</lit>
                         </run>
                       </p>
                     </text>
@@ -474,16 +477,51 @@
                     </text>
                   </values>
                 </item>
-                <item id="oKgv_USrQOH">
+                <item id="oKgv_USrQOH" expanded="yes">
                   <values>
                     <text>
                       <p>
                         <run>
-                          <lit>In addition to configuring keyboard shortcuts, you can change the Shroud backdrop color and choose whether Shroud should cover the menu bar.</lit>
+                          <lit>In addition to configuring keyboard shortcuts, you can:</lit>
                         </run>
                       </p>
                     </text>
                   </values>
+                  <children>
+                    <item id="gUuwd8aPIkE">
+                      <values>
+                        <text>
+                          <p>
+                            <run>
+                              <lit>change the Shroud backdrop color</lit>
+                            </run>
+                          </p>
+                        </text>
+                      </values>
+                    </item>
+                    <item id="kZkMQQtozdc">
+                      <values>
+                        <text>
+                          <p>
+                            <run>
+                              <lit>choose whether Shroud should cover the menu bar</lit>
+                            </run>
+                          </p>
+                        </text>
+                      </values>
+                    </item>
+                    <item id="jBlvaIA8dBy">
+                      <values>
+                        <text>
+                          <p>
+                            <run>
+                              <lit>choose one or more modifier keys (Shift, Option, etc.) to hold down to “peek at” (temporarily show) the menu bar</lit>
+                            </run>
+                          </p>
+                        </text>
+                      </values>
+                    </item>
+                  </children>
                 </item>
               </children>
             </item>
