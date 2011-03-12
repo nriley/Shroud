@@ -66,7 +66,6 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
                                    eventSpecs, self, NULL);
 
     // Create event tap to watch for menu bar peek keystroke.
-    // XXX Check for accessibility.
     menuBarPeekTap = (NSMachPort *)CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, CGEventMaskBit(kCGEventFlagsChanged), ShroudKeyboardFlagsChanged, self);
     [[NSRunLoop currentRunLoop] addPort:menuBarPeekTap forMode:NSDefaultRunLoopMode];
     
