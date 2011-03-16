@@ -6,10 +6,19 @@
     <description>Appcast for Shroud updates.</description>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Thu, 30 Dec 2010 11:14:20 -0600</pubDate>
-    <lastBuildDate>Thu, 30 Dec 2010 11:14:20 -0600</lastBuildDate>
+    <pubDate>Tue, 15 Mar 2011 22:14:46 -0500</pubDate>
+    <lastBuildDate>Tue, 15 Mar 2011 22:14:46 -0500</lastBuildDate>
     
     <atom:link href="http://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Shroud 1.1</title>
+      <link>http://sabi.net/nriley/software/#shroud</link>
+      <author>shroud@sabi.net (Nicholas Riley)</author>
+      <pubDate>Tue, 15 Mar 2011 22:14:46 -0500</pubDate>
+      <enclosure url="http://sabi.net/nriley/software/Shroud-1.1.dmg" length="699695" type="application/x-apple-diskimage" sparkle:version="10" sparkle:shortVersionString="1.1" sparkle:dsaSignature="MCwCFEA54HujpLfaTa4tw40rpcCZ2eBtAhRX4ug+PNgzI2lYPP2OniXQJQulkw=="/>
+      <guid isPermaLink="false">shroud-11</guid>
+      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+    </item>
     <item>
       <title>Shroud 1.0.1</title>
       <link>http://sabi.net/nriley/software/#shroud</link>
