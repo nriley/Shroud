@@ -9,12 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
 #import "ShroudDockTileView.h"
+#import "ShroudMenuBarPanel.h"
 #import "ShroudMenuBarVisibilityController.h"
 #import "ShroudPreferencesController.h"
 
 @interface ShroudAppDelegate : NSObject {
     NSPanel *screenPanel;
-    NSPanel *menuBarPanel;
+    ShroudMenuBarPanel *menuBarPanel;
     ShroudDockTileView *dockTileView;
 }
 

@@ -70,10 +70,10 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [screenPanel orderFront:nil];
 
     // Create menu bar panel.
-    menuBarPanel = [[NSPanel alloc] initWithContentRect:menuBarFrame
-                                              styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
-                                                backing:NSBackingStoreBuffered
-                                                  defer:NO];
+    menuBarPanel = [[ShroudMenuBarPanel alloc] initWithContentRect:menuBarFrame
+                                                         styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
+                                                           backing:NSBackingStoreBuffered
+                                                             defer:NO];
 
     [menuBarPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
     [menuBarPanel setHasShadow:NO];
@@ -263,7 +263,7 @@ static ProcessSerialNumber frontProcess;
     ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
 
     [screenPanel setFrame:screenFrame display:YES];
-    [menuBarPanel setFrame:menuBarFrame display:YES];
+    [menuBarPanel shroudSetFrame:menuBarFrame display:YES];
 }
 
 @end

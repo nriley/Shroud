@@ -20,6 +20,7 @@
 		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
 		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
 		E160711E12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = E160711D12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m */; };
+		E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */; };
 		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
@@ -181,6 +182,8 @@
 		E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJRDictionaryToHotKeyTransformer.m; sourceTree = "<group>"; };
 		E160711C12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudMenuBarVisibilityController.h; sourceTree = "<group>"; };
 		E160711D12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarVisibilityController.m; sourceTree = "<group>"; };
+		E16E086E138F2C7200D0720B /* ShroudMenuBarPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudMenuBarPanel.h; sourceTree = "<group>"; };
+		E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarPanel.m; sourceTree = "<group>"; };
 		E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFBCrashReporter.xcodeproj; path = SFBCrashReporter/SFBCrashReporter.xcodeproj; sourceTree = "<group>"; };
 		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
@@ -218,6 +221,8 @@
 				256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */,
 				216B368E114C59EF002E2818 /* ShroudPreferencesController.h */,
 				216B368F114C59EF002E2818 /* ShroudPreferencesController.m */,
+				E16E086E138F2C7200D0720B /* ShroudMenuBarPanel.h */,
+				E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */,
 				E1BD40EC112F753000DE639A /* ShroudMenuBarView.h */,
 				E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */,
 				E160711C12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.h */,
@@ -568,6 +573,7 @@
 				E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */,
 				E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */,
 				E160711E12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m in Sources */,
+				E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
