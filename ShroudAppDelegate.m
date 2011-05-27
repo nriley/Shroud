@@ -78,6 +78,10 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [menuBarPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
     [menuBarPanel setHasShadow:NO];
 
+    [menuBarPanel setCollectionBehavior:
+     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
+     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
+
     [menuBarPanel setIgnoresMouseEvents:YES];
     [menuBarPanel setLevel:NSStatusWindowLevel + 1];
 
