@@ -33,6 +33,12 @@
     return self;
 }
 
+- (void)dealloc;
+{
+    [[NSDistributedNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
 - (void)coverMenuBar:(BOOL)cover;
 {
     [NSAnimationContext beginGrouping];

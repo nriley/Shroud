@@ -6,11 +6,10 @@
 //  Copyright 2010 Nicholas Riley. All rights reserved.
 //
 
+#import "ShroudAppDelegate.h"
 #import "ShroudMenuBarVisibilityController.h"
 #import "ShroudMenuBarView.h"
 #import "ShroudPreferencesController.h"
-
-#include <Carbon/Carbon.h>
 
 @interface ShroudMenuBarVisibilityController ()
 - (void)peekAtMenuBar:(BOOL)peek;
@@ -65,7 +64,7 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     
     InstallApplicationEventHandler(NewEventHandlerUPP(ShroudSystemUIModeChanged),
                                    GetEventTypeCount(eventSpecs),
-                                   eventSpecs, self, NULL);
+                                   eventSpecs, self, &systemUIModeChangedEventHandler);
 
     // Create event tap to watch for menu bar peek keystroke.
     menuBarPeekTap = (NSMachPort *)CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, CGEventMaskBit(kCGEventFlagsChanged), ShroudKeyboardFlagsChanged, self);
@@ -74,6 +73,14 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     [[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey] options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];
 
     return self;
+}
+
+- (void)dealloc;
+{
+    RemoveEventHandler(systemUIModeChangedEventHandler);
+    [menuBarPeekTap release];
+    [[NSUserDefaultsController sharedUserDefaultsController] removeObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey]];
+    [super dealloc];
 }
 
 - (void)peekAtMenuBar:(BOOL)peek;
@@ -97,6 +104,13 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
 {
     if (!shouldCoverMenuBar)
         return;
+
+    // XXX workaround for Spaces issue on OS X 10.6 (at least)
+    ShroudAppDelegate *appDelegate = [NSApp delegate];
+    if ([appDelegate menuBarPanelOnWrongSpace]) {
+        [appDelegate createMenuBarPanelWithFrame:[[self window] frame]];
+        return;
+    }
     
     if (!visible) {
         [[self window] orderOut:nil];

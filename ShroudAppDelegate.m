@@ -17,6 +17,10 @@
 
 #include <Carbon/Carbon.h>
 
+@interface NSWindow ()
+- (BOOL)isOnActiveSpace; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
+@end
+
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
@@ -69,30 +73,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
     [screenPanel orderFront:nil];
 
-    // Create menu bar panel.
-    menuBarPanel = [[ShroudMenuBarPanel alloc] initWithContentRect:menuBarFrame
-                                                         styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
-                                                           backing:NSBackingStoreBuffered
-                                                             defer:NO];
-
-    [menuBarPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
-    [menuBarPanel setHasShadow:NO];
-
-    [menuBarPanel setCollectionBehavior:
-     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
-     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
-
-    [menuBarPanel setIgnoresMouseEvents:YES];
-    [menuBarPanel setLevel:NSStatusWindowLevel + 1];
-
-    ShroudMenuBarView *menuBarView = [[[ShroudMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
-    [menuBarView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-
-    [menuBarPanel setContentView:menuBarView];
-
-    // Note: the menuBarView itself reacts to internal triggers on showing/hiding the menu bar (menu tracking & mouse entry/exit).  The visibility controller reacts to external triggers (full screen mode and keyboard control).
-    ShroudMenuBarVisibilityController *menuBarVisibilityController = [[ShroudMenuBarVisibilityController alloc] initWithWindow:menuBarPanel];
-    [menuBarVisibilityController bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
+    [self createMenuBarPanelWithFrame:menuBarFrame];
 
     // Create dock tile.
     NSDockTile *dockTile = [NSApp dockTile];
@@ -119,6 +100,74 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // Check for and send crash reports.
     // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
     [SFBCrashReporter performSelector:@selector(checkForNewCrashes) withObject:nil afterDelay:0.01];
+}
+
+#pragma mark workarounds
+
+// XXX In 10.6 (at least), with Focus on one space and exiting full screen mode (either permanently or temporarily, by switching applications) with a different space in front, the menu bar panel is moved to the frontmost space.  In the CGWindowList description, this exhibits itself as a disappearing kCGWindowWorkspace key.
+
+- (BOOL)menuBarPanelOnWrongSpace;
+{
+    if ([menuBarPanel respondsToSelector:@selector(isOnActiveSpace)])
+        return [screenPanel isOnActiveSpace] != [menuBarPanel isOnActiveSpace];
+
+    CFMutableArrayRef windowIDs = CFArrayCreateMutable(kCFAllocatorDefault, 2, NULL);
+    CFArrayAppendValue(windowIDs, (void *)[screenPanel windowNumber]);
+    CFArrayAppendValue(windowIDs, (void *)[menuBarPanel windowNumber]);
+
+    NSArray *descriptions = [(NSArray *)CGWindowListCreateDescriptionFromArray(windowIDs) autorelease];
+    CFRelease(windowIDs);
+
+    if (descriptions == nil || [descriptions count] != 2) {
+        NSLog(@"Unexpected return value from CGWindowListCreateDescriptionFromArray: %@", descriptions);
+        return NO;
+    }
+
+    // In some unexpected conditions, the dictionary key may be missing entirely
+    return ![[[descriptions objectAtIndex:0] objectForKey:(id)kCGWindowWorkspace] isEqual:
+             [[descriptions objectAtIndex:1] objectForKey:(id)kCGWindowWorkspace]];
+}
+
+- (void)createMenuBarPanelWithFrame:(NSRect)menuBarFrame;
+{
+    NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
+    NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
+    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
+
+    if (menuBarPanel != nil) {
+        ShroudMenuBarVisibilityController *menuBarVisibilityController = (ShroudMenuBarVisibilityController *)[menuBarPanel windowController];
+        [menuBarPanel unbind:@"backgroundColor"];
+        [menuBarVisibilityController unbind:@"shouldCoverMenuBar"];
+        [menuBarVisibilityController close];
+        [menuBarVisibilityController release];
+    }
+
+    // Create menu bar panel.
+    menuBarPanel = [[ShroudMenuBarPanel alloc] initWithContentRect:menuBarFrame
+                                                         styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
+                                                           backing:NSBackingStoreBuffered
+                                                             defer:NO];
+
+    [menuBarPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+    [menuBarPanel setHasShadow:NO];
+
+    [menuBarPanel setCollectionBehavior:
+     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
+     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
+
+    [menuBarPanel setIgnoresMouseEvents:YES];
+    [menuBarPanel setLevel:NSStatusWindowLevel + 1];
+
+    ShroudMenuBarView *menuBarView = [[[ShroudMenuBarView alloc] initWithFrame:[menuBarPanel frame]] autorelease];
+    [menuBarView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+
+    [menuBarPanel setContentView:menuBarView];
+
+    // Note: the menuBarView itself reacts to internal triggers on showing/hiding the menu bar (menu tracking & mouse entry/exit).  The visibility controller reacts to external triggers (full screen mode and keyboard control).
+    ShroudMenuBarVisibilityController *menuBarVisibilityController = [[ShroudMenuBarVisibilityController alloc] initWithWindow:menuBarPanel];
+    [menuBarPanel release];
+    [menuBarVisibilityController setShouldCoverMenuBar:YES];
+    [menuBarVisibilityController bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
 }
 
 #pragma mark actions

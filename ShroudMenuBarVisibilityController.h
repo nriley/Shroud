@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#include <Carbon/Carbon.h>
 
 @interface ShroudMenuBarVisibilityController : NSWindowController {
     NSMachPort *menuBarPeekTap;
+    EventHandlerRef systemUIModeChangedEventHandler;
     BOOL shouldCoverMenuBar;
     @public
     CGEventFlags peekFlags;

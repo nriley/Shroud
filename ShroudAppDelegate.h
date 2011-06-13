@@ -24,4 +24,7 @@
 - (IBAction)orderFrontAboutPanel:(id)sender;
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 
+- (BOOL)menuBarPanelOnWrongSpace;
+- (void)createMenuBarPanelWithFrame:(NSRect)menuBarFrame;
+
 @end
