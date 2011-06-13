@@ -21,6 +21,8 @@
 - (BOOL)isOnActiveSpace; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
 @end
 
+static NSString * const NSWorkspaceActiveSpaceDidChangeNotification = @"NSWorkspaceActiveSpaceDidChangeNotification"; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
+
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
@@ -87,6 +89,12 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     TransformProcessType(&currentProcess, kProcessTransformToForegroundApplication);
 
     SetFrontProcessWithOptions(&frontProcess, 0);
+
+    // XXX Work around a Spaces issue.  Note that this notification is only delivered on 10.6.
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+                                                           selector:@selector(workspaceActiveSpaceDidChange:)
+                                                               name:NSWorkspaceActiveSpaceDidChangeNotification
+                                                             object:nil];
 
     // Register for shortcut changes.
     NSDictionary *hotKeyBindingOptions = [NSDictionary dictionaryWithObjectsAndKeys:@"NJRDictionaryToHotKeyTransformer", NSValueTransformerNameBindingOption,
@@ -168,6 +176,25 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [menuBarPanel release];
     [menuBarVisibilityController setShouldCoverMenuBar:YES];
     [menuBarVisibilityController bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
+}
+
+// XXX In 10.6 (at least), panels can end up below the backdrop when switching back to a space containing Shroud. Make sure that other panels (e.g. About, Preferences, crash reporter) are above the backdrop.
+
+- (void)workspaceActiveSpaceDidChange:(NSNotification *)notification;
+{
+    if (![screenPanel isOnActiveSpace])
+        return;
+
+    NSArray *windows = [NSApp windows];
+    if ([windows count] == 2)
+        return;
+
+    NSInteger screenPanelWindowNumber = [screenPanel windowNumber];
+    for (NSWindow *window in windows) {
+        if (window == screenPanel || window == menuBarPanel || ![window isVisible])
+            continue;
+        [window orderWindow:NSWindowAbove relativeTo:screenPanelWindowNumber];
+    }
 }
 
 #pragma mark actions
