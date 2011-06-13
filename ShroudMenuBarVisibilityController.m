@@ -24,8 +24,10 @@ static OSStatus ShroudSystemUIModeChanged(EventHandlerCallRef callRef, EventRef 
     if (err != noErr)
         return err;
     
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     ShroudMenuBarVisibilityController *controller = (ShroudMenuBarVisibilityController *)refcon;
     [controller systemUIElementsDidBecomeVisible:newMode == kUIModeNormal];
+    [pool drain];
     
     return noErr;
 }
