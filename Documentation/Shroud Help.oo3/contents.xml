@@ -153,8 +153,7 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="gXgiyJ1Adlj"/>
-    <selected-rows ids="ctYaHJAhgjy"/>
+    <hoisted-rows ids="akxjRLlvOv3"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -718,6 +717,17 @@
                       <p>
                         <run>
                           <lit>If you would like to Spaces with Shroud, use the Spaces System Preferences pane to set Shroud to “live” in a single space. (Thanks to Nelson Bonner for the suggestion.)</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+                <item id="kdYTSjgIf0O">
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Shroud 1.1.2 works around several bugs in Spaces and should interact much better with Spaces in Mac OS X 10.6.</lit>
                         </run>
                       </p>
                     </text>
