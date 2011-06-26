@@ -14,7 +14,8 @@
 #import "ShroudPreferencesController.h"
 
 @interface ShroudAppDelegate : NSObject {
-    NSPanel *screenPanel;
+    NSPanel *mainScreenPanel;
+    NSMutableArray *screenPanels;
     ShroudMenuBarPanel *menuBarPanel;
     ShroudDockTileView *dockTileView;
 }

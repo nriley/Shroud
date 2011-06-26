@@ -35,6 +35,51 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
 @implementation ShroudAppDelegate
 
+- (void)setUpScreenPanels;
+{
+    NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
+    NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
+    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
+    
+    [screenPanels performSelector:@selector(close)];
+    
+    [screenPanels release];
+    screenPanels = [[NSMutableArray alloc] init];
+    
+    for (NSScreen *screen in [NSScreen screens]) {
+        NSPanel *screenPanel = [[NSPanel alloc] initWithContentRect:[screen frame]
+                                                          styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
+                                                            backing:NSBackingStoreBuffered
+                                                              defer:NO];
+        [screenPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+        [screenPanel setHasShadow:NO];
+        
+        [screenPanel setCollectionBehavior:
+         (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
+         (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
+        
+        ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
+        [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+        
+        [screenPanel setContentView:view];
+        
+        [screenPanel orderFront:nil];
+        
+        [screenPanels addObject:screenPanel];
+        
+        if ([[NSScreen mainScreen] isEqual:[NSScreen mainScreen]]) {
+            mainScreenPanel = screenPanel;
+            
+            NSRect menuBarFrame = [screen frame];
+            NSRect visibleFrame = [screen visibleFrame];
+            CGFloat menuBarHeight = visibleFrame.size.height + visibleFrame.origin.y;
+            menuBarFrame.origin.y += menuBarHeight;
+            menuBarFrame.size.height -= menuBarHeight;
+            [self createMenuBarPanelWithFrame:menuBarFrame];
+        }
+    }
+}
+
 - (void)setUp;
 {
     // Place Shroud behind the frontmost application at launch.
@@ -51,31 +96,8 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
     NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
     NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
-
-    NSRect screenFrame, menuBarFrame;
-    ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
-
-    // Create screen panel.
-    screenPanel = [[NSPanel alloc] initWithContentRect:screenFrame
-					     styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
-					       backing:NSBackingStoreBuffered
-						 defer:NO];
-
-    [screenPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
-    [screenPanel setHasShadow:NO];
-
-    [screenPanel setCollectionBehavior:
-     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
-     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
-
-    ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
-    [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-
-    [screenPanel setContentView:view];
-
-    [screenPanel orderFront:nil];
-
-    [self createMenuBarPanelWithFrame:menuBarFrame];
+    
+    [self setUpScreenPanels];
 
     // Create dock tile.
     NSDockTile *dockTile = [NSApp dockTile];
@@ -117,10 +139,10 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 - (BOOL)menuBarPanelOnWrongSpace;
 {
     if ([menuBarPanel respondsToSelector:@selector(isOnActiveSpace)])
-        return [screenPanel isOnActiveSpace] != [menuBarPanel isOnActiveSpace];
+        return [mainScreenPanel isOnActiveSpace] != [menuBarPanel isOnActiveSpace];
 
     CFMutableArrayRef windowIDs = CFArrayCreateMutable(kCFAllocatorDefault, 2, NULL);
-    CFArrayAppendValue(windowIDs, (void *)[screenPanel windowNumber]);
+    CFArrayAppendValue(windowIDs, (void *)[mainScreenPanel windowNumber]);
     CFArrayAppendValue(windowIDs, (void *)[menuBarPanel windowNumber]);
 
     NSArray *descriptions = [(NSArray *)CGWindowListCreateDescriptionFromArray(windowIDs) autorelease];
@@ -182,16 +204,16 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
 - (void)workspaceActiveSpaceDidChange:(NSNotification *)notification;
 {
-    if (![screenPanel isOnActiveSpace])
+    if (![mainScreenPanel isOnActiveSpace])
         return;
 
     NSArray *windows = [NSApp windows];
     if ([windows count] == 2)
         return;
 
-    NSInteger screenPanelWindowNumber = [screenPanel windowNumber];
+    NSInteger screenPanelWindowNumber = [mainScreenPanel windowNumber];
     for (NSWindow *window in windows) {
-        if (window == screenPanel || window == menuBarPanel || ![window isVisible])
+        if (window == mainScreenPanel || window == menuBarPanel || ![window isVisible])
             continue;
         [window orderWindow:NSWindowAbove relativeTo:screenPanelWindowNumber];
     }
@@ -335,11 +357,7 @@ static ProcessSerialNumber frontProcess;
 
 - (void)applicationDidChangeScreenParameters:(NSNotification *)notification;
 {
-    NSRect screenFrame, menuBarFrame;
-    ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
-
-    [screenPanel setFrame:screenFrame display:YES];
-    [menuBarPanel shroudSetFrame:menuBarFrame display:YES];
+    [self setUpScreenPanels];
 }
 
 @end
