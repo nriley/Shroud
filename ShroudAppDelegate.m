@@ -41,7 +41,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
     NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
     
-    [screenPanels performSelector:@selector(close)];
+    [screenPanels makeObjectsPerformSelector:@selector(close)];
     
     [screenPanels release];
     screenPanels = [[NSMutableArray alloc] init];
