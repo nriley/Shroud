@@ -67,7 +67,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
         
         [screenPanels addObject:screenPanel];
         
-        if ([[NSScreen mainScreen] isEqual:[NSScreen mainScreen]]) {
+        if ([screen isEqual:[NSScreen mainScreen]]) {
             mainScreenPanel = screenPanel;
             
             NSRect menuBarFrame = [screen frame];
