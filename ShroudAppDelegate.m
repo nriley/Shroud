@@ -17,12 +17,6 @@
 
 #include <Carbon/Carbon.h>
 
-@interface NSWindow ()
-- (BOOL)isOnActiveSpace; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
-@end
-
-static NSString * const NSWorkspaceActiveSpaceDidChangeNotification = @"NSWorkspaceActiveSpaceDidChangeNotification"; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
-
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];

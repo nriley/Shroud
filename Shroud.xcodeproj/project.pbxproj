@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -70,19 +70,12 @@
 			remoteGlobalIDString = 342E0104109CCC36009AD8CA;
 			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
-		E11F558812359F8600A0A964 /* PBXContainerItemProxy */ = {
+		E13A2E161562199F0053BD07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9398377F0DA42965007F53F3;
-			remoteInfo = "ShortcutRecorder.framework - with embedded ibplugin";
-		};
-		E11F558A12359F8D00A0A964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E11DFE3B11F247DA001DCDED /* ShortcutRecorder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 342E00BA109CCBF5009AD8CA;
-			remoteInfo = "ShortcutRecorder.ibplugin - standalone";
+			remoteGlobalIDString = 342E00EB109CCC36009AD8CA;
+			remoteInfo = "ShortcutRecorder.framework - for embedding in ibplugin";
 		};
 		E186F45B12C3C3D10051E025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -364,9 +357,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				E13A2E171562199F0053BD07 /* PBXTargetDependency */,
 				E186F46212C3C4030051E025 /* PBXTargetDependency */,
-				E11F558912359F8600A0A964 /* PBXTargetDependency */,
-				E11F558B12359F8D00A0A964 /* PBXTargetDependency */,
 				E1D94341123F75F5005DA161 /* PBXTargetDependency */,
 			);
 			name = Shroud;
@@ -380,8 +372,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shroud" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -580,15 +575,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E11F558912359F8600A0A964 /* PBXTargetDependency */ = {
+		E13A2E171562199F0053BD07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "ShortcutRecorder.framework - with embedded ibplugin";
-			targetProxy = E11F558812359F8600A0A964 /* PBXContainerItemProxy */;
-		};
-		E11F558B12359F8D00A0A964 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ShortcutRecorder.ibplugin - standalone";
-			targetProxy = E11F558A12359F8D00A0A964 /* PBXContainerItemProxy */;
+			name = "ShortcutRecorder.framework - for embedding in ibplugin";
+			targetProxy = E13A2E161562199F0053BD07 /* PBXContainerItemProxy */;
 		};
 		E186F46212C3C4030051E025 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -650,8 +640,6 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
@@ -671,7 +659,6 @@
 					"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
 					"\"$(SRCROOT)\"",
 				);
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
 				INFOPLIST_FILE = "Shroud-Info.plist";
@@ -683,17 +670,14 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CURRENT_PROJECT_VERSION = 12;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -701,18 +685,12 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc7400,
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
 				CURRENT_PROJECT_VERSION = 12;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
