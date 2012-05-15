@@ -59,7 +59,7 @@ static void AllCombinationsOfModifiers(NSHashTable *modifiers, NSUInteger mask) 
     NSMutableArray *modifiersArray = [[NSMutableArray alloc] initWithCapacity:NSCountHashTable(modifiers)];
     NSHashEnumerator e = NSEnumerateHashTable(modifiers);
     NSUInteger moreModifiers;
-    while (moreModifiers = (NSUInteger)NSNextHashEnumeratorItem(&e))
+    while ( (moreModifiers = (NSUInteger)NSNextHashEnumeratorItem(&e)))
         [modifiersArray addObject:[NSNumber numberWithUnsignedInteger:moreModifiers]];
     NSFreeHashTable(modifiers);
     [modifiersArray sortUsingSelector:@selector(compare:)];
