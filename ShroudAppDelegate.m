@@ -97,6 +97,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // XXX whichever of these is first, the set method gets invoked twice at startup - why?
     [self bind:@"focusFrontmostApplicationShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostApplicationShortcutPreferenceKey] options:hotKeyBindingOptions];
     [self bind:@"focusFrontmostWindowShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostWindowShortcutPreferenceKey] options:hotKeyBindingOptions];
+    [self bind:@"hideBackdropShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudHideBackdropShortcutPreferenceKey] options:hotKeyBindingOptions];
 
     // Check for and send crash reports.
     // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
@@ -231,6 +232,11 @@ static ProcessSerialNumber frontProcess;
     [self focusFrontmostApplicationWindowOnly:YES];
 }
 
+- (IBAction)hideBackdrop:(id)sender;
+{
+    [NSApp hide:self];
+}
+
 - (IBAction)orderFrontAboutPanel:(id)sender;
 {
     NSRect bounds = [dockTileView bounds];
@@ -274,9 +280,15 @@ static ProcessSerialNumber frontProcess;
     [self setShortcutWithPreferenceKey:FocusFrontmostWindowShortcutPreferenceKey hotKey:hotKey action:@selector(focusFrontmostWindow:)];
 }
 
+- (void)setHideBackdropShortcut:(NJRHotKey *)hotKey;
+{
+    [self setShortcutWithPreferenceKey:ShroudHideBackdropShortcutPreferenceKey hotKey:hotKey action:@selector(hideBackdrop:)];
+}
+
 // make KVC happy
 - (NJRHotKey *)focusFrontmostApplicationShortcut { return nil; }
 - (NJRHotKey *)focusFrontmostWindowShortcut { return nil; }
+- (NJRHotKey *)hideBackdropShortcut { return nil; }
 
 @end
 

@@ -12,6 +12,7 @@ extern NSString * const ShroudBackdropColorPreferenceKey;
 extern NSString * const ShroudShouldCoverMenuBarPreferenceKey;
 extern NSString * const FocusFrontmostApplicationShortcutPreferenceKey;
 extern NSString * const FocusFrontmostWindowShortcutPreferenceKey;
+extern NSString * const ShroudHideBackdropShortcutPreferenceKey;
 extern NSString * const ShroudPeekAtMenuBarModifierFlagsPreferenceKey;
 
 @interface ShroudPreferencesController : NSWindowController {

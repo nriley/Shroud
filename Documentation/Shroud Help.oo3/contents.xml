@@ -146,14 +146,13 @@
       </first-page-headers>
     </page-adornment>
     <print-info>
-      <print-info-key name="NSPaperName" type="string">US Letter</print-info-key>
       <print-info-key name="OOScaleDocumentToFitPageWidth" type="boolean">true</print-info-key>
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="akxjRLlvOv3"/>
+    <hoisted-rows ids="ftDBf-ySLe5"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -442,7 +441,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>In Shroud’s Preferences, you can set systemwide keyboard shortcuts for the same two operations.</lit>
+                          <lit>In Shroud’s Preferences, you can set systemwide keyboard shortcuts for hiding or placing the backdrop as above.</lit>
                         </run>
                       </p>
                     </text>
