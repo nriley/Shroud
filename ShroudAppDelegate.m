@@ -59,8 +59,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [screenPanel setHasShadow:NO];
 
     [screenPanel setCollectionBehavior:
-     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
-     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
+     (NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorIgnoresCycle)];
 
     ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
     [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
