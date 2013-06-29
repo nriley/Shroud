@@ -47,6 +47,8 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SFBCrashReporterCrashSubmissionURL</key>
-	<string>https://crashpool.com/reporter/kn8yyrctia21/sfbcr</string>
+	<string>http://sabi.net/crash/report</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Shroud would like to give you the option to include your email address with this crash report.</string>
 </dict>
 </plist>
