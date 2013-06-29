@@ -152,7 +152,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="ftDBf-ySLe5"/>
+    <hoisted-rows ids="gXgiyJ1Adlj"/>
+    <selected-rows ids="eKryDdE6joV"/>
+    <selected-columns ids="jFqHUGd_Dg1"/>
+    <selected-characters range="{0, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -181,7 +184,7 @@
         </text>
       </title>
     </column>
-    <column id="jFqHUGd_Dg1" type="text" width="840" minimum-width="13" maximum-width="1000000" text-export-width="72" is-outline-column="yes">
+    <column id="jFqHUGd_Dg1" type="text" width="855" minimum-width="13" maximum-width="1000000" text-export-width="72" is-outline-column="yes">
       <title>
         <text>
           <p>
@@ -633,7 +636,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Shroud only covers the main screen.</lit>
+                      <lit>Shroud only covers the main display.</lit>
                     </run>
                   </p>
                 </text>
@@ -644,7 +647,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is at least partially by design; you should just be able to turn off non-main screens if they’re distracting. Support for multiple screens would entail making Shroud considerably more complex, which I’m not sure I want to do. If you are a developer and would like to implement this, the </lit>
+                          <lit>This is at least partially by design; you should just be able to turn off non-main displays if they’re distracting. I do plan on implementing support for multiple displays and OS X Mavericks’s new multiple-display model as time allows. If you are a developer and would like to implement this, the </lit>
                         </run>
                         <run>
                           <lit><cell href="http://github.com/nriley/Shroud" name="source code is available" expanded="yes" type="link"/></lit>
@@ -726,7 +729,34 @@
                     <text>
                       <p>
                         <run>
-                          <lit>This is a bug in the Dock which I trigger through the unique way Shroud starts up behind the frontmost application without flickering. You can cause the running indicator to appear by restarting the Dock—but this has undesirable side effects such as restoring minimized windows.</lit>
+                          <lit>This is a bug in the Dock in Mac OS X 10.6, which I trigger through the unique way Shroud starts up behind the frontmost application without flickering. You can cause the running indicator to appear by restarting the Dock—but this has undesirable side effects such as restoring minimized windows. The bug is fixed in OS X 10.8.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
+            </item>
+            <item id="f2oiygSCqTA" expanded="yes">
+              <style>
+                <value key="font-weight">9</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>If Shroud is hidden, the frontmost window flashes when showing the backdrop.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="l8x-9XsKZVB">
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Sorry, this is necessary because I am working around a bug in Mac OS X 10.6. It does not occur in OS X 10.8.</lit>
                         </run>
                       </p>
                     </text>
