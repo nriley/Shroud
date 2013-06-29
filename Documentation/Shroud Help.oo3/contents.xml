@@ -626,33 +626,6 @@
             </text>
           </values>
           <children>
-            <item id="hE5lP7Hm6U4" expanded="yes">
-              <style>
-                <inherited-style name="Bold" idref="bMbdsrPBbNQ"/>
-              </style>
-              <values>
-                <text>
-                  <p>
-                    <run>
-                      <lit>The Shroud backdrop shows up in Exposé.</lit>
-                    </run>
-                  </p>
-                </text>
-              </values>
-              <children>
-                <item id="m0_TMBZs9DC">
-                  <values>
-                    <text>
-                      <p>
-                        <run>
-                          <lit>Sorry. Mac OS X 10.5 does not provide a means for me to stop this. The issue does not occur in Mac OS X 10.6.</lit>
-                        </run>
-                      </p>
-                    </text>
-                  </values>
-                </item>
-              </children>
-            </item>
             <item id="fxPDqD6bO6c" expanded="yes">
               <style>
                 <inherited-style name="Bold" idref="bMbdsrPBbNQ"/>
