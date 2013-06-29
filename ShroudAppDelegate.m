@@ -225,33 +225,42 @@ static ProcessSerialNumber frontProcess;
     NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
     NSArray *frontAppWindowsInfo = [windowsInfo filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"kCGWindowOwnerPID == %ld", frontProcessPID]];
 
-    if ([frontAppWindowsInfo count] == 0)
-        frontAppWindowsInfo = windowsInfo;
-
-    NSDictionary *belowWindowInfo = nil;
-    // CGWindow group and tag information, which would allow us to determine if a window is a drawer, popover, etc., is not publicly accessible.  So we guess based on the fact that these attached windows generally have no titles.
-    // Previous versions of Shroud worked around this by using SetFrontProcessWithOptions with kSetFrontProcessFrontWindowOnly, but this causes flashing.
-    if (windowOnly) {
+    NSWindowOrderingMode ordering = NSWindowBelow;
+    NSDictionary *relativeToWindowInfo = nil;
+    if ([frontAppWindowsInfo count] == 0) {
+        if ([windowsInfo count] == 0) {
+            [windowsInfo release];
+            windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
+            if ([windowsInfo count] == 0) { // should never happen
+                [windowsInfo release];
+                return;
+            }
+        }
+        ordering = NSWindowAbove;
+        relativeToWindowInfo = [windowsInfo objectAtIndex:0];
+    } else if (windowOnly) {
+        // CGWindow group and tag information, which would allow us to determine if a window is a drawer, popover, etc., is not publicly accessible.  So we guess based on the fact that these attached windows generally have no titles.
+        // Previous versions of Shroud worked around this by using SetFrontProcessWithOptions with kSetFrontProcessFrontWindowOnly, but this causes flashing.
         for (NSDictionary *windowInfo in frontAppWindowsInfo) {
-            CGWindowLevel windowLevel = [[windowInfo objectForKey:(NSString *)kCGWindowLayer] intValue];
+            CGWindowLevel windowLevel = [[windowInfo objectForKey:(id)kCGWindowLayer] intValue];
             if (windowLevel != kCGBaseWindowLevelKey) // skip over palettes, etc.
                 continue;
 
-            NSString *windowName = [windowInfo objectForKey:(NSString *)kCGWindowName];
+            NSString *windowName = [windowInfo objectForKey:(id)kCGWindowName];
             BOOL hasName = windowName != nil && [windowName length] > 0;
-            if (belowWindowInfo == nil && hasName) // likely "main" window
-                belowWindowInfo = windowInfo;
-            else if (belowWindowInfo != nil && !hasName) // likely secondary window (drawer, etc.)
-                belowWindowInfo = windowInfo;
-            else if (belowWindowInfo != nil && hasName) // likely second "main" window
+            if (relativeToWindowInfo == nil && hasName) // likely "main" window
+                relativeToWindowInfo = windowInfo;
+            else if (relativeToWindowInfo != nil && !hasName) // likely secondary window (drawer, etc.)
+                relativeToWindowInfo = windowInfo;
+            else if (relativeToWindowInfo != nil && hasName) // likely second "main" window
                 break;
             // if belowWindowInfo = nil and no name, keep looking
         }
-        if (belowWindowInfo == nil)
-            belowWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
-    } else belowWindowInfo = [frontAppWindowsInfo lastObject];
+        if (relativeToWindowInfo == nil)
+            relativeToWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
+    } else relativeToWindowInfo = [frontAppWindowsInfo lastObject];
 
-    [screenPanel orderWindow:NSWindowBelow relativeTo:[[belowWindowInfo objectForKey:(NSString *)kCGWindowNumber] longValue]];
+    [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
 
     [windowsInfo release];
 }
