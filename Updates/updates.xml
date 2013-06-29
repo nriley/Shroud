@@ -11,6 +11,16 @@
     
     <atom:link href="http://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Shroud 1.1.3</title>
+      <link>http://sabi.net/nriley/software/#shroud</link>
+      <author>shroud@sabi.net (Nicholas Riley)</author>
+      <pubDate>Mon, 13 Jun 2011 20:50:42 -0500</pubDate>
+      <enclosure url="http://sabi.net/nriley/software/Shroud-1.1.3.dmg" length="704653" type="application/x-apple-diskimage" sparkle:version="12" sparkle:shortVersionString="1.1.2" sparkle:dsaSignature="MCwCFGWrFFtv9PkV7Y7Ee7fR4KThpVNVAhRNxuvHnAFaGXD5bxoIX6F9w1RUMQ=="/>
+      <guid isPermaLink="false">shroud-11.2</guid>
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+    </item>
+    <item>
       <title>Shroud 1.1.2</title>
       <link>http://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
