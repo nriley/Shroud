@@ -91,6 +91,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = SFBCrashReporter;
 		};
+		E1D20682177F772900A9575A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
 		E1D94335123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
@@ -104,13 +111,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
 			remoteInfo = "Sparkle Test App";
-		};
-		E1D94339123F75DF005DA161 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DAAEFC960DA571DF0051E0D0;
-			remoteInfo = "relaunch tool";
 		};
 		E1D9433B123F75DF005DA161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -332,9 +332,9 @@
 			children = (
 				E1D94336123F75DF005DA161 /* Sparkle.framework */,
 				E1D94338123F75DF005DA161 /* Sparkle Test App.app */,
-				E1D9433A123F75DF005DA161 /* relaunch */,
 				E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.octest */,
 				E1D9433E123F75DF005DA161 /* BinaryDelta */,
+				E1D20683177F772900A9575A /* finish_installation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shroud" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -453,6 +453,13 @@
 			remoteRef = E186F45B12C3C3D10051E025 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E1D20683177F772900A9575A /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = E1D20682177F772900A9575A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E1D94336123F75DF005DA161 /* Sparkle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -465,13 +472,6 @@
 			fileType = wrapper.application;
 			path = "Sparkle Test App.app";
 			remoteRef = E1D94337123F75DF005DA161 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E1D9433A123F75DF005DA161 /* relaunch */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = relaunch;
-			remoteRef = E1D94339123F75DF005DA161 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.octest */ = {
@@ -677,8 +677,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -692,7 +693,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				SDKROOT = macosx10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
