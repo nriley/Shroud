@@ -195,31 +195,49 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
 static ProcessSerialNumber frontProcess;
 
-- (void)restoreFrontProcessWindowOnly:(NSNumber *)windowOnly;
-{
-    SetFrontProcessWithOptions(&frontProcess, [windowOnly boolValue] ? kSetFrontProcessFrontWindowOnly : 0);
-}
-
 - (void)focusFrontmostApplicationWindowOnly:(BOOL)windowOnly;
 {
-    if ([NSApp isActive])
+    if ([NSApp isActive]) // nothing to do
         return;
 
     GetFrontProcess(&frontProcess);
+    NSDictionary *frontProcessInformation = (NSDictionary *)ProcessInformationCopyDictionary(&frontProcess, kProcessDictionaryIncludeAllInformationMask);
+    pid_t frontProcessPID = [(NSNumber *)[frontProcessInformation objectForKey:@"pid"] longValue];
+    [frontProcessInformation release];
+    frontProcessInformation = nil;
 
+    NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+    NSArray *frontAppWindowsInfo = [windowsInfo filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"kCGWindowOwnerPID == %ld", frontProcessPID]];
+
+    if ([frontAppWindowsInfo count] == 0)
+        frontAppWindowsInfo = windowsInfo;
+
+    NSDictionary *belowWindowInfo = nil;
+    // CGWindow group and tag information, which would allow us to determine if a window is a drawer, popover, etc., is not publicly accessible.  So we guess based on the fact that these attached windows generally have no titles.
+    // Previous versions of Shroud worked around this by using SetFrontProcessWithOptions with kSetFrontProcessFrontWindowOnly, but this causes flashing.
     if (windowOnly) {
-        [NSApp unhideWithoutActivation];
-        [NSApp activateIgnoringOtherApps:YES];
-    } else {
-        BOOL wasHidden = [NSApp isHidden];
-        [NSApp unhideWithoutActivation];
-        if (!wasHidden) {
-            SetFrontProcessWithOptions(&frontProcess, 0);
-            return;
+        for (NSDictionary *windowInfo in frontAppWindowsInfo) {
+            CGWindowLevel windowLevel = [[windowInfo objectForKey:(NSString *)kCGWindowLayer] intValue];
+            if (windowLevel != kCGBaseWindowLevelKey) // skip over palettes, etc.
+                continue;
+
+            NSString *windowName = [windowInfo objectForKey:(NSString *)kCGWindowName];
+            BOOL hasName = windowName != nil && [windowName length] > 0;
+            if (belowWindowInfo == nil && hasName) // likely "main" window
+                belowWindowInfo = windowInfo;
+            else if (belowWindowInfo != nil && !hasName) // likely secondary window (drawer, etc.)
+                belowWindowInfo = windowInfo;
+            else if (belowWindowInfo != nil && hasName) // likely second "main" window
+                break;
+            // if belowWindowInfo = nil and no name, keep looking
         }
-    }
-    // XXX can we get rid of this delay by using Carbon for unhiding ourself?
-    [self performSelector:@selector(restoreFrontProcessWindowOnly:) withObject:[NSNumber numberWithBool:windowOnly] afterDelay: 0.05];
+        if (belowWindowInfo == nil)
+            belowWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
+    } else belowWindowInfo = [frontAppWindowsInfo lastObject];
+
+    [screenPanel orderWindow:NSWindowBelow relativeTo:[[belowWindowInfo objectForKey:(NSString *)kCGWindowNumber] longValue]];
+
+    [windowsInfo release];
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;
