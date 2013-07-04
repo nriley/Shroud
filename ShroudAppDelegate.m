@@ -257,7 +257,7 @@ static ProcessSerialNumber frontProcess;
                 relativeToWindowInfo = windowInfo;
             else if (relativeToWindowInfo != nil && hasName) // likely second "main" window
                 break;
-            // if belowWindowInfo = nil and no name, keep looking
+            // if relativeToWindowInfo is nil and no name, keep looking
         }
         if (relativeToWindowInfo == nil)
             relativeToWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
