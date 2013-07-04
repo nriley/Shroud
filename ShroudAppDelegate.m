@@ -97,7 +97,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // XXX whichever of these is first, the set method gets invoked twice at startup - why?
     [self bind:@"focusFrontmostApplicationShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostApplicationShortcutPreferenceKey] options:hotKeyBindingOptions];
     [self bind:@"focusFrontmostWindowShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:FocusFrontmostWindowShortcutPreferenceKey] options:hotKeyBindingOptions];
-    [self bind:@"hideBackdropShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudHideBackdropShortcutPreferenceKey] options:hotKeyBindingOptions];
+    [self bind:@"toggleBackdropShortcut" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudToggleBackdropShortcutPreferenceKey] options:hotKeyBindingOptions];
 
     // Check for and send crash reports.
     // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
@@ -191,6 +191,18 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     }
 }
 
+- (void)unhideThenPerformBlock:(void (^)())block;
+{
+    [NSApp unhideWithoutActivation];
+    if (NSAppKitVersionNumber < /* NSAppKitVersionNumber10_7 */ 1138) {
+        // XXX Using dispatch_async on Mac OS X 10.6 hangs the process.  It seems to work fine on 10.8.
+        // The only downside to using dispatch_after is a screen flash.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), block);
+    } else {
+        dispatch_async(dispatch_get_main_queue(), block);
+    }
+}
+
 #pragma mark actions
 
 static ProcessSerialNumber frontProcess;
@@ -198,18 +210,9 @@ static ProcessSerialNumber frontProcess;
 - (void)focusFrontmostApplicationWindowOnly:(BOOL)windowOnly;
 {
     if ([NSApp isHidden]) {
-        [NSApp unhideWithoutActivation];
-        if (NSAppKitVersionNumber < /* NSAppKitVersionNumber10_7 */ 1138) {
-            // XXX Using dispatch_async on Mac OS X 10.6 hangs the process.  It seems to work fine on 10.8.
-            // The only downside to using dispatch_after is a screen flash.
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                [self focusFrontmostApplicationWindowOnly:windowOnly];
-            });
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self focusFrontmostApplicationWindowOnly:windowOnly];
-            });
-        }
+        [self unhideThenPerformBlock:^{
+            [self focusFrontmostApplicationWindowOnly:windowOnly];
+        }];
         return;
     }
 
@@ -275,9 +278,45 @@ static ProcessSerialNumber frontProcess;
     [self focusFrontmostApplicationWindowOnly:YES];
 }
 
-- (IBAction)hideBackdrop:(id)sender;
+- (IBAction)toggleBackdrop:(id)sender;
 {
-    [NSApp hide:self];
+    if ([NSApp isHidden]) {
+        if (showRelativeToOrdering == NSWindowOut) {
+            [NSApp unhide];
+            return;
+        }
+
+        CGWindowID relativeToWindowID;
+        NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+        NSMutableSet *windowIDs = [[NSMutableSet alloc] initWithCapacity:[windowsInfo count]];
+        for (NSDictionary *windowInfo in windowsInfo)
+            [windowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
+
+        // NSLog(@"current windows: %@", [[[windowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
+
+        NSEnumerator *orderRelativeEnumerator =
+            showRelativeToOrdering == NSWindowAbove ? [orderingRelativeToWindowIDs objectEnumerator]
+                                                    : [orderingRelativeToWindowIDs reverseObjectEnumerator];
+        for (NSNumber *orderRelativeWindowID in orderRelativeEnumerator) {
+            if ([windowIDs containsObject:orderRelativeWindowID]) {
+                relativeToWindowID = [orderRelativeWindowID longValue];
+                break;
+            }
+        }
+
+        // NSLog(@"restoring %@ %d (panel %d)", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", relativeToWindowID, screenPanelWindowID);
+
+        [self unhideThenPerformBlock:^{
+            [screenPanel orderWindow:showRelativeToOrdering relativeTo:relativeToWindowID];
+
+            showRelativeToOrdering = NSWindowOut;
+            [orderingRelativeToWindowIDs release];
+            orderingRelativeToWindowIDs = nil;
+            [windowsInfo release];
+        }];
+    } else {
+        [NSApp hide:self];
+    }
 }
 
 - (IBAction)orderFrontAboutPanel:(id)sender;
@@ -323,15 +362,15 @@ static ProcessSerialNumber frontProcess;
     [self setShortcutWithPreferenceKey:FocusFrontmostWindowShortcutPreferenceKey hotKey:hotKey action:@selector(focusFrontmostWindow:)];
 }
 
-- (void)setHideBackdropShortcut:(NJRHotKey *)hotKey;
+- (void)setToggleBackdropShortcut:(NJRHotKey *)hotKey;
 {
-    [self setShortcutWithPreferenceKey:ShroudHideBackdropShortcutPreferenceKey hotKey:hotKey action:@selector(hideBackdrop:)];
+    [self setShortcutWithPreferenceKey:ShroudToggleBackdropShortcutPreferenceKey hotKey:hotKey action:@selector(toggleBackdrop:)];
 }
 
 // make KVC happy
 - (NJRHotKey *)focusFrontmostApplicationShortcut { return nil; }
 - (NJRHotKey *)focusFrontmostWindowShortcut { return nil; }
-- (NJRHotKey *)hideBackdropShortcut { return nil; }
+- (NJRHotKey *)toggleBackdropShortcut { return nil; }
 
 @end
 
@@ -388,6 +427,37 @@ static ProcessSerialNumber frontProcess;
 
     [screenPanel setFrame:screenFrame display:YES];
     [menuBarPanel shroudSetFrame:menuBarFrame display:YES];
+}
+
+- (void)applicationWillHide:(NSNotification *)notification;
+{
+    [orderingRelativeToWindowIDs release];
+    orderingRelativeToWindowIDs = nil;
+
+    CGWindowID screenPanelWindowID = [screenPanel windowNumber];
+    NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenAboveWindow, screenPanelWindowID);
+    if ([windowsInfo count] == 0) {
+        [windowsInfo release];
+        windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenBelowWindow, screenPanelWindowID);
+        if ([windowsInfo count] == 0) {
+            showRelativeToOrdering = NSWindowOut;
+            [windowsInfo release];
+            return;
+        }
+        showRelativeToOrdering = NSWindowAbove;
+    } else {
+        showRelativeToOrdering = NSWindowBelow;
+    }
+
+    orderingRelativeToWindowIDs = [[NSMutableArray alloc] initWithCapacity:[windowsInfo count]];
+    pid_t pid = getpid();
+    for (NSDictionary *windowInfo in windowsInfo) {
+        if ([[windowInfo objectForKey:(id)kCGWindowOwnerPID] longValue] == pid) // not relative to ourselves
+            continue;
+        [orderingRelativeToWindowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
+    }
+    // NSLog(@"saving %@ %@", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", [[[orderingRelativeToWindowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
+    [windowsInfo release];
 }
 
 @end

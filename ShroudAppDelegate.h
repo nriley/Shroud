@@ -17,6 +17,8 @@
     NSPanel *screenPanel;
     ShroudMenuBarPanel *menuBarPanel;
     ShroudDockTileView *dockTileView;
+    NSWindowOrderingMode showRelativeToOrdering;
+    NSMutableArray *orderingRelativeToWindowIDs;
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;

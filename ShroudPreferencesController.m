@@ -14,7 +14,7 @@ NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
 NSString * const ShroudShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuBar";
 NSString * const FocusFrontmostApplicationShortcutPreferenceKey = @"FocusFrontmostApplicationShortcut";
 NSString * const FocusFrontmostWindowShortcutPreferenceKey = @"FocusFrontmostWindowShortcut";
-NSString * const ShroudHideBackdropShortcutPreferenceKey = @"ShroudHideBackdropShortcut";
+NSString * const ShroudToggleBackdropShortcutPreferenceKey = @"ShroudToggleBackdropShortcut";
 NSString * const ShroudPeekAtMenuBarModifierFlagsPreferenceKey = @"ShroudPeekAtMenuBarModifierFlags";
 
 static ShroudPreferencesController *sharedController = nil;
