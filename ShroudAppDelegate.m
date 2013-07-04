@@ -341,8 +341,16 @@ static ProcessSerialNumber frontProcess;
 
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 {
-    [NSApp activateIgnoringOtherApps:YES];
-    [[ShroudPreferencesController sharedPreferencesController] showWindow:self];
+    ShroudPreferencesController *preferencesController = [ShroudPreferencesController sharedPreferencesController];
+    [preferencesController showWindow:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[preferencesController window] orderWindow:NSWindowAbove relativeTo:screenPanel];
+
+    });
+
+    ProcessSerialNumber psn;
+    GetCurrentProcess(&psn);
+    SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
 }
 
 #pragma mark systemwide shortcut support
