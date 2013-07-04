@@ -263,6 +263,10 @@ static ProcessSerialNumber frontProcess;
             relativeToWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
     } else relativeToWindowInfo = [frontAppWindowsInfo lastObject];
 
+
+    if (!windowOnly && ordering == NSWindowBelow)
+        // the application's rearmost window might be quite far back in the window order: bring all application windows to the front first.
+        SetFrontProcessWithOptions(&frontProcess, kSetFrontProcessCausedByUser);
     [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
 
     [windowsInfo release];
