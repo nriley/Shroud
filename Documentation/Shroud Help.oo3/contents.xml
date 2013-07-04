@@ -150,9 +150,10 @@
     </print-info>
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
-  <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
+  <editor content-size="{876, 738}" scroll-position="{0, 3}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
     <hoisted-rows ids="gXgiyJ1Adlj"/>
+    <selected-rows ids="f2oiygSCqTA"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -441,7 +442,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>In Shroud’s Preferences, you can set systemwide keyboard shortcuts for hiding or placing the backdrop as above.</lit>
+                          <lit>In Shroud’s Preferences, you can set systemwide keyboard shortcuts for hiding/showing or placing the backdrop as above.</lit>
                         </run>
                       </p>
                     </text>
@@ -590,7 +591,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Start by focusing on the first window, or just bring Shroud to the front.</lit>
+                          <lit>Start by placing Shroud’s backdrop behind one window or application using its Dock menu or keyboard shortcuts, or just bring Shroud to the front.</lit>
                         </run>
                       </p>
                     </text>
@@ -602,6 +603,17 @@
                       <p>
                         <run>
                           <lit>Then, use Mission Control/Exposé, the Dock, Witch, or your favorite window-switching method to bring each subsequent window forward, one at a time.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+                <item id="fDUZ7xxd_Dv">
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>If you&apos;d prefer to click on windows directly, hide Shroud using a keyboard shortcut, click on each window, then show Shroud using the keyboard shortcut; the backdrop will reappear behind the initial window(s).</lit>
                         </run>
                       </p>
                     </text>
@@ -736,7 +748,7 @@
             </item>
             <item id="f2oiygSCqTA" expanded="yes">
               <style>
-                <value key="font-weight">9</value>
+                <inherited-style name="Bold" idref="bMbdsrPBbNQ"/>
               </style>
               <values>
                 <text>
