@@ -450,9 +450,9 @@ static ProcessSerialNumber frontProcess;
     }
 
     orderingRelativeToWindowIDs = [[NSMutableArray alloc] initWithCapacity:[windowsInfo count]];
-    pid_t pid = getpid();
+    pid_t shroudPID = getpid();
     for (NSDictionary *windowInfo in windowsInfo) {
-        if ([[windowInfo objectForKey:(id)kCGWindowOwnerPID] longValue] == pid) // not relative to ourselves
+        if ([[windowInfo objectForKey:(id)kCGWindowOwnerPID] longValue] == shroudPID) // not relative to ourselves
             continue;
         [orderingRelativeToWindowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
     }
