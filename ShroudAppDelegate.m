@@ -338,8 +338,8 @@ static ProcessSerialNumber frontProcess;
 
 - (IBAction)orderFrontPreferencesPanel:(id)sender;
 {
-    [[ShroudPreferencesController sharedPreferencesController] showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
+    [[ShroudPreferencesController sharedPreferencesController] showWindow:self];
 }
 
 #pragma mark systemwide shortcut support
