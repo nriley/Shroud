@@ -197,9 +197,9 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     if (NSAppKitVersionNumber < /* NSAppKitVersionNumber10_7 */ 1138) {
         // XXX Using dispatch_async on Mac OS X 10.6 hangs the process.  It seems to work fine on 10.8.
         // The only downside to using dispatch_after is a screen flash.
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), block);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), (dispatch_block_t)block);
     } else {
-        dispatch_async(dispatch_get_main_queue(), block);
+        dispatch_async(dispatch_get_main_queue(), (dispatch_block_t)block);
     }
 }
 
