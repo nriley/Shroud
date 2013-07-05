@@ -24,6 +24,12 @@
 		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
+		E1A3D1E2178683DF00957D63 /* ShroudDockTilePlugIn.docktileplugin in Copy Dock Tile Plug-in */ = {isa = PBXBuildFile; fileRef = E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */; };
+		E1A3D1E51786846F00957D63 /* ShroudDockTilePlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */; };
+		E1A3D1F21787730300957D63 /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
+		E1A3D1F51787865300957D63 /* ShroudBackdropColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */; };
+		E1A3D1F61787865900957D63 /* ShroudBackdropColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */; };
+		E1A3D1F717878CFD00957D63 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E1BD4006112E6D4800DE639A /* ShroudNonactivatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */; };
 		E1BD40D4112E76C200DE639A /* Shroud.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1BD40D3112E76C200DE639A /* Shroud.icns */; };
 		E1BD40EE112F753000DE639A /* ShroudMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */; };
@@ -91,6 +97,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = SFBCrashReporter;
 		};
+		E1A3D1E0178683D200957D63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1A3D1D01786839200957D63;
+			remoteInfo = ShroudDockTilePlugIn;
+		};
 		E1D20682177F772900A9575A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
@@ -149,6 +162,17 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1A3D1DF178683C900957D63 /* Copy Dock Tile Plug-in */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1A3D1E2178683DF00957D63 /* ShroudDockTilePlugIn.docktileplugin in Copy Dock Tile Plug-in */,
+			);
+			name = "Copy Dock Tile Plug-in";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +203,13 @@
 		E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarPanel.m; sourceTree = "<group>"; };
 		E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFBCrashReporter.xcodeproj; path = SFBCrashReporter/SFBCrashReporter.xcodeproj; sourceTree = "<group>"; };
 		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
+		E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShroudDockTilePlugIn.docktileplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A3D1D71786839200957D63 /* ShroudDockTilePlugIn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShroudDockTilePlugIn-Info.plist"; sourceTree = "<group>"; };
+		E1A3D1DB1786839200957D63 /* ShroudDockTilePlugIn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShroudDockTilePlugIn-Prefix.pch"; sourceTree = "<group>"; };
+		E1A3D1E31786846F00957D63 /* ShroudDockTilePlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudDockTilePlugIn.h; sourceTree = "<group>"; };
+		E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudDockTilePlugIn.m; sourceTree = "<group>"; };
+		E1A3D1F31787865300957D63 /* ShroudBackdropColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudBackdropColor.h; sourceTree = "<group>"; };
+		E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudBackdropColor.m; sourceTree = "<group>"; };
 		E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD40D3112E76C200DE639A /* Shroud.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Shroud.icns; sourceTree = "<group>"; };
@@ -204,6 +235,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1A3D1CE1786839200957D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A3D1F717878CFD00957D63 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -212,6 +251,8 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */,
+				E1A3D1F31787865300957D63 /* ShroudBackdropColor.h */,
+				E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */,
 				216B368E114C59EF002E2818 /* ShroudPreferencesController.h */,
 				216B368F114C59EF002E2818 /* ShroudPreferencesController.m */,
 				E16E086E138F2C7200D0720B /* ShroudMenuBarPanel.h */,
@@ -256,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Shroud.app */,
+				E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
+				E1A3D1D51786839200957D63 /* ShroudDockTilePlugIn */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -327,6 +370,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E1A3D1D51786839200957D63 /* ShroudDockTilePlugIn */ = {
+			isa = PBXGroup;
+			children = (
+				E1A3D1E31786846F00957D63 /* ShroudDockTilePlugIn.h */,
+				E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */,
+				E1A3D1D61786839200957D63 /* Supporting Files */,
+			);
+			path = ShroudDockTilePlugIn;
+			sourceTree = "<group>";
+		};
+		E1A3D1D61786839200957D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1A3D1D71786839200957D63 /* ShroudDockTilePlugIn-Info.plist */,
+				E1A3D1DB1786839200957D63 /* ShroudDockTilePlugIn-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E1D9432B123F75DF005DA161 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +412,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
+				E1A3D1DF178683C900957D63 /* Copy Dock Tile Plug-in */,
 				E15375F41236010200714C5D /* Build Help Book */,
 				E11F55E91235A35E00A0A964 /* Remove Framework Headers */,
 				E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */,
@@ -360,12 +423,29 @@
 				E13A2E171562199F0053BD07 /* PBXTargetDependency */,
 				E186F46212C3C4030051E025 /* PBXTargetDependency */,
 				E1D94341123F75F5005DA161 /* PBXTargetDependency */,
+				E1A3D1E1178683D200957D63 /* PBXTargetDependency */,
 			);
 			name = Shroud;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Shroud;
 			productReference = 8D1107320486CEB800E47090 /* Shroud.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E1A3D1D01786839200957D63 /* ShroudDockTilePlugIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1A3D1DC1786839200957D63 /* Build configuration list for PBXNativeTarget "ShroudDockTilePlugIn" */;
+			buildPhases = (
+				E1A3D1CD1786839200957D63 /* Sources */,
+				E1A3D1CE1786839200957D63 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShroudDockTilePlugIn;
+			productName = ShroudDockTilePlugIn;
+			productReference = E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -386,6 +466,7 @@
 				German,
 				Dutch,
 				sv,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Shroud */;
 			projectDirPath = "";
@@ -406,6 +487,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Shroud */,
+				E1A3D1D01786839200957D63 /* ShroudDockTilePlugIn */,
 			);
 		};
 /* End PBXProject section */
@@ -569,6 +651,17 @@
 				E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */,
 				E160711E12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m in Sources */,
 				E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */,
+				E1A3D1F51787865300957D63 /* ShroudBackdropColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A3D1CD1786839200957D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A3D1E51786846F00957D63 /* ShroudDockTilePlugIn.m in Sources */,
+				E1A3D1F21787730300957D63 /* ShroudDockTileView.m in Sources */,
+				E1A3D1F61787865900957D63 /* ShroudBackdropColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +677,11 @@
 			isa = PBXTargetDependency;
 			name = SFBCrashReporter;
 			targetProxy = E186F46112C3C4030051E025 /* PBXContainerItemProxy */;
+		};
+		E1A3D1E1178683D200957D63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1A3D1D01786839200957D63 /* ShroudDockTilePlugIn */;
+			targetProxy = E1A3D1E0178683D200957D63 /* PBXContainerItemProxy */;
 		};
 		E1D94341123F75F5005DA161 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -671,10 +769,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 13;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -688,14 +796,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 13;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = "";
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		E1A3D1DD1786839200957D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "ShroudDockTilePlugIn/ShroudDockTilePlugIn-Prefix.pch";
+				INFOPLIST_FILE = "ShroudDockTilePlugIn/ShroudDockTilePlugIn-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = docktileplugin;
+			};
+			name = Debug;
+		};
+		E1A3D1DE1786839200957D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "ShroudDockTilePlugIn/ShroudDockTilePlugIn-Prefix.pch";
+				INFOPLIST_FILE = "ShroudDockTilePlugIn/ShroudDockTilePlugIn-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = docktileplugin;
 			};
 			name = Release;
 		};
@@ -716,6 +854,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1A3D1DC1786839200957D63 /* Build configuration list for PBXNativeTarget "ShroudDockTilePlugIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A3D1DD1786839200957D63 /* Debug */,
+				E1A3D1DE1786839200957D63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

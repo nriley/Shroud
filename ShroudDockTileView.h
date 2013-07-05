@@ -11,6 +11,9 @@
 
 @interface ShroudDockTileView : NSView {
     NSColor *backgroundColor;
+    NSDockTile *dockTile;
 }
+
+- (id)initWithDockTile:(NSDockTile *)aDockTile;
 
 @end

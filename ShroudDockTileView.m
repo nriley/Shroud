@@ -7,7 +7,7 @@
 //
 
 #import "ShroudDockTileView.h"
-
+#import "ShroudBackdropColor.h"
 
 @implementation ShroudDockTileView
 
@@ -16,18 +16,27 @@
     [self exposeBinding:@"backgroundColor"];
 }
 
+- (id)initWithDockTile:(NSDockTile *)aDockTile;
+{
+    if ( (self = [super initWithFrame: NSMakeRect(0, 0, dockTile.size.width, dockTile.size.height)]) != nil) {
+        dockTile = aDockTile;
+        [dockTile setContentView:self];
+        [self bindToShroudBackdropColor:@"backgroundColor"];
+    }
+    return self;
+}
+
 - (void)setBackgroundColor:(NSColor *)color;
 {
     if (color == backgroundColor)
         return;
-    if (backgroundColor == nil) // XXX necessary the first time (threading?)
-        [[NSApp dockTile] performSelector:@selector(display) withObject:nil afterDelay:0];
     [backgroundColor release];
     backgroundColor = [color retain];
-    [[NSApp dockTile] display];
+    [dockTile display];
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect;
+{
     [backgroundColor set];
     NSRectFill(dirtyRect);
 }

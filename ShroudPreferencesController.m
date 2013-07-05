@@ -10,7 +10,6 @@
 #import "ShroudPreferencesController.h"
 #import "NJRHotKeyManager.h"
 
-NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
 NSString * const ShroudShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuBar";
 NSString * const FocusFrontmostApplicationShortcutPreferenceKey = @"FocusFrontmostApplicationShortcut";
 NSString * const FocusFrontmostWindowShortcutPreferenceKey = @"FocusFrontmostWindowShortcut";

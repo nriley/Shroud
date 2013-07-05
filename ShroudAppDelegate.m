@@ -43,8 +43,6 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
     // Bind the background color of windows & the Dock icon to the default.
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
-    NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
-    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
 
     NSRect screenFrame, menuBarFrame;
     ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
@@ -55,7 +53,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 					       backing:NSBackingStoreBuffered
 						 defer:NO];
 
-    [screenPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+    [screenPanel bindToShroudBackdropColor:@"backgroundColor"];
     [screenPanel setHasShadow:NO];
 
     [screenPanel setCollectionBehavior:
@@ -71,11 +69,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [self createMenuBarPanelWithFrame:menuBarFrame];
 
     // Create dock tile.
-    NSDockTile *dockTile = [NSApp dockTile];
-    dockTileView = [[ShroudDockTileView alloc] initWithFrame:
-                    NSMakeRect(0, 0, dockTile.size.width, dockTile.size.height)];
-    [dockTile setContentView:dockTileView];
-    [dockTileView bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+    dockTileView = [[ShroudDockTileView alloc] initWithDockTile:[NSApp dockTile]];
 
     // To avoid menubar flashing, we launch as a UIElement and transform ourselves when we're finished.
     ProcessSerialNumber currentProcess = { 0, kCurrentProcess };
@@ -133,8 +127,6 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 - (void)createMenuBarPanelWithFrame:(NSRect)menuBarFrame;
 {
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
-    NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
-    NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
 
     if (menuBarPanel != nil) {
         ShroudMenuBarVisibilityController *menuBarVisibilityController = (ShroudMenuBarVisibilityController *)[menuBarPanel windowController];
@@ -150,7 +142,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
                                                            backing:NSBackingStoreBuffered
                                                              defer:NO];
 
-    [menuBarPanel bind:@"backgroundColor" toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+    [menuBarPanel bindToShroudBackdropColor:@"backgroundColor"];
     [menuBarPanel setHasShadow:NO];
 
     [menuBarPanel setCollectionBehavior:
@@ -414,12 +406,6 @@ static ProcessSerialNumber frontProcess;
     }
 
     // Initialize preferences.
-    NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];
-
-    [userDefaultsController setInitialValues:
-     [NSDictionary dictionaryWithObject:[NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0.239 alpha:1.000]]
-                                 forKey:ShroudBackdropColorPreferenceKey]];
-
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     float currentVersion = [[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey] floatValue];
     float priorVersion = [userDefaults floatForKey:@"ShroudHighestVersionRun"];

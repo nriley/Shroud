@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ShroudBackdropColor.h"
 
-extern NSString * const ShroudBackdropColorPreferenceKey;
 extern NSString * const ShroudShouldCoverMenuBarPreferenceKey;
 extern NSString * const FocusFrontmostApplicationShortcutPreferenceKey;
 extern NSString * const FocusFrontmostWindowShortcutPreferenceKey;
