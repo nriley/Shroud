@@ -57,8 +57,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [screenPanel bindToShroudBackdropColor:@"backgroundColor"];
     [screenPanel setHasShadow:NO];
 
-    [screenPanel setCollectionBehavior:
-     (NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorIgnoresCycle)];
+    [screenPanel setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorIgnoresCycle];
 
     ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
     [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
@@ -146,9 +145,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     [menuBarPanel bindToShroudBackdropColor:@"backgroundColor"];
     [menuBarPanel setHasShadow:NO];
 
-    [menuBarPanel setCollectionBehavior:
-     (1 << 3 /*NSWindowCollectionBehaviorTransient*/) |
-     (1 << 6 /*NSWindowCollectionBehaviorIgnoresCycle*/)];
+    [menuBarPanel setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorIgnoresCycle];
 
     [menuBarPanel setIgnoresMouseEvents:YES];
     [menuBarPanel setLevel:NSStatusWindowLevel + 1];
