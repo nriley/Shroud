@@ -14,6 +14,7 @@
 #import "ShroudPreferencesController.h"
 #import "NJRHotKey.h"
 #import "NJRHotKeyManager.h"
+#import "NSUserDefaultsController+NJRExtensions.h"
 
 #include <Carbon/Carbon.h>
 
@@ -160,7 +161,8 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
     // Note: the menuBarView itself reacts to internal triggers on showing/hiding the menu bar (menu tracking & mouse entry/exit).  The visibility controller reacts to external triggers (full screen mode and keyboard control).
     ShroudMenuBarVisibilityController *menuBarVisibilityController = [[ShroudMenuBarVisibilityController alloc] initWithWindow:menuBarPanel];
     [menuBarPanel release];
-    [menuBarVisibilityController setShouldCoverMenuBar:YES];
+
+    [userDefaultsController NJR_setInitialValue:[NSNumber numberWithBool:YES] forKey:ShroudShouldCoverMenuBarPreferenceKey];
     [menuBarVisibilityController bind:@"shouldCoverMenuBar" toObject:userDefaultsController withKeyPath:[@"values." stringByAppendingString:ShroudShouldCoverMenuBarPreferenceKey] options:nil];
 }
 

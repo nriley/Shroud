@@ -7,6 +7,7 @@
 //
 
 #import "ShroudBackdropColor.h"
+#import "NSUserDefaultsController+NJRExtensions.h"
 
 NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
 
@@ -18,10 +19,9 @@ NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
 
     static BOOL initialized = NO;
     if (!initialized) {
-        [userDefaultsController setInitialValues:
-         [NSDictionary dictionaryWithObject:
-          [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0.239 alpha:1.000]]
-                                     forKey:ShroudBackdropColorPreferenceKey]];
+        [userDefaultsController NJR_setInitialValue:
+         [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0.239 alpha:1.000]]
+                                         forKey:ShroudBackdropColorPreferenceKey];
         initialized = YES;
     }
 

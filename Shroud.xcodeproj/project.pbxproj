@@ -21,6 +21,8 @@
 		E14B72AA12344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B72A912344CA300BA58AB /* NJRDictionaryToHotKeyTransformer.m */; };
 		E160711E12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = E160711D12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m */; };
 		E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */; };
+		E16E2AD91788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */; };
+		E16E2ADA1788B16000E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */; };
 		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
@@ -201,6 +203,8 @@
 		E160711D12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarVisibilityController.m; sourceTree = "<group>"; };
 		E16E086E138F2C7200D0720B /* ShroudMenuBarPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudMenuBarPanel.h; sourceTree = "<group>"; };
 		E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudMenuBarPanel.m; sourceTree = "<group>"; };
+		E16E2AD71788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaultsController+NJRExtensions.h"; sourceTree = "<group>"; };
+		E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaultsController+NJRExtensions.m"; sourceTree = "<group>"; };
 		E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFBCrashReporter.xcodeproj; path = SFBCrashReporter/SFBCrashReporter.xcodeproj; sourceTree = "<group>"; };
 		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShroudDockTilePlugIn.docktileplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +275,8 @@
 				E14B6FDE12341D5600BA58AB /* NJRHotKey.m */,
 				E14B6F4A123416DA00BA58AB /* NJRHotKeyManager.h */,
 				E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */,
+				E16E2AD71788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.h */,
+				E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				E160711E12CE9FC300A6BBDE /* ShroudMenuBarVisibilityController.m in Sources */,
 				E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */,
 				E1A3D1F51787865300957D63 /* ShroudBackdropColor.m in Sources */,
+				E16E2AD91788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +669,7 @@
 				E1A3D1E51786846F00957D63 /* ShroudDockTilePlugIn.m in Sources */,
 				E1A3D1F21787730300957D63 /* ShroudDockTileView.m in Sources */,
 				E1A3D1F61787865900957D63 /* ShroudBackdropColor.m in Sources */,
+				E16E2ADA1788B16000E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
