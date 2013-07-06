@@ -335,14 +335,16 @@ static ProcessSerialNumber frontProcess;
 {
     ShroudPreferencesController *preferencesController = [ShroudPreferencesController sharedPreferencesController];
     [preferencesController showWindow:self];
-    if ([NSApp isHidden]) {
-	[self unhideThenPerformBlock:^{
-	    [[preferencesController window] orderWindow:NSWindowAbove relativeTo:[screenPanel windowNumber]];
-	}];
-    }
-    ProcessSerialNumber psn;
-    GetCurrentProcess(&psn);
-    SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
+    dispatch_async(dispatch_get_current_queue(), ^{
+        if ([NSApp isHidden]) {
+            [self unhideThenPerformBlock:^{
+                [[preferencesController window] orderWindow:NSWindowAbove relativeTo:[screenPanel windowNumber]];
+            }];
+        }
+        ProcessSerialNumber psn;
+        GetCurrentProcess(&psn);
+        SetFrontProcessWithOptions(&psn, kSetFrontProcessFrontWindowOnly);
+    });
 }
 
 #pragma mark systemwide shortcut support
