@@ -26,7 +26,6 @@
 		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
-		E1A3D1E2178683DF00957D63 /* ShroudDockTilePlugIn.docktileplugin in Copy Dock Tile Plug-in */ = {isa = PBXBuildFile; fileRef = E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */; };
 		E1A3D1E51786846F00957D63 /* ShroudDockTilePlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */; };
 		E1A3D1F21787730300957D63 /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
 		E1A3D1F51787865300957D63 /* ShroudBackdropColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */; };
@@ -99,13 +98,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = SFBCrashReporter;
 		};
-		E1A3D1E0178683D200957D63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1A3D1D01786839200957D63;
-			remoteInfo = ShroudDockTilePlugIn;
-		};
 		E1D20682177F772900A9575A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */;
@@ -162,17 +154,6 @@
 				E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1A3D1DF178683C900957D63 /* Copy Dock Tile Plug-in */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				E1A3D1E2178683DF00957D63 /* ShroudDockTilePlugIn.docktileplugin in Copy Dock Tile Plug-in */,
-			);
-			name = "Copy Dock Tile Plug-in";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -418,7 +399,6 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
-				E1A3D1DF178683C900957D63 /* Copy Dock Tile Plug-in */,
 				E15375F41236010200714C5D /* Build Help Book */,
 				E11F55E91235A35E00A0A964 /* Remove Framework Headers */,
 				E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */,
@@ -429,7 +409,6 @@
 				E13A2E171562199F0053BD07 /* PBXTargetDependency */,
 				E186F46212C3C4030051E025 /* PBXTargetDependency */,
 				E1D94341123F75F5005DA161 /* PBXTargetDependency */,
-				E1A3D1E1178683D200957D63 /* PBXTargetDependency */,
 			);
 			name = Shroud;
 			productInstallPath = "$(HOME)/Applications";
@@ -685,11 +664,6 @@
 			isa = PBXTargetDependency;
 			name = SFBCrashReporter;
 			targetProxy = E186F46112C3C4030051E025 /* PBXContainerItemProxy */;
-		};
-		E1A3D1E1178683D200957D63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1A3D1D01786839200957D63 /* ShroudDockTilePlugIn */;
-			targetProxy = E1A3D1E0178683D200957D63 /* PBXContainerItemProxy */;
 		};
 		E1D94341123F75F5005DA161 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
