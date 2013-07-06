@@ -18,6 +18,7 @@ xcodebuild -target "$PRODUCT" -configuration Release
 xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
     INSTALL_PATH=/ DEPLOYMENT_LOCATION=YES install
 rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"*
+rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"* "$DSTROOT/ShroudDockTilePlugIn"*
 
 # create disk image
 cd "$PACKAGEDIR"
