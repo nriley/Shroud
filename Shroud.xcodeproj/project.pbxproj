@@ -591,7 +591,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E11F55E91235A35E00A0A964 /* Remove Framework Headers */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -599,7 +599,7 @@
 			name = "Remove Framework Headers";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/find ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH} -name Headers -print0 | xargs -0 rm -rf || /usr/bin/true";
 			showEnvVarsInLog = 0;
