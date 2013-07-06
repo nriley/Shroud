@@ -35,6 +35,7 @@ NSString * const ShroudBundleIdentifier = @"net.sabi.Shroud";
         return;
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults synchronize]; // needed prior to 10.8 (cfprefsd)
     [userDefaults willChangeValueForKey:ShroudBackdropColorPreferenceKey];
     [userDefaults didChangeValueForKey:ShroudBackdropColorPreferenceKey];
 }
