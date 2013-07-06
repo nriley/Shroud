@@ -152,10 +152,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="gXgiyJ1Adlj"/>
-    <selected-rows ids="d8Nza_lEIux"/>
+    <hoisted-rows ids="jj3Kw0ND2KJ"/>
+    <selected-rows ids="k2f5GirCi2V"/>
     <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{252, 0}"/>
+    <selected-characters range="{103, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -252,7 +252,7 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Shroud places a solid-color backdrop behind windows on your Mac to allow you to focus on what you’re doing.</lit>
+                      <lit>Shroud places a solid-color backdrop behind windows on your Mac to help you focus on what you’re doing.</lit>
                     </run>
                   </p>
                 </text>
@@ -288,7 +288,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Shroud (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move the mouse pointer over the menu bar to use it if you need it, or “peek” at the menu bar by holding down keys.</lit>
+                          <lit>Shroud (optionally) covers the menu bar, further reducing clutter onscreen while you’re trying to concentrate. Move the mouse pointer over the menu bar to expose it. You can also choose keys which, when held down, let you “peek” at the menu bar.</lit>
                         </run>
                       </p>
                     </text>
@@ -299,7 +299,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Shroud ignores clicks on the backdrop so you don’t accidentally destroy your carefully arranged workspace.</lit>
+                          <lit>Shroud ignores clicks on its backdrop so you don’t accidentally destroy your carefully arranged workspace.</lit>
                         </run>
                       </p>
                     </text>
