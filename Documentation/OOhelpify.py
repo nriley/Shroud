@@ -60,21 +60,22 @@ def fileHeader(theFile, title, robots="", isTop=False, url="", description=""):
     
     topString = ""
     if isTop:
-        topString = """<meta name="AppleTitle" content="%(title)s">
-        <meta name="AppleIcon" content="%(title)s/HelpImages/Icon.png">
+        topString = """<meta name="AppleTitle" content="%(title)s" />
+        <meta name="AppleIcon" content="%(title)s/HelpImages/Icon.png" />
         """ % {
         'title': title
         }
     
-    print >> theFile, """<html>
+    print >> theFile, """<!DOCTYPE html>
+    <html>
 
     <head>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>%(title)s</title>
 		%(topString)s
 		%(robots)s
-		<meta name="description" content="%(description)s">
-        <link rel="stylesheet" href="help.css" type="text/css">
+		<meta name="description" content="%(description)s" />
+        <link rel="stylesheet" href="help.css" type="text/css" />
     </head>
     <body>""" % {
     'title': title,
@@ -344,8 +345,8 @@ def digItem(theItem, level, inheritedStyle=[], destReached=False):
                     }
                     
                 #  <a href="top.html">Top ↑</a>      
-                print >> level2File, """
-                &nbsp;<br/>&nbsp;
+                print >> level2File, u"""
+                \u00a0<br/>\u00a0
             </div>
             """
             
@@ -409,12 +410,7 @@ def itemText(theItem, style=None):              # find out the text of an item a
 
 def evaluateLeaf(theElement):           # find out if an element is text or attachment and send back the appropriate html
     if (theElement.nodeType == TEXT_NODE):
-        htmlText = unicode(theElement.toxml())
-        htmlText = htmlText.replace("""“""", "&ldquo;")
-        htmlText = htmlText.replace("""”""", "&rdquo;")
-        htmlText = htmlText.replace("""‘""", "&lsquo;")
-        htmlText = htmlText.replace("""’""", "&rsquo;")
-        return htmlText
+        return unicode(theElement.toxml())
     elif (theElement.tagName == 'cell'):
         if theElement.getAttribute('href'):
             return '<a href="%(href)s">%(name)s</a>' % {
@@ -426,7 +422,7 @@ def evaluateLeaf(theElement):           # find out if an element is text or atta
             fileName = re.sub("\d*__\S*?__", "", fileName)
             extension = fileName.split('.')[-1].lower()
             if extension == 'png' or extension == 'jpg':
-                return '<img src="%s" class="inline-image">' % (IMAGE_PATH + fileName)
+                return '<img src="%s" class="inline-image" />' % (IMAGE_PATH + fileName)
             else:
                 return '<a href="%(fileName)s">%(name)s</a>' % {
                     'fileName': fileName,
@@ -554,8 +550,10 @@ def main():
                 else:
                     indexerToolPath = developerDirPath + """/Applications/Utilities/Help\ Indexer.app/Contents/MacOS/Help\ Indexer"""                    
                     indexerCommandLine = """%s %s""" % (indexerToolPath, escapedOutputPath)
-                
-                print commands.getoutput(indexerCommandLine)
+                output = commands.getoutput(indexerCommandLine)
+                print >> sys.stderr, output
+                if output:
+                    sys.exit(1)
         
         # check that all links are hooked up
         links.sort()
