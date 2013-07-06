@@ -58,9 +58,9 @@
     return hotKeyModifierFlags;
 }
 
-- (long)modifiers;
+- (UInt32)modifiers;
 {
-    static long modifierMap[5][2] = {
+    static UInt32 modifierMap[5][2] = {
        { NSCommandKeyMask, cmdKey },
        { NSAlternateKeyMask, optionKey },
        { NSControlKeyMask, controlKey },
@@ -68,7 +68,7 @@
        { 0, 0 }
     };
 
-    long modifiers = 0;
+    UInt32 modifiers = 0;
     int i;
 
     for (i = 0 ; modifierMap[i][0] != 0 ; i++)

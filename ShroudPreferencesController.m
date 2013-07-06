@@ -28,7 +28,7 @@ static ShroudPreferencesController *sharedController = nil;
     return sharedController;
 }
 
-static NSString *StringWithModifierFlags(unsigned modifierFlags) {
+static NSString *StringWithModifierFlags(NSUInteger modifierFlags) {
     return [NSString stringWithFormat: @"%@%@%@%@%@",
             (modifierFlags & NSFunctionKeyMask) ? @"fn " : @"",
             (modifierFlags & NSControlKeyMask) ? @"\u2303" : @"",

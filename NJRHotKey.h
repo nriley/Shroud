@@ -22,7 +22,7 @@
 
 - (NSString *)characters;
 - (unsigned)modifierFlags; // Cocoa
-- (long)modifiers; // Carbon
+- (UInt32)modifiers; // Carbon
 - (unsigned short)keyCode;
 
 - (NSString *)keyGlyphs;

@@ -213,7 +213,7 @@ static ProcessSerialNumber frontProcess;
 
     GetFrontProcess(&frontProcess);
     NSDictionary *frontProcessInformation = (NSDictionary *)ProcessInformationCopyDictionary(&frontProcess, kProcessDictionaryIncludeAllInformationMask);
-    pid_t frontProcessPID = [(NSNumber *)[frontProcessInformation objectForKey:@"pid"] longValue];
+    pid_t frontProcessPID = [(NSNumber *)[frontProcessInformation objectForKey:@"pid"] intValue];
     [frontProcessInformation release];
     frontProcessInformation = nil;
 
@@ -298,7 +298,7 @@ static ProcessSerialNumber frontProcess;
                                                     : [orderingRelativeToWindowIDs reverseObjectEnumerator];
         for (NSNumber *orderRelativeWindowID in orderRelativeEnumerator) {
             if ([windowIDs containsObject:orderRelativeWindowID]) {
-                relativeToWindowID = [orderRelativeWindowID longValue];
+                relativeToWindowID = [orderRelativeWindowID unsignedIntValue];
                 break;
             }
         }
@@ -435,7 +435,7 @@ static ProcessSerialNumber frontProcess;
     [orderingRelativeToWindowIDs release];
     orderingRelativeToWindowIDs = nil;
 
-    CGWindowID screenPanelWindowID = [screenPanel windowNumber];
+    CGWindowID screenPanelWindowID = (CGWindowID)[screenPanel windowNumber];
     NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenAboveWindow, screenPanelWindowID);
     if ([windowsInfo count] == 0) {
         [windowsInfo release];

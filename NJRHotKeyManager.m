@@ -232,10 +232,10 @@ pascal OSErr keyEventHandler(EventHandlerCallRef inHandlerRef, EventRef inEvent,
 
 #if __LP64__
         keyID.signature = (NSUInteger)shortcut >> 32;
-        keyID.id = (unsigned long)shortcut;
+        keyID.id = (UInt32)shortcut;
 #else
         keyID.signature = kHotKeyManagerSignature;
-        keyID.id = (unsigned long)shortcut;
+        keyID.id = (UInt32)shortcut;
 #endif
         if (RegisterEventHotKey([hotKey keyCode], [hotKey modifiers], keyID, GetEventDispatcherTarget(), kEventHotKeyExclusive, &shortcut->hotKeyRef) != noErr)
             return NO;
