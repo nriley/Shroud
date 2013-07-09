@@ -116,7 +116,10 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
         [[self window] orderOut:nil];
         return;
     }
-    
+
+    if ([NSApp isHidden])
+        return;
+
     // The OS will be fading in, so we do as well.
     [[self window] setAlphaValue:0];
     [[self window] orderFront:nil];
