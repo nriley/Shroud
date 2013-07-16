@@ -27,7 +27,7 @@ NSString * const ShroudBackdropColorPreferenceKey = @"FocusBackdropColor";
 
     NSDictionary *colorBindingOptions = [NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:NSValueTransformerNameBindingOption];
     NSString *colorBindingKeyPath = [@"values." stringByAppendingString:ShroudBackdropColorPreferenceKey];
-    [self bind:binding toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:colorBindingKeyPath options:colorBindingOptions];
+    [self bind:binding toObject:userDefaultsController withKeyPath:colorBindingKeyPath options:colorBindingOptions];
 }
 
 @end
