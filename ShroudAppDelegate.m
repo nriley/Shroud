@@ -18,6 +18,10 @@
 
 #include <Carbon/Carbon.h>
 
+#ifndef NSAppKitVersionNumber10_7
+    #define NSAppKitVersionNumber10_7 1138
+#endif
+
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
@@ -185,7 +189,7 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 - (void)unhideThenPerformBlock:(void (^)())block;
 {
     [NSApp unhideWithoutActivation];
-    if (NSAppKitVersionNumber < /* NSAppKitVersionNumber10_7 */ 1138) {
+    if (NSAppKitVersionNumber < NSAppKitVersionNumber10_7) {
         // XXX Using dispatch_async on Mac OS X 10.6 hangs the process.  It seems to work fine on 10.8.
         // The only downside to using dispatch_after is a screen flash.
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), (dispatch_block_t)block);
@@ -257,13 +261,26 @@ static ProcessSerialNumber frontProcess;
     NSLog(@"placing backdrop %@ %@", ordering
           == NSWindowAbove ? @"above" : @"below", relativeToWindowInfo);
 
-    if (!windowOnly && ordering == NSWindowBelow)
-        // the application's rearmost window might be quite far back in the window order: bring all application windows to the front first.
-        SetFrontProcessWithOptions(&frontProcess, kSetFrontProcessCausedByUser);
-
-    [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
-
+    [relativeToWindowInfo retain];
     [windowsInfo release];
+
+    dispatch_block_t orderWindow = ^{
+        [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
+        [relativeToWindowInfo release];
+    };
+
+    if (!windowOnly && ordering == NSWindowBelow) {
+        // the application's rearmost window might be quite far back in the window order: bring all application windows to the front first.
+        // XXX kSetFrontProcessCausedByUser does not bring all the windows to the front on 10.6 (fine on 10.8), so just pass 0 for flags.
+        SetFrontProcessWithOptions(&frontProcess, 0);
+
+        if (NSAppKitVersionNumber < NSAppKitVersionNumber10_7) { // can't do it all at once in 10.6
+            dispatch_async(dispatch_get_current_queue(), orderWindow);
+            return;
+        }
+    }
+
+    orderWindow();
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;
