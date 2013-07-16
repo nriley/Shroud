@@ -72,6 +72,8 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     
     [[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey] options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidUnhide:) name:NSApplicationDidUnhideNotification object:nil];
+
     return self;
 }
 
@@ -80,12 +82,26 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     RemoveEventHandler(systemUIModeChangedEventHandler);
     [menuBarPeekTap release];
     [[NSUserDefaultsController sharedUserDefaultsController] removeObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey]];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
+}
+
+- (ShroudMenuBarView *)menuBarView;
+{
+    return (ShroudMenuBarView *)[[self window] contentView];
 }
 
 - (void)peekAtMenuBar:(BOOL)peek;
 {
-    [(ShroudMenuBarView *)[[self window] contentView] setPeeking:peek];
+    [[self menuBarView] setPeeking:peek];
+}
+
+- (void)restoreMenuBarCover;
+{
+    [[self window] setAlphaValue:0];
+    [[self window] orderFront:nil];
+
+    [[self menuBarView] coverMenuBarIfNeededAnimatingWithDuration:0];
 }
 
 - (void)setShouldCoverMenuBar:(BOOL)shouldCover;
@@ -117,17 +133,18 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
         return;
     }
 
-    if ([NSApp isHidden])
+    if ([NSApp isHidden]) // will need to show later
         return;
 
-    // The OS will be fading in, so we do as well.
-    [[self window] setAlphaValue:0];
-    [[self window] orderFront:nil];
-    
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.2];
-    [[[self window] animator] setAlphaValue:1];
-    [NSAnimationContext endGrouping];
+    [self restoreMenuBarCover];
+}
+
+- (void)applicationDidUnhide:(NSNotification *)notification;
+{
+    if (!shouldCoverMenuBar)
+        return;
+
+    [self restoreMenuBarCover];
 }
 
 @end

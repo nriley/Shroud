@@ -16,5 +16,6 @@
 }
 
 - (void)setPeeking:(BOOL)peeking;
+- (void)coverMenuBarIfNeededAnimatingWithDuration:(NSTimeInterval)duration;
 
 @end

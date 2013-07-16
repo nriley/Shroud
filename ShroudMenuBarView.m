@@ -39,12 +39,25 @@
     [super dealloc];
 }
 
-- (void)coverMenuBar:(BOOL)cover;
+- (void)coverMenuBar:(BOOL)cover animatingWithDuration:(NSTimeInterval)duration;
 {
     [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.1];
+    [[NSAnimationContext currentContext] setDuration:duration];
     [[[self window] animator] setAlphaValue:cover ? 1 : 0];
     [NSAnimationContext endGrouping];
+}
+
+- (void)coverMenuBar:(BOOL)cover;
+{
+    [self coverMenuBar:cover animatingWithDuration:0.1];
+}
+
+- (void)coverMenuBarIfNeededAnimatingWithDuration:(NSTimeInterval)duration;
+{
+    if (mouseInMenuBar || peekInProgress)
+	return;
+
+    [self coverMenuBar:YES animatingWithDuration:duration];
 }
 
 - (void)setPeeking:(BOOL)peeking;
@@ -92,13 +105,8 @@
 
     menuTrackingInProgress = NO;
 
-    if (mouseInMenuBar || peekInProgress)
-	return;
-
     // Immediately hide the menu bar so you don't see a flicker when the menu highlight disappears.
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:0.01];
-    [[[self window] animator] setAlphaValue:1];
-    [NSAnimationContext endGrouping];
+    [self coverMenuBarIfNeededAnimatingWithDuration:0.01];
 }
+
 @end
