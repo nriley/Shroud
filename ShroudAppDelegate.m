@@ -258,8 +258,7 @@ static ProcessSerialNumber frontProcess;
             relativeToWindowInfo = [frontAppWindowsInfo objectAtIndex:0];
     } else relativeToWindowInfo = [frontAppWindowsInfo lastObject];
 
-    NSLog(@"placing backdrop %@ %@", ordering
-          == NSWindowAbove ? @"above" : @"below", relativeToWindowInfo);
+    // NSLog(@"placing backdrop %@ %@", ordering == NSWindowAbove ? @"above" : @"below", relativeToWindowInfo);
 
     [relativeToWindowInfo retain];
     [windowsInfo release];
@@ -307,7 +306,7 @@ static ProcessSerialNumber frontProcess;
         for (NSDictionary *windowInfo in windowsInfo)
             [windowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
 
-        NSLog(@"current windows: %@", [[[windowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
+        // NSLog(@"current windows: %@", [[[windowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
 
         NSEnumerator *orderRelativeEnumerator =
             showRelativeToOrdering == NSWindowAbove ? [orderingRelativeToWindowIDs objectEnumerator]
@@ -319,7 +318,7 @@ static ProcessSerialNumber frontProcess;
             }
         }
 
-        NSLog(@"restoring %@ %d", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", relativeToWindowID);
+        // NSLog(@"restoring %@ %d", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", relativeToWindowID);
 
         [self unhideThenPerformBlock:^{
             [screenPanel orderWindow:showRelativeToOrdering relativeTo:relativeToWindowID];
@@ -475,7 +474,7 @@ static ProcessSerialNumber frontProcess;
             continue;
         [orderingRelativeToWindowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
     }
-    NSLog(@"saving %@ %@", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", [[[orderingRelativeToWindowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
+    // NSLog(@"saving %@ %@", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", [[[orderingRelativeToWindowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
     [windowsInfo release];
 }
 
