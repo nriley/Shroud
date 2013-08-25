@@ -187,7 +187,7 @@
 		E16E2AD71788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaultsController+NJRExtensions.h"; sourceTree = "<group>"; };
 		E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaultsController+NJRExtensions.m"; sourceTree = "<group>"; };
 		E186F45712C3C3D10051E025 /* SFBCrashReporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFBCrashReporter.xcodeproj; path = SFBCrashReporter/SFBCrashReporter.xcodeproj; sourceTree = "<group>"; };
-		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
+		E19F3CD1123593E700DFD7BA /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		E1A3D1D11786839200957D63 /* ShroudDockTilePlugIn.docktileplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShroudDockTilePlugIn.docktileplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A3D1D71786839200957D63 /* ShroudDockTilePlugIn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShroudDockTilePlugIn-Info.plist"; sourceTree = "<group>"; };
 		E1A3D1DB1786839200957D63 /* ShroudDockTilePlugIn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShroudDockTilePlugIn-Prefix.pch"; sourceTree = "<group>"; };
