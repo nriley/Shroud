@@ -17,8 +17,8 @@ rm -rf **/build/(N)
 xcodebuild -target "$PRODUCT" -configuration Release
 xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
     INSTALL_PATH=/ DEPLOYMENT_LOCATION=YES install
-rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"*
-rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"* "$DSTROOT/ShroudDockTilePlugIn"*
+rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"* "$DSTROOT/ShroudDockTilePlugIn"*(N)
+# osascript -e 'tell app "Terminal" to do script "clear; cd \"'$DSTROOT'\"; find ."'
 
 # create disk image
 cd "$PACKAGEDIR"
