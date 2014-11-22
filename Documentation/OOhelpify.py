@@ -67,7 +67,7 @@ def fileHeader(theFile, title, robots="", isTop=False, url="", description=""):
         }
     
     print >> theFile, """<!DOCTYPE html>
-    <html>
+<html>
 
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
