@@ -97,15 +97,15 @@ def fileFrames(theFile, title, anchor):
     print >> theFile, """<html>
 
     <head>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <meta name="robots" content="noindex">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="robots" content="noindex" />
         <title>%(title)s</title>
-        <link href="help.css" rel="stylesheet" media="all">
+        <link href="help.css" rel="stylesheet" media="all" />
     </head>
 
     <frameset cols="170,*">
-        <frame name="left" noresize src="%(anchor)s.html">
-        <frame name="right" noresize src="empty.html">
+        <frame name="left" noresize src="%(anchor)s.html" />
+        <frame name="right" noresize src="empty.html" />
         <noframes>
 
             No frames.
@@ -241,7 +241,7 @@ def digItem(theItem, level, inheritedStyle=[], destReached=False):
             
             newFileName = anchor + '.html'
             level2File = open(outputPath + '/' + newFileName, 'w')
-            roboString = """<meta name="robots" content="noindex">"""
+            roboString = """<meta name="robots" content="noindex" />"""
             
             if destReached:
                 roboString = ""
@@ -499,7 +499,7 @@ def main():
                     print >> tocFile, """
                         <div class="top-all">
                             <div class="top-title">
-                                <img src="%(imagePath)sIcon.png" alt="Application Icon" height="128" width="128" border="0">
+                                <img src="%(imagePath)sIcon.png" alt="Application Icon" height="128" width="128" border="0" />
                                 <h1>%(bookTitle)s</h1>
                                 <p><a href="http://%(url)s">%(url)s</a></p>
                             </div>
