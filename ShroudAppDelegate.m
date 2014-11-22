@@ -72,14 +72,14 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
     [self createMenuBarPanelWithFrame:menuBarFrame];
 
-    // Create dock tile.
-    dockTileView = [[ShroudDockTileView alloc] initWithDockTile:[NSApp dockTile]];
-
     // To avoid menubar flashing, we launch as a UIElement and transform ourselves when we're finished.
     ProcessSerialNumber currentProcess = { 0, kCurrentProcess };
     TransformProcessType(&currentProcess, kProcessTransformToForegroundApplication);
 
     SetFrontProcessWithOptions(&frontProcess, 0);
+
+    // Create dock tile.
+    dockTileView = [[ShroudDockTileView alloc] initWithDockTile:[NSApp dockTile]];
 
     // XXX Work around a Spaces issue.  Note that this notification is only delivered on 10.6.
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
