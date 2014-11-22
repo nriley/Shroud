@@ -14,7 +14,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
+		E11DFE5611F2481C001DCDED /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E11DFE5F11F2488B001DCDED /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11DFE4711F247DB001DCDED /* ShortcutRecorder.framework */; };
 		E14B6F46123416B300BA58AB /* NJRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6F45123416B300BA58AB /* NJRHotKeyManager.m */; };
 		E14B6FDF12341D5600BA58AB /* NJRHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B6FDE12341D5600BA58AB /* NJRHotKey.m */; };
@@ -23,7 +23,7 @@
 		E16E0870138F2C7200D0720B /* ShroudMenuBarPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E086F138F2C7200D0720B /* ShroudMenuBarPanel.m */; };
 		E16E2AD91788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */; };
 		E16E2ADA1788B16000E8A07F /* NSUserDefaultsController+NJRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E2AD81788A9C300E8A07F /* NSUserDefaultsController+NJRExtensions.m */; };
-		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
+		E186F46012C3C3F20051E025 /* SFBCrashReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E186F48112C3C7260051E025 /* SFBCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F45C12C3C3D10051E025 /* SFBCrashReporter.framework */; };
 		E19F3CD5123593F500DFD7BA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E19F3CD4123593F500DFD7BA /* Credits.html */; };
 		E1A3D1E51786846F00957D63 /* ShroudDockTilePlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */; };
@@ -36,7 +36,7 @@
 		E1BD40EE112F753000DE639A /* ShroudMenuBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD40ED112F753000DE639A /* ShroudMenuBarView.m */; };
 		E1BD4115112F7B6300DE639A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BD4114112F7B6300DE639A /* Carbon.framework */; };
 		E1D8F35612336ECF0019122A /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
-		E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
+		E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E1D9435C123F793A005DA161 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E1D9435B123F793A005DA161 /* dsa_pub.pem */; };
 		E1E578A0125BB5A2001985D3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
