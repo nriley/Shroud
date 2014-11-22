@@ -494,7 +494,7 @@ def main():
                     bookTitle = text
                     
                     tocFile = open(outputPath + '/top.html', 'w')
-                    fileHeader(tocFile, bookTitle, """<meta name="robots" content="noindex">""", isTop=True, url='top.html')
+                    fileHeader(tocFile, bookTitle, """<meta name="robots" content="segments" />""", isTop=True, url='top.html')
                     
                     print >> tocFile, """
                         <div class="top-all">
