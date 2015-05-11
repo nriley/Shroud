@@ -6,6 +6,10 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Shroud Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Shroud Help</string>
 	<key>CFBundleIconFile</key>
 	<string>Shroud</string>
 	<key>CFBundleIdentifier</key>
@@ -16,41 +20,37 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>FoCS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.2</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>CFBundleSignature</key>
+	<string>FoCS</string>
 	<key>CFBundleVersion</key>
 	<string>15</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>Shroud would like to give you the option to include your email address with this crash report.</string>
 	<key>NSDockTilePlugIn</key>
 	<string>ShroudDockTilePlugIn.docktileplugin</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2010–13 Nicholas Riley</string>
-	<key>NSSupportsSuddenTermination</key>
-	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>LSUIElement</key>
+	<key>NSSupportsSuddenTermination</key>
 	<true/>
-	<key>CFBundleHelpBookFolder</key>
-	<string>Shroud Help</string>
-	<key>CFBundleHelpBookName</key>
-	<string>Shroud Help</string>
-	<key>SUFeedURL</key>
-	<string>http://sabi.net/nriley/software/Shroud/updates.xml</string>
-	<key>SUEnableSystemProfiling</key>
-	<false/>
-	<key>SUScheduledCheckInterval</key>
-	<integer>86400</integer>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
 	<key>SFBCrashReporterCrashSubmissionURL</key>
 	<string>http://sabi.net/crash/report</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Shroud would like to give you the option to include your email address with this crash report.</string>
+	<key>SUEnableSystemProfiling</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>http://sabi.net/nriley/software/Shroud/updates.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>
