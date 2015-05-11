@@ -18,10 +18,6 @@
 
 #include <Carbon/Carbon.h>
 
-#ifndef NSAppKitVersionNumber10_7
-    #define NSAppKitVersionNumber10_7 1138
-#endif
-
 static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBarFrame) {
     NSScreen *mainScreen = [NSScreen mainScreen];
     *screenFrame = *menuBarFrame = [mainScreen frame];
@@ -30,6 +26,11 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 
     menuBarFrame->origin.y += menuBarHeight;
     menuBarFrame->size.height -= menuBarHeight;
+}
+
+static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relativeToWindowID) {
+    NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | option, relativeToWindowID);
+    return [windowsInfo autorelease];
 }
 
 @implementation ShroudAppDelegate
@@ -189,13 +190,26 @@ static void ShroudGetScreenAndMenuBarFrames(NSRect *screenFrame, NSRect *menuBar
 - (void)unhideThenPerformBlock:(void (^)())block;
 {
     [NSApp unhideWithoutActivation];
-    if (NSAppKitVersionNumber < NSAppKitVersionNumber10_7) {
-        // XXX Using dispatch_async on Mac OS X 10.6 hangs the process.  It seems to work fine on 10.7 and 10.8.
-        // The only downside to using dispatch_after is a screen flash.
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), (dispatch_block_t)block);
-    } else {
-        dispatch_async(dispatch_get_main_queue(), (dispatch_block_t)block);
-    }
+    dispatch_async(dispatch_get_main_queue(), (dispatch_block_t)block);
+}
+
+#pragma mark window info
+
+- (NSArray *)allWindowsInfo;
+{
+    return ShroudGetWindowsInfo(kCGWindowListOptionAll, kCGNullWindowID);
+}
+
+- (NSArray *)aboveScreenPanelWindowsInfo;
+{
+    return ShroudGetWindowsInfo(kCGWindowListOptionOnScreenAboveWindow,
+                                (CGWindowID)[screenPanel windowNumber]);
+}
+
+- (NSArray *)belowScreenPanelWindowsInfo;
+{
+    return ShroudGetWindowsInfo(kCGWindowListOptionOnScreenBelowWindow,
+                                (CGWindowID)[screenPanel windowNumber]);
 }
 
 #pragma mark actions
@@ -220,14 +234,13 @@ static ProcessSerialNumber frontProcess;
     [frontProcessInformation release];
     frontProcessInformation = nil;
 
-    NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+    NSArray *windowsInfo = [self allWindowsInfo];
     NSArray *frontAppWindowsInfo = [windowsInfo filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"kCGWindowOwnerPID == %ld", frontProcessPID]];
 
     NSWindowOrderingMode ordering = NSWindowBelow;
     NSDictionary *relativeToWindowInfo = nil;
     if ([frontAppWindowsInfo count] == 0) {
         if ([windowsInfo count] == 0) {
-            [windowsInfo release];
             windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
             if ([windowsInfo count] == 0) { // should never happen
                 [windowsInfo release];
@@ -260,26 +273,12 @@ static ProcessSerialNumber frontProcess;
 
     // NSLog(@"placing backdrop %@ %@", ordering == NSWindowAbove ? @"above" : @"below", relativeToWindowInfo);
 
-    [relativeToWindowInfo retain];
-    [windowsInfo release];
-
-    dispatch_block_t orderWindow = ^{
-        [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
-        [relativeToWindowInfo release];
-    };
-
     if (!windowOnly && ordering == NSWindowBelow) {
         // the application's rearmost window might be quite far back in the window order: bring all application windows to the front first.
-        // XXX kSetFrontProcessCausedByUser does not bring all the windows to the front on 10.6 (fine on 10.8), so just pass 0 for flags.
         SetFrontProcessWithOptions(&frontProcess, 0);
-
-        if (NSAppKitVersionNumber < NSAppKitVersionNumber10_7) { // can't do it all at once in 10.6
-            dispatch_async(dispatch_get_current_queue(), orderWindow);
-            return;
-        }
     }
 
-    orderWindow();
+    [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;
@@ -300,8 +299,8 @@ static ProcessSerialNumber frontProcess;
             return;
         }
 
-        CGWindowID relativeToWindowID;
-        NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+        CGWindowID relativeToWindowID = kCGNullWindowID;
+        NSArray *windowsInfo = [self allWindowsInfo];
         NSMutableSet *windowIDs = [[NSMutableSet alloc] initWithCapacity:[windowsInfo count]];
         for (NSDictionary *windowInfo in windowsInfo)
             [windowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
@@ -326,7 +325,6 @@ static ProcessSerialNumber frontProcess;
             showRelativeToOrdering = NSWindowOut;
             [orderingRelativeToWindowIDs release];
             orderingRelativeToWindowIDs = nil;
-            [windowsInfo release];
         }];
     } else {
         [NSApp hide:self];
@@ -480,14 +478,11 @@ static ProcessSerialNumber frontProcess;
     [orderingRelativeToWindowIDs release];
     orderingRelativeToWindowIDs = nil;
 
-    CGWindowID screenPanelWindowID = (CGWindowID)[screenPanel windowNumber];
-    NSArray *windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenAboveWindow, screenPanelWindowID);
+    NSArray *windowsInfo = [self aboveScreenPanelWindowsInfo];
     if ([windowsInfo count] == 0) {
-        [windowsInfo release];
-        windowsInfo = (NSArray *)CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenBelowWindow, screenPanelWindowID);
+        windowsInfo = [self belowScreenPanelWindowsInfo];
         if ([windowsInfo count] == 0) {
             showRelativeToOrdering = NSWindowOut;
-            [windowsInfo release];
             return;
         }
         showRelativeToOrdering = NSWindowAbove;
@@ -503,7 +498,6 @@ static ProcessSerialNumber frontProcess;
         [orderingRelativeToWindowIDs addObject:[windowInfo objectForKey:(id)kCGWindowNumber]];
     }
     // NSLog(@"saving %@ %@", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", [[[orderingRelativeToWindowIDs description] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
-    [windowsInfo release];
 }
 
 @end
