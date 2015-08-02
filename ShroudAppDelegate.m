@@ -82,7 +82,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
     // Create dock tile.
     dockTileView = [[ShroudDockTileView alloc] initWithDockTile:[NSApp dockTile]];
 
-    // XXX Work around a Spaces issue.  Note that this notification is only delivered on 10.6.
+    // XXX Work around a Spaces issue.
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
                                                            selector:@selector(workspaceActiveSpaceDidChange:)
                                                                name:NSWorkspaceActiveSpaceDidChangeNotification
