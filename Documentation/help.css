@@ -1,5 +1,5 @@
 body {
-    font-family: "Lucida Grande", Verdana, sans-serif;
+    font-family: -apple-system, ".HelveticaNeueDeskInterface-Regular", ".LucidaGrandeUI", "Lucida Grande", Verdana, sans-serif;
     font-size: 13px;
     line-height: 1.4em;
     background-color: #DDDDDD;
@@ -40,7 +40,7 @@ p {
 
 .UI {
     font-weight: bold;
-    font-family: "Lucida Grande", Arial, sans-serif;
+    font-family: -apple-system, ".HelveticaNeueDeskInterface-Regular", ".LucidaGrandeUI", "Lucida Grande", Arial, sans-serif;
 }
 
 div.top-title {
