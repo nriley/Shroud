@@ -144,9 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="aVRTtWri8z5"/>
+    <selected-rows ids="mqVnIgnYCad"/>
     <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{29, 0}"/>
+    <selected-characters range="{41, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2856,7 +2856,7 @@
             </text>
           </values>
         </item>
-        <item id="iZVohZAxiHi">
+        <item id="iZVohZAxiHi" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -2870,6 +2870,48 @@
             </text>
           </values>
         </item>
+        <item id="hFm7DhRhjEI" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix failure to set dock icon color on startup</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="mOKms_O79VU">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Update .gitignore to match Pester</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="mqVnIgnYCad">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Update SFBCrashReporter (figure out what changes I made in it first)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
         <item id="aVRTtWri8z5">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
@@ -2878,7 +2920,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Fix app signing to be correct</lit>
+                  <lit>Fix code signing to be correct and verify it (check Pester, again)</lit>
                 </run>
               </p>
             </text>
@@ -2892,21 +2934,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Check that I&apos;m using the correct binding for Sparkle, like in Pester (think this is fixed on Shirley, mabe?)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="hFm7DhRhjEI">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Fix failure to set dock icon color on startup</lit>
+                  <lit>Check that I&apos;m using the correct binding for Sparkle, like in Pester</lit>
                 </run>
               </p>
             </text>
