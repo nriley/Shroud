@@ -144,7 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="iGe63eATLCr"/>
+    <selected-rows ids="aVRTtWri8z5"/>
+    <selected-columns ids="ad996af83d1b866b01c90211"/>
+    <selected-characters range="{29, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2840,7 +2842,7 @@
             </text>
           </values>
         </item>
-        <item id="gbv7oAwGZtS">
+        <item id="gbv7oAwGZtS" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -2849,6 +2851,34 @@
               <p>
                 <run>
                   <lit>At least on 10.10, toggling Shroud no longer works properly</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="iZVohZAxiHi">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="aVRTtWri8z5">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix app signing to be correct</lit>
                 </run>
               </p>
             </text>
@@ -2877,20 +2907,6 @@
               <p>
                 <run>
                   <lit>Fix failure to set dock icon color on startup</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="iZVohZAxiHi">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
                 </run>
               </p>
             </text>
@@ -2954,6 +2970,20 @@
         </text>
       </values>
       <children>
+        <item id="aJCxtiaJ_OP">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Figure out what&apos;s going on with the new Spaces</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
         <item id="mETMQzXxYlp">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
