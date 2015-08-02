@@ -159,7 +159,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
     for (NSWindow *window in windows) {
         if (window == screenPanel || window == menuBarPanel || ![window isVisible])
             continue;
-        [window orderWindow:NSWindowAbove relativeTo:screenPanelWindowNumber];
+        [window orderWindow:NSWindowAbove relativeTo:screenPanelWindowNumber]; // XXX remove if removing Spaces support
     }
 }
 
@@ -167,6 +167,28 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
 {
     [NSApp unhideWithoutActivation];
     dispatch_async(dispatch_get_main_queue(), (dispatch_block_t)block);
+}
+
+/* CGS private APIs; have been present going way back in OS X */
+typedef int32_t CGSConnection;
+typedef int32_t CGSWindow;
+extern CGSConnection _CGSDefaultConnection(void);
+extern CGError CGSOrderWindow(const CGSConnection cid, const CGSWindow wid, NSWindowOrderingMode/*CGSWindowOrderingMode*/place, CGSWindow relativeToWindowID);
+
+#ifndef NSAppKitVersionNumber10_10_3
+#define NSAppKitVersionNumber10_10_3 1347
+#endif
+
+- (void)orderScreenPanel:(NSWindowOrderingMode)ordering relativeToWindow:(NSInteger)wid;
+{
+    if (NSAppKitVersionNumber <= NSAppKitVersionNumber10_10_3) {
+        [screenPanel orderWindow:ordering relativeTo:wid];
+    } else {
+        // work around http://www.openradar.me/22064080
+        // undocumented and somewhat flaky on 10.11 betas but at least works most of the time
+        CGSConnection cid = _CGSDefaultConnection();
+        CGSOrderWindow(cid, (CGSWindow)screenPanel.windowNumber, ordering, (CGSWindow)wid);
+    }
 }
 
 #pragma mark window info
@@ -254,7 +276,7 @@ static ProcessSerialNumber frontProcess;
         SetFrontProcessWithOptions(&frontProcess, 0);
     }
 
-    [screenPanel orderWindow:ordering relativeTo:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
+    [self orderScreenPanel:ordering relativeToWindow:[[relativeToWindowInfo objectForKey:(id)kCGWindowNumber] longValue]];
 }
 
 - (IBAction)focusFrontmostApplication:(id)sender;
@@ -296,7 +318,7 @@ static ProcessSerialNumber frontProcess;
         // NSLog(@"restoring %@ %d", showRelativeToOrdering == NSWindowAbove ? @"above" : @"below", relativeToWindowID);
 
         [self unhideThenPerformBlock:^{
-            [screenPanel orderWindow:showRelativeToOrdering relativeTo:relativeToWindowID];
+            [self orderScreenPanel:showRelativeToOrdering relativeToWindow:relativeToWindowID];
 
             showRelativeToOrdering = NSWindowOut;
             [orderingRelativeToWindowIDs release];
