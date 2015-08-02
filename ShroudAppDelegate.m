@@ -105,30 +105,6 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
 
 #pragma mark workarounds
 
-// XXX In 10.6 (at least), with Focus on one space and exiting full screen mode (either permanently or temporarily, by switching applications) with a different space in front, the menu bar panel is moved to the frontmost space.  In the CGWindowList description, this exhibits itself as a disappearing kCGWindowWorkspace key.
-
-- (BOOL)menuBarPanelOnWrongSpace;
-{
-    if ([menuBarPanel respondsToSelector:@selector(isOnActiveSpace)])
-        return [screenPanel isOnActiveSpace] != [menuBarPanel isOnActiveSpace];
-
-    CFMutableArrayRef windowIDs = CFArrayCreateMutable(kCFAllocatorDefault, 2, NULL);
-    CFArrayAppendValue(windowIDs, (void *)[screenPanel windowNumber]);
-    CFArrayAppendValue(windowIDs, (void *)[menuBarPanel windowNumber]);
-
-    NSArray *descriptions = [(NSArray *)CGWindowListCreateDescriptionFromArray(windowIDs) autorelease];
-    CFRelease(windowIDs);
-
-    if (descriptions == nil || [descriptions count] != 2) {
-        NSLog(@"Unexpected return value from CGWindowListCreateDescriptionFromArray: %@", descriptions);
-        return NO;
-    }
-
-    // In some unexpected conditions, the dictionary key may be missing entirely
-    return ![[[descriptions objectAtIndex:0] objectForKey:(id)kCGWindowWorkspace] isEqual:
-             [[descriptions objectAtIndex:1] objectForKey:(id)kCGWindowWorkspace]];
-}
-
 - (void)createMenuBarPanelWithFrame:(NSRect)menuBarFrame;
 {
     NSUserDefaultsController *userDefaultsController = [NSUserDefaultsController sharedUserDefaultsController];

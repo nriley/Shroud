@@ -121,13 +121,6 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     if (!shouldCoverMenuBar)
         return;
 
-    // XXX workaround for Spaces issue on OS X 10.6 (at least)
-    ShroudAppDelegate *appDelegate = [NSApp delegate];
-    if ([appDelegate menuBarPanelOnWrongSpace]) {
-        [appDelegate createMenuBarPanelWithFrame:[[self window] frame]];
-        return;
-    }
-    
     if (!visible) {
         [[self window] orderOut:nil];
         return;
