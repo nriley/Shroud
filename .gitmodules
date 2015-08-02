@@ -3,7 +3,7 @@
 	url = https://github.com/nriley/ShortcutRecorder.git
 [submodule "Sparkle"]
 	path = Sparkle
-	url = https://github.com/nriley/Sparkle.git
+	url = https://github.com/sparkle-project/Sparkle.git
 [submodule "SFBCrashReporter"]
 	path = SFBCrashReporter
 	url = https://github.com/nriley/SFBCrashReporter.git

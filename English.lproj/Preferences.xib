@@ -326,7 +326,7 @@
 						<object class="NSButton" id="527808747">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">293</int>
-							<string key="NSFrame">{{117, 18}, {203, 18}}</string>
+							<string key="NSFrame">{{106, 18}, {226, 18}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -334,7 +334,7 @@
 							<object class="NSButtonCell" key="NSCell" id="1025044354">
 								<int key="NSCellFlags">-2080374784</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Check for updates to Shroud</string>
+								<string key="NSContents">Check for updates automatically</string>
 								<reference key="NSSupport" ref="1064254541"/>
 								<reference key="NSControlView" ref="527808747"/>
 								<int key="NSButtonFlags">1211912448</int>

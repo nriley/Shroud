@@ -381,9 +381,9 @@
 			children = (
 				E1D94336123F75DF005DA161 /* Sparkle.framework */,
 				E1D94338123F75DF005DA161 /* Sparkle Test App.app */,
-				E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.octest */,
+				E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.xctest */,
 				E1D9433E123F75DF005DA161 /* BinaryDelta */,
-				E1D20683177F772900A9575A /* finish_installation.app */,
+				E1D20683177F772900A9575A /* Autoupdate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,10 +525,10 @@
 			remoteRef = E186F45B12C3C3D10051E025 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E1D20683177F772900A9575A /* finish_installation.app */ = {
+		E1D20683177F772900A9575A /* Autoupdate.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = finish_installation.app;
+			path = Autoupdate.app;
 			remoteRef = E1D20682177F772900A9575A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -546,10 +546,10 @@
 			remoteRef = E1D94337123F75DF005DA161 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.octest */ = {
+		E1D9433C123F75DF005DA161 /* Sparkle Unit Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Sparkle Unit Tests.octest";
+			path = "Sparkle Unit Tests.xctest";
 			remoteRef = E1D9433B123F75DF005DA161 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -777,10 +777,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -803,9 +803,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "$(SOURCE_ROOT)/shortcutrecorder/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
