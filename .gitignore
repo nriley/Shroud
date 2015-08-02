@@ -2,11 +2,10 @@ build
 xcuserdata
 .DS_Store
 *.pbxuser
-*.perspectivev3
-*.mode?v3
+*.xccheckout
+*.xcscmblueprint
 *~
 \#*
-.#*
-.OABK
+.\#*
 Shroud ?.*
 Shroud-*.dmg
