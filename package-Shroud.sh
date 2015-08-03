@@ -10,7 +10,6 @@ DMG="$PRODUCT-$VERSION.dmg" VOL="$PRODUCT $VERSION"
 DSTROOT="$PACKAGEDIR/$VOL"
 
 # clean and build
-sudo rm -rf "$DSTROOT"
 find . -name \*~ -exec rm '{}' \;
 rm -rf **/build/(N)
 # can't have INSTALL_PATH=/ for bundled frameworks because it'll override @executable_path etc.
