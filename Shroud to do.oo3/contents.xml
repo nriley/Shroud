@@ -144,9 +144,7 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="mOKms_O79VU"/>
-    <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{33, 0}"/>
+    <selected-rows ids="jAB4VdqvogL"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2898,6 +2896,62 @@
             </text>
           </values>
         </item>
+        <item id="aVRTtWri8z5" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Make sure code signing works</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="aJCfOoZf0te" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix xcodebuild failure</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="jAB4VdqvogL" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix localizations failing to strip on install</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="m8ZR0nCOWjT">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix frameworks built in the wrong place (either in the @rpath dir with sbooth&apos;s SFBCrashReporter, or in the Frameworks dir)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
         <item id="mqVnIgnYCad" expanded="yes">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
@@ -2927,20 +2981,6 @@
               </values>
             </item>
           </children>
-        </item>
-        <item id="aVRTtWri8z5">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Make sure code signing works</lit>
-                </run>
-              </p>
-            </text>
-          </values>
         </item>
         <item id="oHRdIcfnhCw">
           <style>
