@@ -144,7 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="jAB4VdqvogL"/>
+    <selected-rows ids="ljsaVXaSGRu"/>
+    <selected-columns ids="ad996af83d1b866b01c90211"/>
+    <selected-characters range="{45, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2938,20 +2940,6 @@
             </text>
           </values>
         </item>
-        <item id="m8ZR0nCOWjT">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Fix frameworks built in the wrong place (either in the @rpath dir with sbooth&apos;s SFBCrashReporter, or in the Frameworks dir)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
         <item id="mqVnIgnYCad" expanded="yes">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
@@ -2975,6 +2963,20 @@
                   <p>
                     <run>
                       <lit>Need to put the UI back the way I had it.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="ljsaVXaSGRu">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Skip Install so it builds in the right place.</lit>
                     </run>
                   </p>
                 </text>
