@@ -12,7 +12,7 @@ SYMROOT="$PWD/build"
 
 # clean and build
 find . -name \*~ -exec rm '{}' \;
-rm -rf "$SYMROOT"
+rm -rf "$SYMROOT" "$DSTROOT"
 # can't have INSTALL_PATH=/ for bundled frameworks because it'll override @executable_path etc.
 xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
     SYMROOT="$SYMROOT" DEPLOYMENT_LOCATION=YES install
