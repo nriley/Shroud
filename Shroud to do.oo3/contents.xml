@@ -144,9 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="mqVnIgnYCad"/>
+    <selected-rows ids="nsDF8c8I0LI"/>
     <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{41, 0}"/>
+    <selected-characters range="{81, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2856,20 +2856,6 @@
             </text>
           </values>
         </item>
-        <item id="iZVohZAxiHi" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
         <item id="hFm7DhRhjEI" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
@@ -2884,7 +2870,21 @@
             </text>
           </values>
         </item>
-        <item id="mOKms_O79VU">
+        <item id="iZVohZAxiHi" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="mOKms_O79VU" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -2962,7 +2962,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Prevent App Nap on Mavericks</lit>
+                  <lit>Prevent App Nap on Mavericks and later (need to figure out how to reproduce this)</lit>
                 </run>
               </p>
             </text>
