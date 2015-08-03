@@ -591,6 +591,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nhelp_src=\"${SRCROOT}/Documentation\"\nhelp_dest=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/English.lproj\"\nhelp_dir=\"Shroud Help\"\n\n/usr/bin/python \"${help_src}/OOhelpify.py\" \"${help_src}/${help_dir}.oo3\"\n\nrm -rf \"${help_dest}/${help_dir}\"\nmv \"${help_src}/${help_dir}\" \"${help_dest}\"\ninstall -m 644 \"${help_src}/mail.scpt\" \"${help_dest}/${help_dir}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */ = {
 			isa = PBXShellScriptBuildPhase;
