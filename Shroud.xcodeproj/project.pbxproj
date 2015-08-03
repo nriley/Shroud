@@ -715,7 +715,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
 				INFOPLIST_FILE = "Shroud-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
+				INSTALL_PATH = /;
 				PRODUCT_NAME = Shroud;
 				PROVISIONING_PROFILE = "";
 			};
@@ -736,7 +736,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
 				INFOPLIST_FILE = "Shroud-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
+				INSTALL_PATH = /;
 				PRODUCT_NAME = Shroud;
 				PROVISIONING_PROFILE = "";
 			};

@@ -8,15 +8,14 @@ VERSION=`agvtool mvers -terse1`
 BUILD=`agvtool vers -terse`
 DMG="$PRODUCT-$VERSION.dmg" VOL="$PRODUCT $VERSION"
 DSTROOT="$PACKAGEDIR/$VOL"
+SYMROOT="$PWD/build"
 
 # clean and build
 find . -name \*~ -exec rm '{}' \;
-rm -rf **/build/(N)
+rm -rf "$SYMROOT"
 # can't have INSTALL_PATH=/ for bundled frameworks because it'll override @executable_path etc.
-xcodebuild -target "$PRODUCT" -configuration Release
 xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
-    INSTALL_PATH=/ DEPLOYMENT_LOCATION=YES install
-rm -rf "$DSTROOT/ShortcutRecorder"* "$DSTROOT/Sparkle"* "$DSTROOT/SFBCrashReporter"* "$DSTROOT/ShroudDockTilePlugIn"*(N)
+    SYMROOT="$SYMROOT" DEPLOYMENT_LOCATION=YES install
 # osascript -e 'tell app "Terminal" to do script "clear; cd \"'$DSTROOT'\"; find ."'
 
 # create disk image
