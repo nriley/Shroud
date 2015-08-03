@@ -120,14 +120,6 @@ img.inline-image {
     vertical-align: middle;
 }
 
-.Destination img {
-	border: 1px solid #919191;
-}
-
-img.screenshot {
-    border: gray 1px dotted;
-}
-
 div.bottom-nav {
     padding: 10px;
     background-color: #DDDDDD;
