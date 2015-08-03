@@ -100,7 +100,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
 
     // Check for and send crash reports.
     // (Without the delay, the crash reporter window is in front but the rest of Shroud, such as its menubar window, isn't, and the formerly frontmost app's menubar doesn't even respond to clicks.)
-    // XXX [SFBCrashReporter performSelector:@selector(checkForNewCrashes) withObject:nil afterDelay:0.01];
+    [SFBCrashReporter performSelector:@selector(checkForNewCrashes) withObject:nil afterDelay:0.01];
 }
 
 #pragma mark workarounds
