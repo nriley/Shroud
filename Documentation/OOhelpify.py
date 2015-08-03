@@ -27,7 +27,7 @@
 #
 # $Header: svn+ssh://source.omnigroup.com/Source/svn/Omni/trunk/Staff/wvh/Helpify/OOhelpify.py 137210 2010-08-12 01:42:01Z wvh $
 
-import sys, os, shutil, re, commands, codecs
+import sys, os, shutil, re, commands, codecs, urllib
 from xml.dom.minidom import parseString
 
 reload(sys)
@@ -422,10 +422,11 @@ def evaluateLeaf(theElement):           # find out if an element is text or atta
             fileName = re.sub("\d*__\S*?__", "", fileName)
             extension = fileName.split('.')[-1].lower()
             if extension == 'png' or extension == 'jpg':
-                return '<img src="%s" class="inline-image" />' % (IMAGE_PATH + fileName)
+                url = urllib.quote(IMAGE_PATH + fileName, safe='/')
+                return '<img srcset="%s 2x" class="inline-image" />' % url
             else:
                 return '<a href="%(fileName)s">%(name)s</a>' % {
-                    'fileName': fileName,
+                    'fileName': urllib.quote(fileName, safe='/'),
                     'name': theElement.getAttribute('name')
                     }
 

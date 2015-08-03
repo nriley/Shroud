@@ -151,13 +151,11 @@
     <auto-generate-level-styles>no</auto-generate-level-styles>
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
-    <drawer display="find" width="236" palette-height="379">
-      <find-term name="exposé"/>
-    </drawer>
-    <hoisted-rows ids="b9708GcW34s"/>
-    <selected-rows ids="cqmjc6evT3p"/>
+    <drawer display="sections" width="236" palette-height="379"/>
+    <hoisted-rows ids="eZiWRg7oWft"/>
+    <selected-rows ids="bjrwqOkl54G"/>
     <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{25, 0}"/>
+    <selected-characters range="{1, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -433,7 +431,7 @@
                         <text>
                           <p>
                             <run>
-                              <lit><cell refid="att0" name="dock menu" expanded="yes" type="image" width="283" height="251"/></lit>
+                              <lit><cell refid="att0" name="dock menu" expanded="yes" type="image" width="324" height="213"/></lit>
                             </run>
                           </p>
                         </text>
@@ -826,7 +824,10 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Copyright (C) 2009, 2010 Stephen F. Booth &lt;me@sbooth.org&gt;</lit>
+                          <lit>Copyright (C) 2009, 2010 Stephen F. Booth </lit>
+                        </run>
+                        <run>
+                          <lit><cell href="mailto:me@sbooth.org" name="me@sbooth.org" type="link"/></lit>
                         </run>
                       </p>
                       <p>
@@ -834,9 +835,7 @@
                           <lit>All rights reserved.</lit>
                         </run>
                       </p>
-                      <p>
-                        <run/>
-                      </p>
+                      <p/>
                       <p>
                         <run>
                           <lit>Redistribution and use in source and binary forms, with or without</lit>
@@ -887,9 +886,7 @@
                           <lit>   derived from this software without specific prior written permission.</lit>
                         </run>
                       </p>
-                      <p>
-                        <run/>
-                      </p>
+                      <p/>
                       <p>
                         <run>
                           <lit>THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&apos;&apos; AND ANY EXPRESS OR</lit>
