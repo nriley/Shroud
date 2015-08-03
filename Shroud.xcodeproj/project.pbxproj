@@ -395,12 +395,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Shroud" */;
 			buildPhases = (
+				E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */,
+				E11DFE6211F248AE001DCDED /* Copy Frameworks */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
-				E11DFE6211F248AE001DCDED /* Copy Frameworks */,
 				E15375F41236010200714C5D /* Build Help Book */,
-				E16DA70F12C5A62F00AF9DD0 /* Remove Non-English Framework Resource Localizations */,
 			);
 			buildRules = (
 			);
@@ -604,7 +604,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/find \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\" -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true";
+			shellScript = "/usr/bin/find \"${TARGET_BUILD_DIR}/\"*.framework -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
