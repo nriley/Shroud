@@ -16,7 +16,10 @@ rm -rf "$SYMROOT" "$DSTROOT"
 # can't have INSTALL_PATH=/ for bundled frameworks because it'll override @executable_path etc.
 xcodebuild -target "$PRODUCT" -configuration Release DSTROOT="$DSTROOT" \
     SYMROOT="$SYMROOT" DEPLOYMENT_LOCATION=YES install
-# osascript -e 'tell app "Terminal" to do script "clear; cd \"'$DSTROOT'\"; find ."'
+
+# ensure code signature and Developer ID are valid
+codesign --verify --verbose=4 "$VOL"/*.app
+spctl -vv --assess "$VOL"/*.app
 
 # create disk image
 cd "$PACKAGEDIR"
