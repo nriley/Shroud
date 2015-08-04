@@ -152,10 +152,10 @@
   </settings>
   <editor content-size="{876, 738}" column-titles-display-mode="off" status-visible="no">
     <drawer display="sections" width="236" palette-height="379"/>
-    <hoisted-rows ids="eZiWRg7oWft"/>
-    <selected-rows ids="bjrwqOkl54G"/>
+    <hoisted-rows ids="akxjRLlvOv3"/>
+    <selected-rows ids="mF4pbj0OheA"/>
     <selected-columns ids="jFqHUGd_Dg1"/>
-    <selected-characters range="{1, 0}"/>
+    <selected-characters range="{1340, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -824,7 +824,7 @@
                     <text>
                       <p>
                         <run>
-                          <lit>Copyright (C) 2009, 2010 Stephen F. Booth </lit>
+                          <lit>Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015 Stephen F. Booth </lit>
                         </run>
                         <run>
                           <lit><cell href="mailto:me@sbooth.org" name="me@sbooth.org" type="link"/></lit>
@@ -832,7 +832,7 @@
                       </p>
                       <p>
                         <run>
-                          <lit>All rights reserved.</lit>
+                          <lit>All Rights Reserved.</lit>
                         </run>
                       </p>
                       <p/>
@@ -843,14 +843,15 @@
                       </p>
                       <p>
                         <run>
-                          <lit>modification, are permitted provided that the following conditions</lit>
+                          <lit>modification, are permitted provided that the following conditions are</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>are met:</lit>
+                          <lit>met:</lit>
                         </run>
                       </p>
+                      <p/>
                       <p>
                         <run>
                           <lit>1. Redistributions of source code must retain the above copyright</lit>
@@ -861,6 +862,7 @@
                           <lit>   notice, this list of conditions and the following disclaimer.</lit>
                         </run>
                       </p>
+                      <p/>
                       <p>
                         <run>
                           <lit>2. Redistributions in binary form must reproduce the above copyright</lit>
@@ -876,45 +878,40 @@
                           <lit>   documentation and/or other materials provided with the distribution.</lit>
                         </run>
                       </p>
-                      <p>
-                        <run>
-                          <lit>3. The name of the author may not be used to endorse or promote products</lit>
-                        </run>
-                      </p>
-                      <p>
-                        <run>
-                          <lit>   derived from this software without specific prior written permission.</lit>
-                        </run>
-                      </p>
                       <p/>
                       <p>
                         <run>
-                          <lit>THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&apos;&apos; AND ANY EXPRESS OR</lit>
+                          <lit>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES</lit>
+                          <lit>&quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.</lit>
+                          <lit>LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,</lit>
+                          <lit>A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT</lit>
+                          <lit>HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</lit>
+                          <lit>SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</lit>
+                        </run>
+                      </p>
+                      <p>
+                        <run>
+                          <lit>LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</lit>
                         </run>
                       </p>
                       <p>
@@ -929,12 +926,12 @@
                       </p>
                       <p>
                         <run>
-                          <lit>(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF</lit>
+                          <lit>(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</lit>
                         </run>
                       </p>
                       <p>
                         <run>
-                          <lit>THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</lit>
+                          <lit>OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</lit>
                         </run>
                       </p>
                     </text>
