@@ -144,9 +144,7 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="ljsaVXaSGRu"/>
-    <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{45, 0}"/>
+    <selected-rows ids="mqVnIgnYCad"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -670,7 +668,7 @@
                 </text>
               </values>
               <children>
-                <item id="burK4CCrETI" expanded="yes" state="checked">
+                <item id="burK4CCrETI" state="checked">
                   <style>
                     <value key="paragraph-tab-stop-interval">36</value>
                   </style>
@@ -2940,7 +2938,7 @@
             </text>
           </values>
         </item>
-        <item id="mqVnIgnYCad" expanded="yes">
+        <item id="mqVnIgnYCad" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -2954,7 +2952,7 @@
             </text>
           </values>
           <children>
-            <item id="nhh7dT6pWn6">
+            <item id="nhh7dT6pWn6" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -2968,7 +2966,7 @@
                 </text>
               </values>
             </item>
-            <item id="ljsaVXaSGRu">
+            <item id="ljsaVXaSGRu" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -2977,6 +2975,20 @@
                   <p>
                     <run>
                       <lit>Skip Install so it builds in the right place.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="kkW_IGPDxMT" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Update the acknowledgments</lit>
                     </run>
                   </p>
                 </text>
@@ -2997,6 +3009,15 @@
               </p>
             </text>
           </values>
+          <note>
+            <text>
+              <p>
+                <run>
+                  <lit><cell href="http://sparkle-project.org/documentation/" name="sparkle-project.org—documentation" type="link"/></lit>
+                </run>
+              </p>
+            </text>
+          </note>
         </item>
         <item id="ctnlzOc8Jh5">
           <style>
