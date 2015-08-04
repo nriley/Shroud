@@ -144,9 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="mXZh30e45ZT"/>
+    <selected-rows ids="d8LQyW0LY-W"/>
     <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{36, 0}"/>
+    <selected-characters range="{51, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2817,7 +2817,7 @@
         </item>
       </children>
     </item>
-    <item id="oQv4j5lInum" expanded="yes" state="indeterminate">
+    <item id="oQv4j5lInum" state="checked">
       <values>
         <text>
           <p>
@@ -3098,7 +3098,7 @@
             </item>
           </children>
         </item>
-        <item id="mXZh30e45ZT">
+        <item id="pYTnYExmegu" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -3106,13 +3106,13 @@
             <text>
               <p>
                 <run>
-                  <lit>Sparkle still has icon sizing issues</lit>
+                  <lit>SFBCrashReporter hangs when you decline a crash report</lit>
                 </run>
               </p>
             </text>
           </values>
         </item>
-        <item id="bh22Iz50nl5" expanded="yes">
+        <item id="bh22Iz50nl5" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -3126,7 +3126,7 @@
             </text>
           </values>
           <children>
-            <item id="ie7_L5pk5Tj">
+            <item id="ie7_L5pk5Tj" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3140,7 +3140,7 @@
                 </text>
               </values>
             </item>
-            <item id="dOTQlXytp-U">
+            <item id="dOTQlXytp-U" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3155,20 +3155,6 @@
               </values>
             </item>
           </children>
-        </item>
-        <item id="nsDF8c8I0LI">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Prevent App Nap on Mavericks and later (need to figure out how to reproduce this)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
         </item>
       </children>
     </item>
@@ -3191,7 +3177,21 @@
             <text>
               <p>
                 <run>
-                  <lit>Check if I can remove the workaround for 10.11</lit>
+                  <lit>Check if I can remove the workaround in 10.11 final</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="mXZh30e45ZT">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Sparkle still has icon sizing issues (submit an update upstream)</lit>
                 </run>
               </p>
             </text>
