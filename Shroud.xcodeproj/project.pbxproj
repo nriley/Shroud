@@ -162,11 +162,11 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		216B368E114C59EF002E2818 /* ShroudPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudPreferencesController.h; sourceTree = "<group>"; tabWidth = 8; };
-		216B368F114C59EF002E2818 /* ShroudPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudPreferencesController.m; sourceTree = "<group>"; tabWidth = 8; };
+		216B368E114C59EF002E2818 /* ShroudPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ShroudPreferencesController.h; sourceTree = "<group>"; tabWidth = 8; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		216B368F114C59EF002E2818 /* ShroudPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ShroudPreferencesController.m; sourceTree = "<group>"; tabWidth = 8; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		21AE5B03114C06C10096A903 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudAppDelegate.h; sourceTree = "<group>"; tabWidth = 8; };
-		256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudAppDelegate.m; sourceTree = "<group>"; tabWidth = 8; };
+		256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ShroudAppDelegate.h; sourceTree = "<group>"; tabWidth = 8; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ShroudAppDelegate.m; sourceTree = "<group>"; tabWidth = 8; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		256AC3F00F4B6AF500CF3369 /* Shroud_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shroud_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -194,7 +194,7 @@
 		E1A3D1E31786846F00957D63 /* ShroudDockTilePlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudDockTilePlugIn.h; sourceTree = "<group>"; };
 		E1A3D1E41786846F00957D63 /* ShroudDockTilePlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudDockTilePlugIn.m; sourceTree = "<group>"; };
 		E1A3D1F31787865300957D63 /* ShroudBackdropColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudBackdropColor.h; sourceTree = "<group>"; };
-		E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudBackdropColor.m; sourceTree = "<group>"; };
+		E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ShroudBackdropColor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E1BD4004112E6D4800DE639A /* ShroudNonactivatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShroudNonactivatingView.h; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD4005112E6D4800DE639A /* ShroudNonactivatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudNonactivatingView.m; sourceTree = "<group>"; tabWidth = 8; };
 		E1BD40D3112E76C200DE639A /* Shroud.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Shroud.icns; sourceTree = "<group>"; };
@@ -749,7 +749,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Nicholas Riley (CYEL96ZVC2)";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -776,7 +776,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Nicholas Riley (CYEL96ZVC2)";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
