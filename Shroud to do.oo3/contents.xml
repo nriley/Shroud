@@ -144,7 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="mqVnIgnYCad"/>
+    <selected-rows ids="mXZh30e45ZT"/>
+    <selected-columns ids="ad996af83d1b866b01c90211"/>
+    <selected-characters range="{36, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2996,7 +2998,21 @@
             </item>
           </children>
         </item>
-        <item id="oHRdIcfnhCw">
+        <item id="pk3zvuaelGp" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Code signing works, but Gatekeeper verification is still failing (spctl vs codesign)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="oHRdIcfnhCw" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -3019,7 +3035,40 @@
             </text>
           </note>
         </item>
-        <item id="ctnlzOc8Jh5">
+        <item id="o8mWO5ZP3gj" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Can I use NSKeyValueObservingOptionInitial? See </lit>
+                </run>
+                <run>
+                  <lit><cell href="http://ddeville.me/2013/10/key-value-observing-for-the-mainstream/" name="ddeville.me—key-value-observing-for-the-mainstream" type="link"/></lit>
+                </run>
+              </p>
+            </text>
+          </values>
+          <children>
+            <item id="iYVca-wy4F1" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Huh, I already do it in ShroudMenuBarVisibilityController.  Go fig.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+          </children>
+        </item>
+        <item id="ctnlzOc8Jh5" state="checked">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -3032,6 +3081,80 @@
               </p>
             </text>
           </values>
+          <children>
+            <item id="e0LMCcmJcRt" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Nope — it&apos;s fine.  The methods get triggered several times, but they do *work*.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+          </children>
+        </item>
+        <item id="mXZh30e45ZT">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Sparkle still has icon sizing issues</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="bh22Iz50nl5" expanded="yes">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Check that Sparkle works</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+          <children>
+            <item id="ie7_L5pk5Tj">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Update from 1.2.1b1 beta to 1.2.1</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="dOTQlXytp-U">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Update from 1.2 to 1.2.1</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+          </children>
         </item>
         <item id="nsDF8c8I0LI">
           <style>
@@ -3042,23 +3165,6 @@
               <p>
                 <run>
                   <lit>Prevent App Nap on Mavericks and later (need to figure out how to reproduce this)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="o8mWO5ZP3gj">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Can I use NSKeyValueObservingOptionInitial? See </lit>
-                </run>
-                <run>
-                  <lit><cell href="http://ddeville.me/2013/10/key-value-observing-for-the-mainstream/" name="ddeville.me—key-value-observing-for-the-mainstream" type="link"/></lit>
                 </run>
               </p>
             </text>
@@ -3077,7 +3183,7 @@
         </text>
       </values>
       <children>
-        <item id="aJCxtiaJ_OP">
+        <item id="d8LQyW0LY-W">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
           </style>
@@ -3085,7 +3191,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Figure out what&apos;s going on with the new Spaces</lit>
+                  <lit>Check if I can remove the workaround for 10.11</lit>
                 </run>
               </p>
             </text>
