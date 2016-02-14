@@ -2,77 +2,77 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>Shroud</title>
-    <link>http://sabi.net/nriley/software/#shroud</link>
+    <link>https://sabi.net/nriley/software/#shroud</link>
     <description>Appcast for Shroud updates.</description>
     <language>en</language>
     <pubDate>Tue, 04 Aug 2015 13:51:13 -0400</pubDate>
     <lastBuildDate>Tue, 04 Aug 2015 13:51:13 -0400</lastBuildDate>
     
-    <atom:link href="http://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://sabi.net/nriley/software/Shroud/updates.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Shroud 1.2.1</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Tue, 04 Aug 2015 13:51:13 -0400</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.2.1.dmg" length="492871" type="application/x-apple-diskimage" sparkle:version="18" sparkle:shortVersionString="1.2.1" sparkle:dsaSignature="MCwCFBJb00F5qLtsZAhiH2Fm+YNg3NM9AhR3jDfJrC7GsxMNdzNkQtueTj2Rcg=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.2.1.dmg" length="492871" type="application/x-apple-diskimage" sparkle:version="18" sparkle:shortVersionString="1.2.1" sparkle:dsaSignature="MCwCFBJb00F5qLtsZAhiH2Fm+YNg3NM9AhR3jDfJrC7GsxMNdzNkQtueTj2Rcg=="/>
       <guid isPermaLink="false">shroud-12.1</guid>
       <sparkle:minimumSystemVersion>10.8</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.2</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Sun, 25 Aug 2013 01:21:51 -0500</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.2.dmg" length="477901" type="application/x-apple-diskimage" sparkle:version="15" sparkle:shortVersionString="1.2" sparkle:dsaSignature="MCwCFEUCyLssuWgwJIRHspKAaAzOpEwPAhQ2VzkXlCaVdchvv8MV3IFVzifBiA=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.2.dmg" length="477901" type="application/x-apple-diskimage" sparkle:version="15" sparkle:shortVersionString="1.2" sparkle:dsaSignature="MCwCFEUCyLssuWgwJIRHspKAaAzOpEwPAhQ2VzkXlCaVdchvv8MV3IFVzifBiA=="/>
       <guid isPermaLink="false">shroud-12</guid>
       <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.1.2</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Mon, 13 Jun 2011 20:50:42 -0500</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.1.2.dmg" length="704653" type="application/x-apple-diskimage" sparkle:version="12" sparkle:shortVersionString="1.1.2" sparkle:dsaSignature="MCwCFGWrFFtv9PkV7Y7Ee7fR4KThpVNVAhRNxuvHnAFaGXD5bxoIX6F9w1RUMQ=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.1.2.dmg" length="704653" type="application/x-apple-diskimage" sparkle:version="12" sparkle:shortVersionString="1.1.2" sparkle:dsaSignature="MCwCFGWrFFtv9PkV7Y7Ee7fR4KThpVNVAhRNxuvHnAFaGXD5bxoIX6F9w1RUMQ=="/>
       <guid isPermaLink="false">shroud-11.2</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.1.1</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Thu, 26 May 2011 20:39:26 -0500</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.1.1.dmg" length="700857" type="application/x-apple-diskimage" sparkle:version="11" sparkle:shortVersionString="1.1.1" sparkle:dsaSignature="MCwCFBn4c4C5eRRxy7tJL4Ej14DYa/ycAhQ/ut4WLLJzt8QkkNJM8v8Uui4D0w=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.1.1.dmg" length="700857" type="application/x-apple-diskimage" sparkle:version="11" sparkle:shortVersionString="1.1.1" sparkle:dsaSignature="MCwCFBn4c4C5eRRxy7tJL4Ej14DYa/ycAhQ/ut4WLLJzt8QkkNJM8v8Uui4D0w=="/>
       <guid isPermaLink="false">shroud-11.1</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.1</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Tue, 15 Mar 2011 22:14:46 -0500</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.1.dmg" length="699695" type="application/x-apple-diskimage" sparkle:version="10" sparkle:shortVersionString="1.1" sparkle:dsaSignature="MCwCFEA54HujpLfaTa4tw40rpcCZ2eBtAhRX4ug+PNgzI2lYPP2OniXQJQulkw=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.1.dmg" length="699695" type="application/x-apple-diskimage" sparkle:version="10" sparkle:shortVersionString="1.1" sparkle:dsaSignature="MCwCFEA54HujpLfaTa4tw40rpcCZ2eBtAhRX4ug+PNgzI2lYPP2OniXQJQulkw=="/>
       <guid isPermaLink="false">shroud-11</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.0.1</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Thu, 30 Dec 2010 11:14:20 -0600</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.0.1.dmg" length="690178" type="application/x-apple-diskimage" sparkle:version="9" sparkle:shortVersionString="1.0.1" sparkle:dsaSignature="MCwCFE0JkitdxA3GGz88GqylDCm936QmAhQ9I8jmyEWweYL1sxjHMTs2C0IUaw=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.0.1.dmg" length="690178" type="application/x-apple-diskimage" sparkle:version="9" sparkle:shortVersionString="1.0.1" sparkle:dsaSignature="MCwCFE0JkitdxA3GGz88GqylDCm936QmAhQ9I8jmyEWweYL1sxjHMTs2C0IUaw=="/>
       <guid isPermaLink="false">shroud-10.1</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
     <item>
       <title>Shroud 1.0</title>
-      <link>http://sabi.net/nriley/software/#shroud</link>
+      <link>https://sabi.net/nriley/software/#shroud</link>
       <author>shroud@sabi.net (Nicholas Riley)</author>
       <pubDate>Sat, 25 Dec 2010 22:06:01 -0600</pubDate>
-      <enclosure url="http://sabi.net/nriley/software/Shroud-1.0.dmg" length="625010" type="application/x-apple-diskimage" sparkle:version="8" sparkle:shortVersionString="1.0" sparkle:dsaSignature="MCwCFF1nCMembhvvZV/VX3OzdNtER0CkAhRmnvgVsnIdynVbPZhpBhJ23gTz5g=="/>
+      <enclosure url="https://sabi.net/nriley/software/Shroud-1.0.dmg" length="625010" type="application/x-apple-diskimage" sparkle:version="8" sparkle:shortVersionString="1.0" sparkle:dsaSignature="MCwCFF1nCMembhvvZV/VX3OzdNtER0CkAhRmnvgVsnIdynVbPZhpBhJ23gTz5g=="/>
       <guid isPermaLink="false">shroud-10</guid>
-      <sparkle:releaseNotesLink>http://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://sabi.net/nriley/software/Shroud/release-notes.html</sparkle:releaseNotesLink>
     </item>
   </channel>
 </rss>
