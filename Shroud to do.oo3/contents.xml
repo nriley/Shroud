@@ -144,9 +144,7 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="ghwdzUq9G_H"/>
-    <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{56, 0}"/>
+    <selected-rows ids="fOHpUiRHvsy"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3158,6 +3156,93 @@
         </item>
       </children>
     </item>
+    <item id="iKdrRTav9_p" expanded="yes" state="indeterminate">
+      <values>
+        <text>
+          <p>
+            <run>
+              <lit>1.2.2</lit>
+            </run>
+          </p>
+        </text>
+      </values>
+      <children>
+        <item id="beUmDlVfMCw" state="checked">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Sparkle vulnerabilty</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="fOHpUiRHvsy" state="checked">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Port About font changing code from Pester</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="pt8gRBoQO5H">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Test SFBCrashReporter with SSL too</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="d8LQyW0LY-W" expanded="yes">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Check if I can remove the workaround for </lit>
+                </run>
+                <run>
+                  <style>
+                    <value key="font-family">Menlo</value>
+                    <value key="font-fill">
+                      <color r="0" g="0" b="1"/>
+                    </value>
+                    <value key="font-fixed-pitch">yes</value>
+                    <value key="ligature-selection">none</value>
+                  </style>
+                  <lit><cell href="http://www.openradar.me/22064080" name="http://www.openradar.me/22064080" type="link"/></lit>
+                </run>
+              </p>
+            </text>
+          </values>
+          <children>
+            <item id="lxmS5Lb0590">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Otherwise, try double-checking as focusing window still doesn&apos;t work always</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+          </children>
+        </item>
+      </children>
+    </item>
     <item id="pfHKZocPlk4" expanded="yes">
       <values>
         <text>
@@ -3184,20 +3269,6 @@
                 </run>
                 <run>
                   <lit>)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="d8LQyW0LY-W">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Check if I can remove the workaround in 10.11 final</lit>
                 </run>
               </p>
             </text>
