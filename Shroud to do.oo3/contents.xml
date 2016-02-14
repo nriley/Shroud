@@ -144,7 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="fOHpUiRHvsy"/>
+    <selected-rows ids="lxmS5Lb0590"/>
+    <selected-columns ids="ad996af83d1b866b01c90211"/>
+    <selected-characters range="{65, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3282,7 +3284,7 @@
             <text>
               <p>
                 <run>
-                  <lit>Sparkle still has icon sizing issues (submit an update upstream)</lit>
+                  <lit>Sparkle still doesn&apos;t scale the Shroud icon in the Software Update window (submit an update upstream)</lit>
                 </run>
               </p>
             </text>
