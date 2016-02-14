@@ -335,13 +335,27 @@ static ProcessSerialNumber frontProcess;
     NSBitmapImageRep *imageRep = [dockTileView bitmapImageRepForCachingDisplayInRect:bounds];
     [dockTileView cacheDisplayInRect:bounds toBitmapImageRep:imageRep];
     NSImage *image = [[NSImage alloc] init];
-    [image addRepresentation: imageRep];
+    [image addRepresentation:imageRep];
 
-    // XXX work around bug in OS X 10.7 / 10.8 where the Credits text is not centered (r. 14829080)
+    // XXX work around bug in OS X 10.7-10.11 where the Credits text is not centered (r. 14829080)
     NSSet *windowsBefore = [NSSet setWithArray:[NSApp windows]];
 
-    [NSApp orderFrontStandardAboutPanelWithOptions:
-     [NSDictionary dictionaryWithObject:image forKey:@"ApplicationIcon"]];
+    // change credits font to current system font
+    NSData *creditsData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"html"]];
+    NSMutableAttributedString *credits = [[NSMutableAttributedString alloc] initWithHTML:creditsData documentAttributes:nil];
+    NSString *systemFontFamily = [[NSFont systemFontOfSize:[NSFont labelFontSize]].fontDescriptor objectForKey:NSFontFamilyAttribute];
+
+    NSFontManager *fontManager = [NSFontManager sharedFontManager];
+    NSRange effectiveRange = {0, 0};
+    NSUInteger length = credits.length;
+    while (NSMaxRange(effectiveRange) < length) {
+        NSFont *font = [credits attribute:NSFontAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
+        font = [fontManager convertFont:font toFamily:systemFontFamily];
+        [credits addAttribute:NSFontAttributeName value:font range:effectiveRange];
+    }
+
+    [NSApp orderFrontStandardAboutPanelWithOptions:@{@"Credits": credits, @"ApplicationIcon": image}];
+    [credits release];
     [image release];
 
     for (NSWindow *window in [NSApp windows]) {
