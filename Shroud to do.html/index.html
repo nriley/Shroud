@@ -1,0 +1,1588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title></title>
+<script type="text/javascript" src="outliner.js"></script><style type="text/css">
+			
+			
+			th {
+			vertical-align: bottom;
+			
+			}
+			
+			td {
+			vertical-align: top;
+			}
+			
+			td,th {
+			
+			empty-cells: show;
+			}
+			
+			.top-right-border {
+			
+			}
+			
+			.no-border {
+			border-bottom: 0px;
+			border-left: 0px;
+			}
+			
+			
+			
+			
+			table {
+			
+			font-family: Helvetica, sans-serif;
+			font-size: 12px;
+			font-family: "Lucida Grande", sans-serif;  font-size: 11px;			
+			
+			}
+
+			
+			
+			.wholeDocument {
+			font-family: "Lucida Grande", sans-serif;  font-size: 11px;
+	
+			}
+		
+			
+			td.subcell {
+			border: none;
+			}
+			
+			td.content {
+			padding-left: 4px;
+			padding-bottom: 2px;
+			padding-top: 1px;
+			padding-right: 3px;
+			}
+			
+			.full {
+			height: 100%;
+			}
+			
+			.heighthack {
+			height: 8px;
+			}
+			
+			div.titlepadding { 
+			padding-right:3px;
+			padding-left:6px;
+			padding-bottom:3px;
+			padding-top: 2px;
+			}
+			
+			
+					.summary_node {
+						background: rgba(0,0,0,.12);
+						margin-bottom: 1px;
+					}
+				
+			
+			div.column {   
+			padding-right: 3px;
+			padding-left: 4px;
+			padding-top: 1px;
+			padding-bottom: 2px;
+			margin-right: 1px;
+			}
+			
+			.labelpadding {
+			padding-right: 3px;
+			padding-top: 1px;
+			padding-left: 2px;
+			}
+			
+			.indicator {
+			white-space: nowrap;
+			text-align:right;
+			margin-right: 0px;
+			vertical-align: top;
+			padding-top: 1px;
+			padding-left: 0px;
+			}
+			
+			.wholedocgutter {
+			
+			}
+			
+			div.row {
+			}
+			
+			div.headerRow {
+			}
+			
+			.expanded {
+			display: inline;
+			}
+			.collapsed {
+			display: none;
+			}
+			
+            div.palette-hit-zone {
+                position: fixed;
+                bottom: 0px;
+				height: 33%;
+                left:50%;
+                width: 66%;
+                margin-left: -33%;
+            }
+
+			div.floating-palette {
+                -webkit-border-radius: 5px;
+                -webkit-transition: opacity is fade-in-out;
+                -webkit-transition-duration: 1s;
+				background-color: rgb(64, 64, 64);
+                opacity:0.7;
+				width: 88px;
+				height: 44px;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                margin-left: -44px;
+			}
+            
+            div.palette-cell {
+                opacity:1;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                position: absolute;
+                height: 32px;
+                width: 32px;
+            }
+            
+            div.cell-divider {
+                position: absolute;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                margin-left: 44px;
+                height: 32px;
+                width:0px;
+                position:absolute;
+                left:0px;
+                border-right:rgb(207, 207, 207) 2px solid;
+            }
+
+			
+			
+			
+			.note { 
+			padding-left: 5px;
+			padding-right: 3px; 
+			border: none; 
+			
+			}
+			
+			/* Total table width is 538
+			Adjusted table width is 570 */
+			
+			.wholething {
+				width: auto;
+			}
+			
+			
+			table.row {
+				
+						width: 538px;
+						
+			
+			}
+			
+			
+    .col_width1 { 
+        width: 538px;  /* Actual width is 538 */
+    }
+
+    .col1 { 
+        
+    }
+
+    .colbackground1 { 
+        
+    }
+
+			
+			/* Level Styles */
+			
+			
+    .columntitle { 
+        
+    }
+
+    .level1 { 
+        font-weight: 900;  
+    }
+
+    .levelcolor1 { 
+        
+    }
+
+    .levelguttercolor1 { 
+        
+    }
+
+    .ns-Priority { 
+        }
+
+    .ns-Question { 
+        }
+
+    .ns-In-Progress { 
+        color:rgb(255,254,254) ;  }
+
+    .ns-Code { 
+        font-family: "Consolas", sans-serif;  font-size: 11px;}
+
+    .ns-FIXME { 
+        color:rgb(127,0,2) ;  }
+
+    .ns-Done { 
+        color:rgb(127,127,127) ;  font-family: "Calibri", sans-serif;  text-decoration:  line-through;font-size: 13px;}
+
+    .ns-Separator { 
+        color:rgb(254,254,254) ;  font-weight: 900;  }
+
+    .ns-bg-Priority { 
+        background-color:rgb(255,255,102) ;  }
+
+    .ns-bg-Question { 
+        background-color:rgb(241,78,75) ;  }
+
+    .ns-bg-In-Progress { 
+        background-color:rgb(140,128,114) ;  }
+
+    .ns-bg-Code { 
+        }
+
+    .ns-bg-FIXME { 
+        }
+
+    .ns-bg-Done { 
+        }
+
+    .ns-bg-Separator { 
+        background-color:rgb(165,165,165) ;  }
+
+    .ns-gutter-Priority { 
+        }
+
+    .ns-gutter-Question { 
+        }
+
+    .ns-gutter-In-Progress { 
+        }
+
+    .ns-gutter-Code { 
+        }
+
+    .ns-gutter-FIXME { 
+        }
+
+    .ns-gutter-Done { 
+        }
+
+    .ns-gutter-Separator { 
+        }
+</style>
+</head>
+<body class="wholeDocument"><table cellspacing="0" cellpadding="0" class="top-right-border"><tr><td class="wholething no-border">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('piGe63eATLCr', event.shiftKey)" id="iiGe63eATLCr" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level1 subcell">Released<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="piGe63eATLCr" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pefp7bNtOcwL', event.shiftKey)" id="iefp7bNtOcwL" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.0b1<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pefp7bNtOcwL" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Hot key to place behind frontmost app (or window)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Better default location for prefs dialog (Pester?)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Change the dock icon to match<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Items in dock menu<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Background color—just copy what I do in AntiRSI<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Menu bar<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Reset option<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Investigate ShortcutRecorder state of the art<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Don't allow 2 shortcuts to be the same<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('poFWZuAV6xzL', event.shiftKey)" id="ioFWZuAV6xzL" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.0b2<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="poFWZuAV6xzL" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Option-clicking doesn't work at startup.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Mailto script isn't working (targeting broke things, oddly)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Merge  <span><a href="http://github.com/darwin/shortcutrecorder/commit/1aabc13edcaa515e41b8a667c5830fbdbbb5f781">github.com—1aabc13edcaa515e41b8a667c5830fbdbbb5f781</a></span><br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Open Focus Help to introduction page on first startup.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pbx8QwjxChPp', event.shiftKey)" id="ibx8QwjxChPp" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.0 final<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pbx8QwjxChPp" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pjFVAdpTHclp', event.shiftKey)" id="ijFVAdpTHclp" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Sparkle may have some activation issues.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pjFVAdpTHclp" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Yup, same as SFBCrashReporter - easy to fix by activating the frontmost window.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pmA_hAhVzlNq', event.shiftKey)" id="imA_hAhVzlNq" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Updater window uses the wrong sized Shroud icon; fix<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pmA_hAhVzlNq" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Just need to change the image well scaling to up/down<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">What about localizations? Removed them.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pcmegGnpyqvY', event.shiftKey)" id="icmegGnpyqvY" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">SFBCrashReporter.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pcmegGnpyqvY" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Pop up window on top of everything else<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">(Shift-)Tab in text view should tab to next field (see what I did with GitX)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Text view switches to Helvetica when all text is deleted<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Default button doesn't make any sense in text view<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Check in changes<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Attribution<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">After dismissing dialog, Shroud activation breaks<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Migrate prefs from Focus to Shroud<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Fix checking for updates automatically.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pas2LkKkvdpN', event.shiftKey)" id="ias2LkKkvdpN" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.0.1<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pas2LkKkvdpN" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pgXznAAqfd5F', event.shiftKey)" id="igXznAAqfd5F" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Help is missing<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pgXznAAqfd5F" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img onmousedown="ioSwitch('pburK4CCrETI', event.shiftKey)" id="iburK4CCrETI" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Places to put it...<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pburK4CCrETI" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">INSTALL_DIR - no, it's /Users/nicholas/Applications<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">DSTROOT - no, it's /tmp/Shroud.dst in build<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">INSTALL_PATH, INSTALL_ROOT - no, same as above<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">TARGET_BUILD_DIR - looks good, but don't we use this already?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pkaxpooFBUnF', event.shiftKey)" id="ikaxpooFBUnF" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.1<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pkaxpooFBUnF" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">“Peek at menu bar” modifier keys<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('peuQD_qvhydh', event.shiftKey)" id="ieuQD_qvhydh" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.1.1<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="peuQD_qvhydh" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pdsx7tf8B-45', event.shiftKey)" id="idsx7tf8B-45" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Menu bar flashes when I show/hide the Dock.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pdsx7tf8B-45" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack">
+<tr><td class=" col1 colbackground1 col_width1" style="border-bottom: none;"><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">This appears to be triggering a windowserver bug; it's moving our window.<br>
+</td>
+</tr></table></div></td></tr>
+<tr><td class=" level4 colbackground1"><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="width:100%"><tr>
+<td style="width: 57px;" class=" subcell wholedocgutter levelguttercolor4"></td>
+<td class=" subcell wholedocgutter levelguttercolor4" style="width: 28px;"></td>
+<td class=" subcell" style="width: 16px;"></td>
+<td class="note subcell">
+<span class="" style='font-family: "Screen", sans-serif;  font-weight: 600;  font-size: 9px;'>2010-03-05 22:27:09.852 Focus[64687:a0b] {{0, 878}, {1440, 22}} {{0, 46}, {1440, 22}}</span><br>
+</td>
+</tr></table></div></td></tr>
+</table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">File a bug about this. (Happens on 10.5 too.)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Can we subclass NSWindow and prevent the move?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pbh2UczY-AkY', event.shiftKey)" id="ibh2UczY-AkY" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.1.2<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pbh2UczY-AkY" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pmhTm_6pTqXy', event.shiftKey)" id="imhTm_6pTqXy" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Sometimes the menu bar ends up on a different Space from the backdrop. Possible to fix this?<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pmhTm_6pTqXy" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img onmousedown="ioSwitch('plTKkVI9u5Ll', event.shiftKey)" id="ilTKkVI9u5Ll" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">We don't do setCollectionBehavior for the menu bar panel; this might be it. (No.)<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="plTKkVI9u5Ll" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">I've now done this (5/13/11). If it doesn't happen for a month, consider it fixed.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">6/10/11: Not fixed. The windows are clearly on different workspaces (menu bar on workspace 2, desktop covering on workspace 1, where Shroud is pinned).<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img onmousedown="ioSwitch('pfLixcadv4PL', event.shiftKey)" id="ifLixcadv4PL" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Wonder how to reproduce this.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pfLixcadv4PL" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">Perhaps going into fullscreen mode in Chrome triggers it? Fullscreen could break the workspace model.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">Yup! Going into and out of fullscreen mode in Chrome triggers the problem.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Still need to fix it for the case when we cmd-Tab of fullscreen mode. Hrm, maybe not?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pkSc97zs7hcb', event.shiftKey)" id="ikSc97zs7hcb" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">It should never be possible to send the preferences/about panels behind the backdrop.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pkSc97zs7hcb" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Badness when grabbing the preferences window and trying to move it between Spaces.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Also: choosing About Shroud from another space.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Finally: the crash panel popping up on startup!<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('phI3DoLMUwwH', event.shiftKey)" id="ihI3DoLMUwwH" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">1.2<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="phI3DoLMUwwH" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">“Hide Shroud” keyboard shortcut<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">10.6+, build with Xcode 4, etc.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pi2af9AfFD7s', event.shiftKey)" id="ii2af9AfFD7s" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Fix the race.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pi2af9AfFD7s" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">The crash reports don't suggest it is a race. <br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Attempting to work around the actual problem, though it may just mean we crash a bit later.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Figure out what's going on with 10.8 window focus.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pgbpgAJCeAFZ', event.shiftKey)" id="igbpgAJCeAFZ" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">We can use NSWindow orderWindow:relativeTo: to eliminate the flash when focusing on the frontmost window.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pgbpgAJCeAFZ" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Also, we can avoid reacting if the frontmost window isn't on the same screen.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Update Sparkle if necessary.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pizvZb89jUIP', event.shiftKey)" id="iizvZb89jUIP" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Update SFBCrashReporter?<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pizvZb89jUIP" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">If not, at least commit our changes<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">We've got some stuff to fix the build architectures<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Current upstream doesn't support 10.6<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('phtDO6woGndT', event.shiftKey)" id="ihtDO6woGndT" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">crashpool.com is dead, sadly; switch to something else<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="phtDO6woGndT" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Address book privacy stuff.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Focusing after hidden causes problems.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Hide should actually be hide/show toggle which saves the relative position (window in front / back).  This is the same as will be needed for multiple displays, anyway.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pb2zcmhxq6dH', event.shiftKey)" id="ib2zcmhxq6dH" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Focus on app is not working if you've used Mission Control, or just a click, to bring forward a window.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pb2zcmhxq6dH" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Duh, you need to make the app frontmost first.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">This seems like it's not working on 10.6?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Respond to  <span><a href="https://github.com/nriley/Shroud/issues/2">github.com—2</a></span><br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Make sure framework headers don't get packaged.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">ShortcutRecorder: <span class="" style='font-family: "Menlo", sans-serif;  font-weight: 900;  '>2013-07-04 16:15:18.406 Shroud[54886:303] *** WARNING: -[NSImage dissolveToPoint:fromRect:fraction:] is deprecated in MacOSX 10.8 and later. Please use -[NSImage drawAtPoint:fromRect:operation:fraction:] instead.</span><br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('ppr-92ilAdoY', event.shiftKey)" id="ipr-92ilAdoY" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Test on 10.6<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="ppr-92ilAdoY" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Hide then preferences is still broken.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">…and now it's fixed on 10.6, *not* on 10.8!? Yup.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('ppct-BIso-f3', event.shiftKey)" id="ipct-BIso-f3" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">First launch problems<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="ppct-BIso-f3" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Help anchor isn't<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img onmousedown="ioSwitch('pmiDWkWAuzz7', event.shiftKey)" id="imiDWkWAuzz7" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">The menubar starts out obscured, and I have no idea why.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pmiDWkWAuzz7" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">The checkbox is correct on 10.8, wrong on 10.6.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor5"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level5 levelguttercolor5" style="width: 73px;"></td>
+<td class=" subcell wholedocgutter indicator level5 levelguttercolor5" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level5 subcell">This is all because of Focus vs. Shroud preferences. Either way of setting the default menubar visibility seems to be just fine.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Get rid of the dock tile plugin.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pbhcpuhbmQJ6', event.shiftKey)" id="ibhcpuhbmQJ6" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Having some visibility issues with the menubar covering window now — it's hiding and failing to show in some cases, but of course this is hard to identify<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pbhcpuhbmQJ6" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Able to reproduce with the *old* 10.6-style fullscreen, in Emacs hide then C-x 5 9 then C-x 5 9 then show — menu bar would stay gone.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Got rid of the delays.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">Now all fixed except for menubar being covered after exiting *new* fullscreen mode — this waits for the mouseenter event to be delivered, which is the only choice because it's actually a Space, so the window isn't even onscreen. We can probably ignore this as it's a very small cosmetic issue which doesn't look <span class="" style="font-weight: 900;  ">bad</span> and probably only I notice.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Remove debugging<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Sign (thanks, Apple!)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Test on 10.7 (have it on the SR SD card)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img onmousedown="ioSwitch('pj-kRMzIckgH', event.shiftKey)" id="ij-kRMzIckgH" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Save the .dSYM when building this time so we can actually decode the crash reports.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pj-kRMzIckgH" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor4"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level4 levelguttercolor4" style="width: 57px;"></td>
+<td class=" subcell wholedocgutter indicator level4 levelguttercolor4" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level4 subcell">It ends up in the build/Release/ directory.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Release<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('poQv4j5lInum', event.shiftKey)" id="ioQv4j5lInum" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level1 subcell">1.2.1<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="poQv4j5lInum" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Fix help book<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">At least on 10.10, toggling Shroud no longer works properly<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Fix failure to set dock icon color on startup<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Update to actually-current Sparkle (yes, including ARC)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Update .gitignore to match Pester<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Make sure code signing works<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Fix xcodebuild failure<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Fix localizations failing to strip on install<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pmqVnIgnYCad', event.shiftKey)" id="imqVnIgnYCad" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Update SFBCrashReporter (figure out what changes I made in it first)<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pmqVnIgnYCad" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Need to put the UI back the way I had it.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Skip Install so it builds in the right place.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Update the acknowledgments<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Code signing works, but Gatekeeper verification is still failing (spctl vs codesign)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Check that I'm using the correct binding for Sparkle, like in Pester<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('po8mWO5ZP3gj', event.shiftKey)" id="io8mWO5ZP3gj" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Can I use NSKeyValueObservingOptionInitial? See  <span><a href="http://ddeville.me/2013/10/key-value-observing-for-the-mainstream/">ddeville.me—key-value-observing-for-the-mainstream</a></span><br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="po8mWO5ZP3gj" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Huh, I already do it in ShroudMenuBarVisibilityController.  Go fig.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pctnlzOc8Jh5', event.shiftKey)" id="ictnlzOc8Jh5" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Reassigning to the prior keyboard shortcut is broken — looks like Shroud never actually *removes* the keyboard shortcut so you can't re-type it.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pctnlzOc8Jh5" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Nope — it's fine.  The methods get triggered several times, but they do *work*.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">SFBCrashReporter hangs when you decline a crash report<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pbh22Iz50nl5', event.shiftKey)" id="ibh22Iz50nl5" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Check that Sparkle works<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pbh22Iz50nl5" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Update from 1.2.1b1 beta to 1.2.1<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Update from 1.2 to 1.2.1<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('ppfHKZocPlk4', event.shiftKey)" id="ipfHKZocPlk4" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="V" src="Expanded.png" title="collapse"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">1.3<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="ppfHKZocPlk4" class="expanded">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Consider replacing ShortcutRecorder with MASShortcut ( <span><a href="https://github.com/shpakovski/MASShortcut">github.com—MASShortcut</a></span>)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Check if I can remove the workaround in 10.11 final<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Sparkle still has icon sizing issues (submit an update upstream)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Drawing in the dock *does* generate a different color from drawing on the background in 10.8; only noticeable with different-from-default color. But dragging from the dock appears fine, so probably not anything we can fix.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">File a bug: position window, hide app, click on window, app comes to the front. (Can't reproduce any more?)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Multiple displays from Wolf (all or none)<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Multiple menu bars on Mavericks, too, and perhaps limit focus to one space at a time (perhaps automatically, if Mavericks behavior is enabled?)<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pfETBHX_vFJn', event.shiftKey)" id="ifETBHX_vFJn" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="V" src="Expanded.png" title="collapse"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="-" src="Mixed.png">
+</td>
+<td class=" content level1 subcell">Later<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pfETBHX_vFJn" class="expanded">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pjFYAyBNlShw', event.shiftKey)" id="ijFYAyBNlShw" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">The menubar covering window can sometimes be lost entirely.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pjFYAyBNlShw" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Maybe happens when moving the menubar from one display to another?<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Memory usage doesn't shrink when window does? Check Quartz Debug on shirley.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Preferences window doesn't get removed when we close it; should dealloc the controller?<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Select displays?<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('ppMNsmNivRrZ', event.shiftKey)" id="ipMNsmNivRrZ" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level2 subcell">Maybe don't hide on startup? That'll at least cause the Dock icon to be correct.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="ppMNsmNivRrZ" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt="X" src="Checked.png">
+</td>
+<td class=" content level3 subcell">Think this is fixed in 10.7+<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('plCuJSGB1sim', event.shiftKey)" id="ilCuJSGB1sim" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Spaces interaction is really crappy if you want Focus on more than one Space.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="plCuJSGB1sim" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Can we get this info with public CG functions in 10.5? Or just Cocoa in 10.6? Or only SPI?<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Switch to current workspace if we're displaying on it - maybe earlier, so we can get the front process on *that* workspace?<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Warn if Focus launches on another space (put this in our icon?)—10.6 only?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('plt5a57Mox3i', event.shiftKey)" id="ilt5a57Mox3i" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Should be able to drag to menu bar.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="plt5a57Mox3i" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">More importantly, should be able to Command-drag to rearrange SystemUIServer bits.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Menu bar toggle keyboard shortcut? We’ve got Shroud toggle, probably enough.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pmHXd89cMH3W', event.shiftKey)" id="imHXd89cMH3W" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Switching from one menu extra to another: we lose the menubar. Figure out why.<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pmHXd89cMH3W" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">This doesn't happen with menus on in the main part of the menu bar.<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Only seems to happen with mouse-held menu activation, too.<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('phWtkICK1CBf', event.shiftKey)" id="ihWtkICK1CBf" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Accessibility/Shortcut menu activation—is this a lost cause or can we distinguish between menubar accesses and popup menus?<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="phWtkICK1CBf" class="collapsed"><table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell">Not via the notification we can't; all it tells you is the PID of the process.<br>
+</td>
+</tr></table></div></td></tr></table></div>
+</div>
+</td></tr></table></body>
+</html>

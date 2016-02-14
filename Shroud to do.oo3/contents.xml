@@ -144,9 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="d8LQyW0LY-W"/>
+    <selected-rows ids="ghwdzUq9G_H"/>
     <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{51, 0}"/>
+    <selected-characters range="{56, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3169,6 +3169,26 @@
         </text>
       </values>
       <children>
+        <item id="ghwdzUq9G_H">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Consider replacing ShortcutRecorder with MASShortcut (</lit>
+                </run>
+                <run>
+                  <lit><cell href="https://github.com/shpakovski/MASShortcut" name="github.com—MASShortcut" type="link"/></lit>
+                </run>
+                <run>
+                  <lit>)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
         <item id="d8LQyW0LY-W">
           <style>
             <value key="paragraph-tab-stop-interval">36</value>
