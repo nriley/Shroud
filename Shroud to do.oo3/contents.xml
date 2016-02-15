@@ -144,7 +144,7 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="iKdrRTav9_p"/>
+    <selected-rows ids="pt8gRBoQO5H"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3209,7 +3209,29 @@
             </text>
           </values>
         </item>
-        <item id="pt8gRBoQO5H">
+        <item id="h-Q-xCDm3Wi" state="checked">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Re-merge SFBCrashReporter</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="erce6ofSFmU" state="checked">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Fix nib compatibility issue with SFBCrashReporter</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="pt8gRBoQO5H" state="checked">
           <values>
             <text>
               <p>
