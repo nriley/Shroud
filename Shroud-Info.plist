@@ -43,7 +43,7 @@
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
 	<key>SFBCrashReporterCrashSubmissionURL</key>
-	<string>http://sabi.net/crash/report</string>
+	<string>https://sabi.net/crash/report</string>
 	<key>SUEnableSystemProfiling</key>
 	<false/>
 	<key>SUFeedURL</key>
