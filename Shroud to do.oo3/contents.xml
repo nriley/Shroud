@@ -144,9 +144,7 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="lxmS5Lb0590"/>
-    <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{65, 0}"/>
+    <selected-rows ids="iKdrRTav9_p"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -2815,146 +2813,18 @@
             </item>
           </children>
         </item>
-      </children>
-    </item>
-    <item id="oQv4j5lInum" state="checked">
-      <values>
-        <text>
-          <p>
-            <run>
-              <lit>1.2.1</lit>
-            </run>
-          </p>
-        </text>
-      </values>
-      <children>
-        <item id="hOFKVSHRfct" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
+        <item id="oQv4j5lInum" state="checked">
           <values>
             <text>
               <p>
                 <run>
-                  <lit>Fix help book</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="gbv7oAwGZtS" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>At least on 10.10, toggling Shroud no longer works properly</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="hFm7DhRhjEI" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Fix failure to set dock icon color on startup</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="iZVohZAxiHi" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="mOKms_O79VU" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Update .gitignore to match Pester</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="aVRTtWri8z5" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Make sure code signing works</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="aJCfOoZf0te" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Fix xcodebuild failure</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="jAB4VdqvogL" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Fix localizations failing to strip on install</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="mqVnIgnYCad" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Update SFBCrashReporter (figure out what changes I made in it first)</lit>
+                  <lit>1.2.1</lit>
                 </run>
               </p>
             </text>
           </values>
           <children>
-            <item id="nhh7dT6pWn6" state="checked">
+            <item id="hOFKVSHRfct" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -2962,13 +2832,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Need to put the UI back the way I had it.</lit>
+                      <lit>Fix help book</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-            <item id="ljsaVXaSGRu" state="checked">
+            <item id="gbv7oAwGZtS" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -2976,13 +2846,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Skip Install so it builds in the right place.</lit>
+                      <lit>At least on 10.10, toggling Shroud no longer works properly</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-            <item id="kkW_IGPDxMT" state="checked">
+            <item id="hFm7DhRhjEI" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -2990,69 +2860,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Update the acknowledgments</lit>
+                      <lit>Fix failure to set dock icon color on startup</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-          </children>
-        </item>
-        <item id="pk3zvuaelGp" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Code signing works, but Gatekeeper verification is still failing (spctl vs codesign)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="oHRdIcfnhCw" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Check that I&apos;m using the correct binding for Sparkle, like in Pester</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-          <note>
-            <text>
-              <p>
-                <run>
-                  <lit><cell href="http://sparkle-project.org/documentation/" name="sparkle-project.org—documentation" type="link"/></lit>
-                </run>
-              </p>
-            </text>
-          </note>
-        </item>
-        <item id="o8mWO5ZP3gj" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Can I use NSKeyValueObservingOptionInitial? See </lit>
-                </run>
-                <run>
-                  <lit><cell href="http://ddeville.me/2013/10/key-value-observing-for-the-mainstream/" name="ddeville.me—key-value-observing-for-the-mainstream" type="link"/></lit>
-                </run>
-              </p>
-            </text>
-          </values>
-          <children>
-            <item id="iYVca-wy4F1" state="checked">
+            <item id="iZVohZAxiHi" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3060,29 +2874,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Huh, I already do it in ShroudMenuBarVisibilityController.  Go fig.</lit>
+                      <lit>Update to actually-current Sparkle (yes, including ARC)</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-          </children>
-        </item>
-        <item id="ctnlzOc8Jh5" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Reassigning to the prior keyboard shortcut is broken — looks like Shroud never actually *removes* the keyboard shortcut so you can&apos;t re-type it.</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-          <children>
-            <item id="e0LMCcmJcRt" state="checked">
+            <item id="mOKms_O79VU" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3090,43 +2888,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Nope — it&apos;s fine.  The methods get triggered several times, but they do *work*.</lit>
+                      <lit>Update .gitignore to match Pester</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-          </children>
-        </item>
-        <item id="pYTnYExmegu" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>SFBCrashReporter hangs when you decline a crash report</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="bh22Iz50nl5" state="checked">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Check that Sparkle works</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-          <children>
-            <item id="ie7_L5pk5Tj" state="checked">
+            <item id="aVRTtWri8z5" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3134,13 +2902,13 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Update from 1.2.1b1 beta to 1.2.1</lit>
+                      <lit>Make sure code signing works</lit>
                     </run>
                   </p>
                 </text>
               </values>
             </item>
-            <item id="dOTQlXytp-U" state="checked">
+            <item id="aJCfOoZf0te" state="checked">
               <style>
                 <value key="paragraph-tab-stop-interval">36</value>
               </style>
@@ -3148,11 +2916,241 @@
                 <text>
                   <p>
                     <run>
-                      <lit>Update from 1.2 to 1.2.1</lit>
+                      <lit>Fix xcodebuild failure</lit>
                     </run>
                   </p>
                 </text>
               </values>
+            </item>
+            <item id="jAB4VdqvogL" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Fix localizations failing to strip on install</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="mqVnIgnYCad" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Update SFBCrashReporter (figure out what changes I made in it first)</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="nhh7dT6pWn6" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Need to put the UI back the way I had it.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+                <item id="ljsaVXaSGRu" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Skip Install so it builds in the right place.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+                <item id="kkW_IGPDxMT" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Update the acknowledgments</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
+            </item>
+            <item id="pk3zvuaelGp" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Code signing works, but Gatekeeper verification is still failing (spctl vs codesign)</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="oHRdIcfnhCw" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Check that I&apos;m using the correct binding for Sparkle, like in Pester</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <note>
+                <text>
+                  <p>
+                    <run>
+                      <lit><cell href="http://sparkle-project.org/documentation/" name="sparkle-project.org—documentation" type="link"/></lit>
+                    </run>
+                  </p>
+                </text>
+              </note>
+            </item>
+            <item id="o8mWO5ZP3gj" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Can I use NSKeyValueObservingOptionInitial? See </lit>
+                    </run>
+                    <run>
+                      <lit><cell href="http://ddeville.me/2013/10/key-value-observing-for-the-mainstream/" name="ddeville.me—key-value-observing-for-the-mainstream" type="link"/></lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="iYVca-wy4F1" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Huh, I already do it in ShroudMenuBarVisibilityController.  Go fig.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
+            </item>
+            <item id="ctnlzOc8Jh5" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Reassigning to the prior keyboard shortcut is broken — looks like Shroud never actually *removes* the keyboard shortcut so you can&apos;t re-type it.</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="e0LMCcmJcRt" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Nope — it&apos;s fine.  The methods get triggered several times, but they do *work*.</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
+            </item>
+            <item id="pYTnYExmegu" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>SFBCrashReporter hangs when you decline a crash report</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="bh22Iz50nl5" state="checked">
+              <style>
+                <value key="paragraph-tab-stop-interval">36</value>
+              </style>
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>Check that Sparkle works</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+              <children>
+                <item id="ie7_L5pk5Tj" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Update from 1.2.1b1 beta to 1.2.1</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+                <item id="dOTQlXytp-U" state="checked">
+                  <style>
+                    <value key="paragraph-tab-stop-interval">36</value>
+                  </style>
+                  <values>
+                    <text>
+                      <p>
+                        <run>
+                          <lit>Update from 1.2 to 1.2.1</lit>
+                        </run>
+                      </p>
+                    </text>
+                  </values>
+                </item>
+              </children>
             </item>
           </children>
         </item>
@@ -3191,6 +3189,26 @@
             </text>
           </values>
         </item>
+        <item id="d8LQyW0LY-W" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Remove workaround for </lit>
+                </run>
+                <run>
+                  <lit><cell href="http://www.openradar.me/22064080" name="http://www.openradar.me/22064080" type="link"/></lit>
+                </run>
+                <run>
+                  <lit> — fixed in 10.11.3</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
         <item id="pt8gRBoQO5H">
           <values>
             <text>
@@ -3202,40 +3220,56 @@
             </text>
           </values>
         </item>
-        <item id="d8LQyW0LY-W" expanded="yes">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
+        <item id="oOEr2XrjtVC" expanded="yes" state="indeterminate">
           <values>
             <text>
               <p>
                 <run>
-                  <lit>Check if I can remove the workaround for </lit>
-                </run>
-                <run>
-                  <style>
-                    <value key="font-family">Menlo</value>
-                    <value key="font-fill">
-                      <color r="0" g="0" b="1"/>
-                    </value>
-                    <value key="font-fixed-pitch">yes</value>
-                    <value key="ligature-selection">none</value>
-                  </style>
-                  <lit><cell href="http://www.openradar.me/22064080" name="http://www.openradar.me/22064080" type="link"/></lit>
+                  <lit>Test</lit>
                 </run>
               </p>
             </text>
           </values>
           <children>
-            <item id="lxmS5Lb0590">
-              <style>
-                <value key="paragraph-tab-stop-interval">36</value>
-              </style>
+            <item id="aC0qdZUeGbL">
               <values>
                 <text>
                   <p>
                     <run>
-                      <lit>Otherwise, try double-checking as focusing window still doesn&apos;t work always</lit>
+                      <lit>10.8</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="kjiJAPthLBf">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.9</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="lM33Gw0VA1P">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.10</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="ozrVXXM2Tbj" state="checked">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.11</lit>
                     </run>
                   </p>
                 </text>
