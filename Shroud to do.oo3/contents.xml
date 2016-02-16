@@ -144,7 +144,9 @@
   <editor content-size="{559, 706}" column-titles-display-mode="off">
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
-    <selected-rows ids="pt8gRBoQO5H"/>
+    <selected-rows ids="fgOL19uQuof"/>
+    <selected-columns ids="ad996af83d1b866b01c90211"/>
+    <selected-characters range="{43, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3242,7 +3244,7 @@
             </text>
           </values>
         </item>
-        <item id="oOEr2XrjtVC" expanded="yes" state="indeterminate">
+        <item id="oOEr2XrjtVC" state="checked">
           <values>
             <text>
               <p>
@@ -3253,7 +3255,7 @@
             </text>
           </values>
           <children>
-            <item id="aC0qdZUeGbL">
+            <item id="aC0qdZUeGbL" state="checked">
               <values>
                 <text>
                   <p>
@@ -3264,7 +3266,7 @@
                 </text>
               </values>
             </item>
-            <item id="kjiJAPthLBf">
+            <item id="kjiJAPthLBf" state="checked">
               <values>
                 <text>
                   <p>
@@ -3275,7 +3277,7 @@
                 </text>
               </values>
             </item>
-            <item id="lM33Gw0VA1P">
+            <item id="lM33Gw0VA1P" state="checked">
               <values>
                 <text>
                   <p>
@@ -3298,6 +3300,20 @@
               </values>
             </item>
           </children>
+        </item>
+        <item id="fgOL19uQuof">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Sparkle spurious authentication requests: </lit>
+                </run>
+                <run>
+                  <lit><cell href="https://github.com/sparkle-project/Sparkle/issues/752" name="github.com—752" type="link"/></lit>
+                </run>
+              </p>
+            </text>
+          </values>
         </item>
       </children>
     </item>
