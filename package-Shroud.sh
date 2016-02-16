@@ -52,5 +52,9 @@ perl -pi -e 's|(<guid isPermaLink="false">)[^<]*|$1'${PRODUCT:l}-${VERSION:s/.//
 scp $DMG osric:web/nriley/software/$DMG.new
 ssh osric chmod go+r web/nriley/software/$DMG.new
 ssh osric mv web/nriley/software/$DMG{.new,}
+# for testing
+mv Updates/updates.xml Updates/updatez.xml
 rsync -avz --exclude='.*' Updates/ osric:web/nriley/software/$PRODUCT/
+# for testing
+mv Updates/updatez.xml Updates/updates.xml
 ssh osric chmod -R go+rX web/nriley/software/$PRODUCT
