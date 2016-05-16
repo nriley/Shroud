@@ -145,8 +145,6 @@
     <drawer width="208" palette-height="196"/>
     <note-split-view height="104"/>
     <selected-rows ids="fgOL19uQuof"/>
-    <selected-columns ids="ad996af83d1b866b01c90211"/>
-    <selected-characters range="{43, 0}"/>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
     &quot;TB Icon Size Mode&quot; = 1;
@@ -3301,7 +3299,21 @@
             </item>
           </children>
         </item>
-        <item id="fgOL19uQuof">
+        <item id="mXZh30e45ZT" state="checked">
+          <style>
+            <value key="paragraph-tab-stop-interval">36</value>
+          </style>
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Sparkle still doesn&apos;t scale the Shroud icon in the Software Update window (submit an update upstream)</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+        </item>
+        <item id="fgOL19uQuof" state="checked">
           <values>
             <text>
               <p>
@@ -3314,6 +3326,63 @@
               </p>
             </text>
           </values>
+        </item>
+        <item id="gokkAzHiWii" expanded="yes">
+          <values>
+            <text>
+              <p>
+                <run>
+                  <lit>Retest Sparkle updating with Sparkle HEAD</lit>
+                </run>
+              </p>
+            </text>
+          </values>
+          <children>
+            <item id="nwH0-vu3dPa">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.8</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="ckjwhHYr6Ot">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.9</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="pt_b7bvylOo">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.10</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+            <item id="a97WC0DTUOn">
+              <values>
+                <text>
+                  <p>
+                    <run>
+                      <lit>10.11</lit>
+                    </run>
+                  </p>
+                </text>
+              </values>
+            </item>
+          </children>
         </item>
       </children>
     </item>
@@ -3343,20 +3412,6 @@
                 </run>
                 <run>
                   <lit>)</lit>
-                </run>
-              </p>
-            </text>
-          </values>
-        </item>
-        <item id="mXZh30e45ZT">
-          <style>
-            <value key="paragraph-tab-stop-interval">36</value>
-          </style>
-          <values>
-            <text>
-              <p>
-                <run>
-                  <lit>Sparkle still doesn&apos;t scale the Shroud icon in the Software Update window (submit an update upstream)</lit>
                 </run>
               </p>
             </text>
