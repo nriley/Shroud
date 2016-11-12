@@ -1,0 +1,5 @@
+Updates/* linguist-documentation
+Documentation/* linguist-documentation
+*.html linguist-generated
+helpbook.sh linguist-vendored
+
