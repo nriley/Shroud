@@ -330,6 +330,7 @@ static ProcessSerialNumber frontProcess;
         NSFont *font = [credits attribute:NSFontAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
         font = [fontManager convertFont:font toFamily:systemFontFamily];
         [credits addAttribute:NSFontAttributeName value:font range:effectiveRange];
+        [credits addAttribute:NSForegroundColorAttributeName value:NSColor.controlTextColor range:effectiveRange];
     }
 
     [NSApp orderFrontStandardAboutPanelWithOptions:@{@"Credits": credits, @"ApplicationIcon": image}];
