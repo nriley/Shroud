@@ -271,7 +271,7 @@ static ProcessSerialNumber frontProcess;
 {
     if ([NSApp isHidden]) {
         if (showRelativeToOrdering == NSWindowOut) {
-            [NSApp unhide];
+            [NSApp unhideWithoutActivation];
             return;
         }
 
