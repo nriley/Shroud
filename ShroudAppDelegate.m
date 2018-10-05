@@ -367,7 +367,7 @@ static ProcessSerialNumber frontProcess;
 {
     ShroudPreferencesController *preferencesController = [ShroudPreferencesController sharedPreferencesController];
     [preferencesController showWindow:self];
-    dispatch_async(dispatch_get_current_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         if ([NSApp isHidden]) {
             [self unhideThenPerformBlock:^{
                 [[preferencesController window] orderWindow:NSWindowAbove relativeTo:[screenPanel windowNumber]];
