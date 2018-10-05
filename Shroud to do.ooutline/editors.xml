@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.omnigroup.com/namespace/OmniOutliner/xmloutline-editors-v1.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0?>
+<editors xmlns="http://www.omnigroup.com/namespace/OmniOutliner/editors/v1">
+  <editor content-size="{534, 704}" column-titles-display-mode="off" inspector-sidebar-visible="yes" auto-size-outline-column="yes">
+    <sidebar width="152" selected-tab="styles"/>
+    <column-states columns-id="iyLGUNm2TU0">
+      <column-state column-id="nOs_7dbJBSt" width="32" summary="state"/>
+      <column-state column-id="ad996af83d1b866b01c90211" width="513"/>
+      <column-state column-id="c9896af73d1b866b01c90211" width="18"/>
+    </column-states>
+    <note-split-view height="33"/>
+    <item-states>
+      <item item-id="fETBHX_vFJn" expanded="yes"/>
+      <item item-id="gokkAzHiWii" expanded="yes"/>
+      <item item-id="iKdrRTav9_p" expanded="yes"/>
+      <item item-id="onEeyy7lgar" note-expanded="yes"/>
+      <item item-id="pfHKZocPlk4" expanded="yes"/>
+    </item-states>
+    <selected-items>
+      <item item-id="oOEr2XrjtVC"/>
+    </selected-items>
+    <toolbar>{
+    &quot;TB Display Mode&quot; = 1;
+    &quot;TB Icon Size Mode&quot; = 1;
+    &quot;TB Is Shown&quot; = 0;
+    &quot;TB Item Identifiers&quot; =     (
+        ToggleSections,
+        SelectSection,
+        ActionButton,
+        NSToolbarSeparatorItem,
+        AddColumn,
+        Attach,
+        ToggleRecording,
+        NSToolbarFlexibleSpaceItem,
+        NSToolbarSeparatorItem,
+        ShowInfo
+    );
+    &quot;TB Size Mode&quot; = 1;
+}</toolbar>
+  </editor>
+</editors>
