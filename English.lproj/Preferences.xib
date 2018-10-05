@@ -187,7 +187,7 @@
                         </view>
                     </box>
                     <button verticalHuggingPriority="750" id="49">
-                        <rect key="frame" x="305" y="60" width="46" height="17"/>
+                        <rect key="frame" x="305" y="60" width="47" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="roundRect" title="Reset" bezelStyle="roundedRect" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
