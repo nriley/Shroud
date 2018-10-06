@@ -238,17 +238,6 @@
       </text>
       <entry/>
     </item>
-    <item id="aC0qdZUeGbL" parent-id="oOEr2XrjtVC" rank="">
-      <checkbox>checked</checkbox>
-      <text>
-        <p>
-          <run>
-            <lit>10.8</lit>
-          </run>
-        </p>
-      </text>
-      <entry/>
-    </item>
     <item id="aJCfOoZf0te" parent-id="oQv4j5lInum" rank="0006">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -402,7 +391,7 @@
       <text>
         <p>
           <run>
-            <lit>Sparkle vulnerabilty</lit>
+            <lit>Sparkle updates</lit>
           </run>
         </p>
       </text>
@@ -1882,6 +1871,17 @@
       </text>
       <entry/>
     </item>
+    <item id="dn9z1VEc5fY" parent-id="beUmDlVfMCw" rank="">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Sparkle vulnerabilty</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
     <item id="dsx7tf8B-45" parent-id="euQD_qvhydh" rank="">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -1924,6 +1924,17 @@
       </text>
       <entry/>
     </item>
+    <item id="eBjK_ElmBWy" parent-id="gokkAzHiWii" rank="0004">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.12</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
     <item id="eCZftg5pEHY" parent-id="efp7bNtOcwL" rank="0004">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -1947,6 +1958,17 @@
         <p>
           <run>
             <lit>Release</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="eHHL5xVZBis" parent-id="gokkAzHiWii" rank="0006">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.14</lit>
           </run>
         </p>
       </text>
@@ -2077,7 +2099,7 @@
       </text>
       <entry/>
     </item>
-    <item id="fgOL19uQuof" parent-id="iKdrRTav9_p" rank="0008">
+    <item id="fgOL19uQuof" parent-id="beUmDlVfMCw" rank="0002">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -2128,6 +2150,28 @@
         <p>
           <run>
             <lit>Got rid of the delays.</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="g-QDMG_hjgZ" parent-id="oOEr2XrjtVC" rank="0006">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.14</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="g1VpHtk6ZXC" parent-id="gokkAzHiWii" rank="0005">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.13</lit>
           </run>
         </p>
       </text>
@@ -2304,6 +2348,17 @@
       </text>
       <entry/>
     </item>
+    <item id="hB82cE4bL2w" parent-id="iKdrRTav9_p" rank="00081f">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Dark Mode and accent color support for 10.14</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
     <item id="hFm7DhRhjEI" parent-id="oQv4j5lInum" rank="0002">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -2352,6 +2407,17 @@
         <p>
           <run>
             <lit>Fix help book</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="hRlNt23eDJ4" parent-id="iKdrRTav9_p" rank="00083f">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Warn about accessibility access</lit>
           </run>
         </p>
       </text>
@@ -2844,6 +2910,17 @@
       </text>
       <entry/>
     </item>
+    <item id="kJQVex1SaxW" parent-id="oOEr2XrjtVC" rank="0005">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.13</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
     <item id="kSc97zs7hcb" parent-id="bh2UczY-AkY" rank="0001">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -2870,7 +2947,7 @@
       <entry/>
     </item>
     <item id="kjiJAPthLBf" parent-id="oOEr2XrjtVC" rank="0001">
-      <checkbox>checked</checkbox>
+      <checkbox>unchecked</checkbox>
       <text>
         <p>
           <run>
@@ -2914,6 +2991,17 @@
         <p>
           <run>
             <lit>Badness when grabbing the preferences window and trying to move it between Spaces.</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="l0KjtQx0k_c" parent-id="oOEr2XrjtVC" rank="0004">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>10.12</lit>
           </run>
         </p>
       </text>
@@ -3040,7 +3128,7 @@
       <entry/>
     </item>
     <item id="lM33Gw0VA1P" parent-id="oOEr2XrjtVC" rank="0002">
-      <checkbox>checked</checkbox>
+      <checkbox>unchecked</checkbox>
       <text>
         <p>
           <run>
@@ -3215,7 +3303,7 @@
       </text>
       <entry/>
     </item>
-    <item id="mXZh30e45ZT" parent-id="iKdrRTav9_p" rank="0007">
+    <item id="mXZh30e45ZT" parent-id="beUmDlVfMCw" rank="0001">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
       </style>
@@ -3514,17 +3602,6 @@
       </text>
       <entry/>
     </item>
-    <item id="nwH0-vu3dPa" parent-id="gokkAzHiWii" rank="">
-      <checkbox>unchecked</checkbox>
-      <text>
-        <p>
-          <run>
-            <lit>10.8</lit>
-          </run>
-        </p>
-      </text>
-      <entry/>
-    </item>
     <item id="o8mWO5ZP3gj" parent-id="oQv4j5lInum" rank="000b">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -3601,7 +3678,7 @@
       </text>
       <entry/>
     </item>
-    <item id="oOEr2XrjtVC" parent-id="iKdrRTav9_p" rank="0006">
+    <item id="oOEr2XrjtVC" parent-id="iKdrRTav9_p" rank="00085f">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -3653,7 +3730,7 @@
       </text>
     </item>
     <item id="ozrVXXM2Tbj" parent-id="oOEr2XrjtVC" rank="0003">
-      <checkbox>checked</checkbox>
+      <checkbox>unchecked</checkbox>
       <text>
         <p>
           <run>
@@ -3728,6 +3805,17 @@
         <p>
           <run>
             <lit>Maybe don&apos;t hide on startup? That&apos;ll at least cause the Dock icon to be correct.</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="pN6Qaot4OMG" parent-id="iKdrRTav9_p" rank="0006">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Drop 10.8 support</lit>
           </run>
         </p>
       </text>

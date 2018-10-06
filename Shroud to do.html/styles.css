@@ -313,7 +313,7 @@ tr.note-row td.note-bg {
 
 }
 table.whole-row, table.whole-note, table#column-header, div.temp-wrapper {
-width: 533px;
+width: 559px;
 
 }
 /******************
@@ -327,12 +327,12 @@ div#centered table.span-columns {
 }
 /* Column widths + backgrounds */
 table.outline-column { 
-    width: 513px; 
-    max-width: 513px; 
+    width: 539px; 
+    max-width: 539px; 
 }
 tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1) { 
-    width: 513px; 
-    max-width: 513px; 
+    width: 539px; 
+    max-width: 539px; 
     
 }
 tr#header td:nth-of-type(2), tr.outline-row > td:nth-of-type(2), tr.note-row > td:nth-of-type(2) { 
