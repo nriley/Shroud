@@ -13,6 +13,7 @@
 
 @interface ShroudMenuBarVisibilityController ()
 - (void)peekAtMenuBar:(BOOL)peek;
+- (void)setShouldCoverMenuBar:(BOOL)shouldCover;
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
 @end
 
@@ -66,10 +67,9 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
                                    GetEventTypeCount(eventSpecs),
                                    eventSpecs, self, &systemUIModeChangedEventHandler);
 
-    // Create event tap to watch for menu bar peek keystroke.
-    menuBarPeekTap = (NSMachPort *)CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, CGEventMaskBit(kCGEventFlagsChanged), ShroudKeyboardFlagsChanged, self);
-    [[NSRunLoop currentRunLoop] addPort:menuBarPeekTap forMode:NSDefaultRunLoopMode];
-    
+    // Watch for changes to accessibility access.
+    [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityAccessDidChange:) name:@"com.apple.accessibility.api" object:nil suspensionBehavior:NSNotificationSuspensionBehaviorDeliverImmediately];
+
     [[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey] options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidUnhide:) name:NSApplicationDidUnhideNotification object:nil];
@@ -77,10 +77,60 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     return self;
 }
 
++ (void)requestAccessibilityAccess;
+{
+    [self requestAccessibilityAccessFromWindow:nil];
+}
+
++ (void)requestAccessibilityAccessFromWindow:(nullable NSWindow *)window;
+{
+    NSAlert *accessibilityAccessRequestAlert = [NSAlert alertWithMessageText:@"Shroud would like to request accessibility access." defaultButton:@"Deny" alternateButton:@"Open System Preferences" otherButton:nil informativeTextWithFormat:@"With accessibility access, Shroud can let you “peek” at the menu bar by holding down keys.\n\nGrant access to Shroud in Security & Privacy System Preferences by checking the box next to Shroud.\n\nClicking Deny disables Shroud’s menu bar peek feature. Configure this from Shroud’s Preferences."];
+    accessibilityAccessRequestAlert.alertStyle = NSAlertStyleCritical;
+
+    void (^alertHandler)(NSModalResponse returnCode) = ^(NSModalResponse modalResponse) {
+        if (modalResponse == NSAlertDefaultReturn) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:ShroudPeekAtMenuBarModifierFlagsPreferenceKey];
+        } else {
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"]];
+        }
+    };
+
+    if (window == nil) {
+        alertHandler([accessibilityAccessRequestAlert runModal]);
+    } else {
+        [accessibilityAccessRequestAlert beginSheetModalForWindow:window completionHandler:alertHandler];
+    }
+}
+
+- (void)removeMenuBarPeekTap;
+{
+    if (menuBarPeekTap != nil)
+        [[NSRunLoop currentRunLoop] removePort:menuBarPeekTap forMode:NSDefaultRunLoopMode];
+}
+
+- (void)createMenuBarPeekTap;
+{
+    [self removeMenuBarPeekTap];
+
+    // Check for accessibility access.
+    if (!AXIsProcessTrusted()) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.class requestAccessibilityAccess];
+        });
+        return;
+    }
+
+    // Create event tap to watch for menu bar peek keystroke.
+    menuBarPeekTap = (NSMachPort *)CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, CGEventMaskBit(kCGEventFlagsChanged), ShroudKeyboardFlagsChanged, self);
+
+    [[NSRunLoop currentRunLoop] addPort:menuBarPeekTap forMode:NSDefaultRunLoopMode];
+}
+
 - (void)dealloc;
 {
     RemoveEventHandler(systemUIModeChangedEventHandler);
     [menuBarPeekTap release];
+    [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.accessibility.api" object:nil];
     [[NSUserDefaultsController sharedUserDefaultsController] removeObserver:self forKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey]];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
@@ -113,7 +163,8 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     else
         [[self window] orderOut:nil];
 
-    CGEventTapEnable((CFMachPortRef)menuBarPeekTap, shouldCover);
+    if (menuBarPeekTap != nil)
+        CGEventTapEnable((CFMachPortRef)menuBarPeekTap, shouldCover);
 }
 
 - (void)systemUIElementsDidBecomeVisible:(BOOL)visible;
@@ -140,6 +191,18 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
     [self restoreMenuBarCover];
 }
 
+- (void)accessibilityAccessDidChange:(NSNotification *)notification;
+{
+    // Unfortunately AXIsProcessTrusted() takes some time to return the new value.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BOOL hasAccessibilityAccess = AXIsProcessTrusted();
+        if (hasAccessibilityAccess && !hadAccessibilityAccess) {
+            [self createMenuBarPeekTap];
+        }
+        hadAccessibilityAccess = hasAccessibilityAccess;
+    });
+}
+
 @end
                               
 @implementation ShroudMenuBarVisibilityController (NSKeyValueObserving)
@@ -150,8 +213,12 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
         return;
     
     peekFlags = [[[NSUserDefaults standardUserDefaults] objectForKey:ShroudPeekAtMenuBarModifierFlagsPreferenceKey] unsignedIntegerValue];
-    if (peekFlags == 0)
+    if (peekFlags == 0) {
+        [self removeMenuBarPeekTap];
         [self peekAtMenuBar:NO];
+    } else {
+        [self createMenuBarPeekTap];
+    }
 }
 
 @end

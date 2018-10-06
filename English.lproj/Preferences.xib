@@ -79,7 +79,7 @@
                                     </connections>
                                 </popUpButton>
                                 <textField verticalHuggingPriority="750" id="85">
-                                    <rect key="frame" x="88" y="14" width="140" height="17"/>
+                                    <rect key="frame" x="96" y="14" width="132" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="To peek at menu bar:" id="86">
                                         <font key="font" metaFont="system"/>
@@ -99,6 +99,18 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <button toolTip="Shroud requires accessibility access for this option." id="VN4-PU-A2u" userLabel="No accessibility">
+                                    <rect key="frame" x="80" y="14" width="16" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSCaution" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="rOT-kd-PWO">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="requestAccessibilityAccess:" target="-2" id="bZZ-rA-F9a"/>
+                                        <binding destination="-2" name="hidden" keyPath="hasAccessibilityAccess" id="STK-PV-swW"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </view>
                     </box>
@@ -240,4 +252,7 @@
         <userDefaultsController representsSharedInstance="YES" id="38"/>
         <customObject id="65" customClass="SUUpdater"/>
     </objects>
+    <resources>
+        <image name="NSCaution" width="128" height="128"/>
+    </resources>
 </document>

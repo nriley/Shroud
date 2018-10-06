@@ -13,10 +13,11 @@
     NSMachPort *menuBarPeekTap;
     EventHandlerRef systemUIModeChangedEventHandler;
     BOOL shouldCoverMenuBar;
+    BOOL hadAccessibilityAccess;
     @public
     CGEventFlags peekFlags;
 }
 
-- (void)setShouldCoverMenuBar:(BOOL)shouldCover;
++ (void)requestAccessibilityAccessFromWindow:(nullable NSWindow *)window;
 
 @end

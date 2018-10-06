@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ShroudPreferencesController.h"
+#import "ShroudMenuBarVisibilityController.h"
 #import "NJRHotKeyManager.h"
 
 NSString * const ShroudShouldCoverMenuBarPreferenceKey = @"FocusShouldCoverMenuBar";
@@ -96,11 +97,40 @@ static void AllCombinationsOfModifiers(NSHashTable *modifiers, NSUInteger mask) 
     [modifiersArray release];
     // bindings set in IB get applied before this, so manually bind
     [peekModifierMenuButton bind:NSSelectedTagBinding toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:[@"values." stringByAppendingString:ShroudPeekAtMenuBarModifierFlagsPreferenceKey] options:nil];
+
+    // Watch for changes to accessibility access.
+    [self willChangeValueForKey:@"hasAccessibilityAccess"];
+    hadAccessibilityAccess = AXIsProcessTrusted();
+    [self didChangeValueForKey:@"hasAccessibilityAccess"];
+    [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(accessibilityAccessDidChange:) name:@"com.apple.accessibility.api" object:nil suspensionBehavior:NSNotificationSuspensionBehaviorDeliverImmediately];
 }
 
 - (IBAction)resetBackdropColor:(id)sender;
 {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:ShroudBackdropColorPreferenceKey];
+}
+
+- (IBAction)requestAccessibilityAccess:(id)sender;
+{
+    [ShroudMenuBarVisibilityController requestAccessibilityAccessFromWindow:self.window];
+}
+
+- (void)accessibilityAccessDidChange:(NSNotification *)notification;
+{
+    // Unfortunately AXIsProcessTrusted() takes some time to return the new value.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BOOL hasAccessibilityAccess = AXIsProcessTrusted();
+        if (hasAccessibilityAccess == hadAccessibilityAccess)
+            return;
+        [self willChangeValueForKey:@"hasAccessibilityAccess"];
+        hadAccessibilityAccess = hasAccessibilityAccess;
+        [self didChangeValueForKey:@"hasAccessibilityAccess"];
+    });
+}
+
+- (BOOL)hasAccessibilityAccess;
+{
+    return hadAccessibilityAccess;
 }
 
 @end
@@ -109,6 +139,7 @@ static void AllCombinationsOfModifiers(NSHashTable *modifiers, NSUInteger mask) 
 
 - (void)windowWillClose:(NSNotification *)notification;
 {
+    [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:@"com.apple.accessibility.api" object:nil];
     sharedController = nil;
     [self autorelease];
 }

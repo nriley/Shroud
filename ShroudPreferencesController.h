@@ -17,10 +17,14 @@ extern NSString * const ShroudPeekAtMenuBarModifierFlagsPreferenceKey;
 
 @interface ShroudPreferencesController : NSWindowController {
     IBOutlet NSPopUpButton *peekModifierMenuButton;
+    BOOL hadAccessibilityAccess;
 }
+
+@property (readonly) BOOL hasAccessibilityAccess;
 
 + (ShroudPreferencesController *)sharedPreferencesController;
 
 - (IBAction)resetBackdropColor:(id)sender;
+- (IBAction)requestAccessibilityAccess:(id)sender;
 
 @end
