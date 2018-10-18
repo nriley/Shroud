@@ -84,7 +84,7 @@ static CGEventRef ShroudKeyboardFlagsChanged(CGEventTapProxy proxy, CGEventType 
 
 + (void)requestAccessibilityAccessFromWindow:(nullable NSWindow *)window;
 {
-    NSAlert *accessibilityAccessRequestAlert = [NSAlert alertWithMessageText:@"Shroud would like to request accessibility access." defaultButton:@"Deny" alternateButton:@"Open System Preferences" otherButton:nil informativeTextWithFormat:@"With accessibility access, Shroud can let you “peek” at the menu bar by holding down keys.\n\nGrant access to Shroud in Security & Privacy System Preferences by checking the box next to Shroud.\n\nClicking Deny disables Shroud’s menu bar peek feature. Configure this from Shroud’s Preferences."];
+    NSAlert *accessibilityAccessRequestAlert = [NSAlert alertWithMessageText:@"Shroud would like to request accessibility access." defaultButton:@"Deny" alternateButton:@"Open System Preferences" otherButton:nil informativeTextWithFormat:@"With accessibility access, Shroud can let you “peek” at the menu bar by holding down keys.\n\nGrant access to Shroud in Security & Privacy System Preferences by checking the box next to Shroud.\n\nClicking Deny disables Shroud’s menu bar peek feature. Change this from Shroud’s Preferences."];
     accessibilityAccessRequestAlert.alertStyle = NSAlertStyleCritical;
 
     void (^alertHandler)(NSModalResponse returnCode) = ^(NSModalResponse modalResponse) {
