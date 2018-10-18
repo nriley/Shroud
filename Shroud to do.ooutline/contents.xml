@@ -2812,6 +2812,17 @@
       </text>
       <entry/>
     </item>
+    <item id="jGYMUZcSDGB" parent-id="iKdrRTav9_p" rank="00084f">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Toggling broke — a race. Need to verify somehow and adjust?</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
     <item id="jPzXE7kGS3C" parent-id="cmegGnpyqvY" rank="0002">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
