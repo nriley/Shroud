@@ -163,7 +163,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
     }
 }
 
-- (void)unhideThenPerformBlock:(void (^)())block;
+- (void)unhideThenPerformBlock:(void (^)(void))block;
 {
     [NSApp unhideWithoutActivation];
     dispatch_async(dispatch_get_main_queue(), (dispatch_block_t)block);
