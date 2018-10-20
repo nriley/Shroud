@@ -425,6 +425,7 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
 				E15375F41236010200714C5D /* Build Help Book */,
+				E1F98EB6217B7574001AD011 /* Harden Sparkle */,
 			);
 			buildRules = (
 			);
@@ -655,6 +656,24 @@
 			shellScript = "/usr/bin/find -L \"${BUILT_PRODUCTS_DIR}/\"*.framework -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true";
 			showEnvVarsInLog = 0;
 		};
+		E1F98EB6217B7574001AD011 /* Harden Sparkle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Harden Sparkle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Re-codesign Sparkle with hardened runtime, so it's possible to notarize the app.\n# More information: https://github.com/sparkle-project/Sparkle/issues/1266\n\nLOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\n\n/usr/bin/codesign --verbose --force --deep -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Resources/Autoupdate.app\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -817,6 +836,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 18;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -858,6 +878,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 18;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
