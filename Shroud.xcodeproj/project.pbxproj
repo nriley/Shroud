@@ -653,7 +653,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/find -L \"${BUILT_PRODUCTS_DIR}/\"*.framework -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true";
+			shellScript = "/usr/bin/find -L \"${BUILT_PRODUCTS_DIR}/\"*.framework -name \\*.lproj -and -not \\( -name en\\*.lproj -or -name English.lproj \\) -print0 | xargs -0 rm -rf || /usr/bin/true\n";
 			showEnvVarsInLog = 0;
 		};
 		E1F98EB6217B7574001AD011 /* Harden Sparkle */ = {
