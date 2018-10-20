@@ -475,6 +475,45 @@
       </text>
       <entry/>
     </item>
+    <item id="cB0XjmgQbPy" parent-id="iKdrRTav9_p" rank="00084b">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Update packaging script to support notarization </lit>
+          </run>
+          <run>
+            <style>
+              <value key="font-family">Helvetica</value>
+              <value key="font-size">10</value>
+            </style>
+            <lit>— build with Xcode 10.1</lit>
+          </run>
+        </p>
+      </text>
+      <text>
+        <p>
+          <run>
+            <lit><cell href="https://help.apple.com/xcode/mac/current/#/dev88332a81e" name="https://help.apple.com/xcode/mac/current/#/dev88332a81e" type="link"/></lit>
+          </run>
+        </p>
+        <p>
+          <run>
+            <lit><cell href="https://forums.developer.apple.com/thread/107976" name="https://forums.developer.apple.com/thread/107976" type="link"/></lit>
+          </run>
+        </p>
+        <p>
+          <run>
+            <lit><cell href="https://twitter.com/rosyna/status/1004418504408252416" name="https://twitter.com/rosyna/status/1004418504408252416" type="link"/></lit>
+          </run>
+        </p>
+        <p>
+          <run>
+            <lit><cell href="https://twitter.com/rosyna/status/1052950703423905792" name="https://twitter.com/rosyna/status/1052950703423905792" type="link"/></lit>
+          </run>
+        </p>
+      </text>
+    </item>
     <item id="cHVYza-eGjs" parent-id="hI3DoLMUwwH" rank="000d">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
@@ -2751,6 +2790,17 @@
         <p>
           <run>
             <lit>Save the .dSYM when building this time so we can actually decode the crash reports.</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="j4q2P37p4Dd" parent-id="iKdrRTav9_p" rank="000847">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>Build for notarization</lit>
           </run>
         </p>
       </text>

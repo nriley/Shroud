@@ -10,12 +10,13 @@
     </column-states>
     <note-split-view height="33"/>
     <item-states>
+      <item item-id="cB0XjmgQbPy" note-expanded="yes"/>
       <item item-id="iKdrRTav9_p" expanded="yes"/>
       <item item-id="onEeyy7lgar" note-expanded="yes"/>
       <item item-id="pfHKZocPlk4" expanded="yes"/>
     </item-states>
     <selected-items>
-      <item item-id="jGYMUZcSDGB"/>
+      <item item-id="cB0XjmgQbPy"/>
     </selected-items>
     <toolbar>{
     &quot;TB Display Mode&quot; = 1;
