@@ -142,7 +142,6 @@
       </master-page-headers>
     </page-adornment>
     <print-info>
-      <print-info-key name="NSPaperSize" type="size">{612.02830219268799, 792}</print-info-key>
       <print-info-key name="OOColumnHeaderPrintBehavior" type="int">1</print-info-key>
       <print-info-key name="OOPageHeaderPrintBehavior" type="int">0</print-info-key>
     </print-info>
@@ -386,7 +385,7 @@
       </text>
       <entry/>
     </item>
-    <item id="beUmDlVfMCw" parent-id="iKdrRTav9_p" rank="">
+    <item id="beUmDlVfMCw" parent-id="l-5xzRgClnB" rank="">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -551,7 +550,7 @@
       </text>
       <entry/>
     </item>
-    <item id="ch8RZ4d_PqT" parent-id="pfHKZocPlk4" rank="0004">
+    <item id="ch8RZ4d_PqT" parent-id="pfHKZocPlk4" rank="00ff3f">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
       </style>
@@ -657,7 +656,7 @@
       </text>
       <entry/>
     </item>
-    <item id="d8LQyW0LY-W" parent-id="iKdrRTav9_p" rank="0002">
+    <item id="d8LQyW0LY-W" parent-id="l-5xzRgClnB" rank="0002">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
       </style>
@@ -2052,7 +2051,7 @@
       </text>
       <entry/>
     </item>
-    <item id="erce6ofSFmU" parent-id="iKdrRTav9_p" rank="0004">
+    <item id="erce6ofSFmU" parent-id="l-5xzRgClnB" rank="0004">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -2074,7 +2073,7 @@
       </text>
       <entry/>
     </item>
-    <item id="evGZZb2yM7f" parent-id="pfHKZocPlk4" rank="0003">
+    <item id="evGZZb2yM7f" parent-id="pfHKZocPlk4" rank="00fe">
       <style>
         <value key="paragraph-tab-stop-interval">36</value>
       </style>
@@ -2113,7 +2112,7 @@
       </text>
       <entry/>
     </item>
-    <item id="fOHpUiRHvsy" parent-id="iKdrRTav9_p" rank="0001">
+    <item id="fOHpUiRHvsy" parent-id="l-5xzRgClnB" rank="0001">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -2314,6 +2313,12 @@
             <lit><cell href="https://github.com/shpakovski/MASShortcut" name="github.com—MASShortcut" type="link"/></lit>
           </run>
           <run>
+            <lit>) or ShortcutRecorder 2 (</lit>
+          </run>
+          <run>
+            <lit><cell href="https://github.com/Kentzo/ShortcutRecorder" name="https://github.com/Kentzo/ShortcutRecorder" type="link"/></lit>
+          </run>
+          <run>
             <lit>)</lit>
           </run>
         </p>
@@ -2362,7 +2367,7 @@
       </text>
       <entry/>
     </item>
-    <item id="h-Q-xCDm3Wi" parent-id="iKdrRTav9_p" rank="0003">
+    <item id="h-Q-xCDm3Wi" parent-id="l-5xzRgClnB" rank="0003">
       <checkbox>checked</checkbox>
       <text>
         <p>
@@ -2694,7 +2699,7 @@
       <text>
         <p>
           <run>
-            <lit>1.2.2</lit>
+            <lit>1.2.3</lit>
           </run>
         </p>
       </text>
@@ -2871,7 +2876,13 @@
           </run>
         </p>
       </text>
-      <entry/>
+      <text>
+        <p>
+          <run>
+            <lit>Recheck with 10.14.3 to see if it’s better.</lit>
+          </run>
+        </p>
+      </text>
     </item>
     <item id="jPzXE7kGS3C" parent-id="cmegGnpyqvY" rank="0002">
       <style>
@@ -3038,6 +3049,17 @@
         <p>
           <run>
             <lit>This is all because of Focus vs. Shroud preferences. Either way of setting the default menubar visibility seems to be just fine.</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="l-5xzRgClnB" parent-id="iGe63eATLCr" rank="0009">
+      <checkbox>unchecked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>1.2.2 (got partially released in 2016)</lit>
           </run>
         </p>
       </text>
@@ -3373,6 +3395,17 @@
         <p>
           <run>
             <lit>Sparkle still doesn&apos;t scale the Shroud icon in the Software Update window (submit an update upstream)</lit>
+          </run>
+        </p>
+      </text>
+      <entry/>
+    </item>
+    <item id="mdUTBu_zC4N" parent-id="iKdrRTav9_p" rank="0005">
+      <checkbox>checked</checkbox>
+      <text>
+        <p>
+          <run>
+            <lit>More Sparkle updates</lit>
           </run>
         </p>
       </text>
@@ -3876,7 +3909,7 @@
       <text>
         <p>
           <run>
-            <lit>Drop 10.8 support</lit>
+            <lit>Drop 10.8–10.11 support</lit>
           </run>
         </p>
       </text>
@@ -3969,7 +4002,7 @@
       </text>
       <entry/>
     </item>
-    <item id="pt8gRBoQO5H" parent-id="iKdrRTav9_p" rank="0005">
+    <item id="pt8gRBoQO5H" parent-id="l-5xzRgClnB" rank="0005">
       <checkbox>checked</checkbox>
       <text>
         <p>
