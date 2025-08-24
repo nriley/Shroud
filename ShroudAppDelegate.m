@@ -105,7 +105,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
 
     // Create menu bar panel.
     menuBarPanel = [[ShroudMenuBarPanel alloc] initWithContentRect:menuBarFrame
-                                                         styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
+                                                         styleMask:NSWindowStyleMaskBorderless | NSWindowStyleMaskNonactivatingPanel
                                                            backing:NSBackingStoreBuffered
                                                              defer:NO];
 
