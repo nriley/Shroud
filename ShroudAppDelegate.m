@@ -9,9 +9,9 @@
 #import <SFBCrashReporter/SFBCrashReporter.h>
 
 #import "ShroudAppDelegate.h"
-#import "ShroudNonactivatingView.h"
 #import "ShroudMenuBarView.h"
 #import "ShroudPreferencesController.h"
+#import "ShroudScreenPanel.h"
 #import "NJRHotKey.h"
 #import "NJRHotKeyManager.h"
 #import "NSUserDefaultsController+NJRExtensions.h"
