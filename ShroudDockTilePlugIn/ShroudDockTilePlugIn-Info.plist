@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.1</string>
+	<string>1.2.3d1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>18</string>
+	<string>20</string>
 	<key>NSPrincipalClass</key>
 	<string>ShroudDockTilePlugIn</string>
 </dict>
