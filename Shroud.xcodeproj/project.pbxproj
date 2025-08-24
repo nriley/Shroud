@@ -38,6 +38,7 @@
 		E1D8F35612336ECF0019122A /* ShroudDockTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8F35512336ECF0019122A /* ShroudDockTileView.m */; };
 		E1D94343123F760C005DA161 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1D9435C123F793A005DA161 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E1D9435B123F793A005DA161 /* dsa_pub.pem */; };
+		E1E4EDA82E5BBED0007C516A /* ShroudScreenPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4EDA72E5BBED0007C516A /* ShroudScreenPanel.m */; };
 		E1E578A0125BB5A2001985D3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D94336123F75DF005DA161 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
@@ -296,6 +297,8 @@
 		E1D8F35512336ECF0019122A /* ShroudDockTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShroudDockTileView.m; sourceTree = "<group>"; };
 		E1D9432A123F75DF005DA161 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		E1D9435B123F793A005DA161 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		E1E4EDA62E5BBED0007C516A /* ShroudScreenPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShroudScreenPanel.h; sourceTree = "<group>"; };
+		E1E4EDA72E5BBED0007C516A /* ShroudScreenPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShroudScreenPanel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +330,8 @@
 			children = (
 				256AC3D80F4B6AC300CF3369 /* ShroudAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* ShroudAppDelegate.m */,
+				E1E4EDA62E5BBED0007C516A /* ShroudScreenPanel.h */,
+				E1E4EDA72E5BBED0007C516A /* ShroudScreenPanel.m */,
 				E1A3D1F31787865300957D63 /* ShroudBackdropColor.h */,
 				E1A3D1F41787865300957D63 /* ShroudBackdropColor.m */,
 				216B368E114C59EF002E2818 /* ShroudPreferencesController.h */,
@@ -832,6 +837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				E1E4EDA82E5BBED0007C516A /* ShroudScreenPanel.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* ShroudAppDelegate.m in Sources */,
 				E1BD4006112E6D4800DE639A /* ShroudNonactivatingView.m in Sources */,
 				E1BD40EE112F753000DE639A /* ShroudMenuBarView.m in Sources */,

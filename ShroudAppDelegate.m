@@ -54,21 +54,7 @@ static NSArray *ShroudGetWindowsInfo(CGWindowListOption option, CGWindowID relat
     ShroudGetScreenAndMenuBarFrames(&screenFrame, &menuBarFrame);
 
     // Create screen panel.
-    screenPanel = [[NSPanel alloc] initWithContentRect:screenFrame
-					     styleMask:NSBorderlessWindowMask | NSNonactivatingPanelMask
-					       backing:NSBackingStoreBuffered
-						 defer:NO];
-
-    [screenPanel bindToShroudBackdropColor:@"backgroundColor"];
-    [screenPanel setHasShadow:NO];
-
-    [screenPanel setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorIgnoresCycle];
-
-    ShroudNonactivatingView *view = [[[ShroudNonactivatingView alloc] initWithFrame:[screenPanel frame]] autorelease];
-    [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-
-    [screenPanel setContentView:view];
-
+    screenPanel = [ShroudScreenPanel panelWithContentRect:screenFrame];
     [screenPanel orderFront:nil];
 
     [self createMenuBarPanelWithFrame:menuBarFrame];
