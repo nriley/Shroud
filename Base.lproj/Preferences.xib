@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,11 +13,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Shroud Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" animationBehavior="default" id="1" userLabel="Preferences Panel" customClass="NSPanel">
+        <window title="Shroud Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" animationBehavior="default" id="1" userLabel="Preferences Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="598" y="367" width="438" height="342"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="438" height="342"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -27,15 +26,15 @@
                     <userLayoutGuide location="403" affinity="minX"/>
                 </userGuides>
                 <subviews>
-                    <box autoresizesSubviews="NO" borderType="line" title="Menu Bar (hold Shift, Control, Option, or Command for more choices)" id="82">
+                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Menu Bar (hold Shift, Control, Option, or Command for more choices)" translatesAutoresizingMaskIntoConstraints="NO" id="82">
                         <rect key="frame" x="17" y="85" width="404" height="85"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="k6Q-7D-xnn">
-                            <rect key="frame" x="3" y="3" width="398" height="67"/>
+                            <rect key="frame" x="4" y="5" width="396" height="65"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button id="83">
-                                    <rect key="frame" x="234" y="39" width="123" height="18"/>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83">
+                                    <rect key="frame" x="234" y="37" width="123" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Cover menu bar" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="94">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -49,12 +48,12 @@
                                         </binding>
                                     </connections>
                                 </button>
-                                <popUpButton verticalHuggingPriority="750" id="84">
-                                    <rect key="frame" x="232" y="8" width="155" height="26"/>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84">
+                                    <rect key="frame" x="232" y="6" width="155" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <popUpButtonCell key="cell" type="push" title="-" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="99" id="87">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="message"/>
                                         <menu key="menu" title="OtherViews" id="88">
                                             <items>
                                                 <menuItem title="Hold ⌃" tag="262144" id="90">
@@ -78,8 +77,8 @@
                                         <binding destination="38" name="enabled" keyPath="values.FocusShouldCoverMenuBar" id="104"/>
                                     </connections>
                                 </popUpButton>
-                                <textField verticalHuggingPriority="750" id="85">
-                                    <rect key="frame" x="96" y="14" width="132" height="17"/>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="85">
+                                    <rect key="frame" x="96" y="12" width="132" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="To peek at menu bar:" id="86">
                                         <font key="font" metaFont="system"/>
@@ -90,8 +89,8 @@
                                         <binding destination="38" name="enabled" keyPath="values.FocusShouldCoverMenuBar" id="103"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="97">
-                                    <rect key="frame" x="33" y="40" width="195" height="17"/>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97">
+                                    <rect key="frame" x="33" y="38" width="195" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Unless pointer over menu bar:" id="98">
                                         <font key="font" metaFont="system"/>
@@ -99,8 +98,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <button toolTip="Shroud requires accessibility access for this option." id="VN4-PU-A2u" userLabel="No accessibility">
-                                    <rect key="frame" x="80" y="14" width="16" height="16"/>
+                                <button toolTip="Shroud requires accessibility access for this option." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VN4-PU-A2u" userLabel="No accessibility">
+                                    <rect key="frame" x="80" y="12" width="16" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSCaution" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="rOT-kd-PWO">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -114,7 +113,7 @@
                             </subviews>
                         </view>
                     </box>
-                    <colorWell id="3">
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                         <rect key="frame" x="253" y="58" width="44" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,7 +125,7 @@
                             </binding>
                         </connections>
                     </colorWell>
-                    <button id="63">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63">
                         <rect key="frame" x="110" y="18" width="218" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="check" title="Check for updates automatically" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="64">
@@ -137,7 +136,7 @@
                             <binding destination="65" name="value" keyPath="automaticallyChecksForUpdates" id="67"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="6">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                         <rect key="frame" x="145" y="61" width="103" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Backdrop color:" id="7">
@@ -146,15 +145,15 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box autoresizesSubviews="NO" borderType="line" title="To place Shroud…" id="37">
+                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="To place Shroud…" translatesAutoresizingMaskIntoConstraints="NO" id="37">
                         <rect key="frame" x="17" y="203" width="404" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="Wao-dQ-VvA">
-                            <rect key="frame" x="3" y="3" width="398" height="74"/>
+                            <rect key="frame" x="4" y="5" width="396" height="72"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <customView id="25" customClass="SRRecorderControl">
-                                    <rect key="frame" x="234" y="42" width="149" height="22"/>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25" customClass="SRRecorderControl">
+                                    <rect key="frame" x="234" y="40" width="147" height="22"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="allowedFlags">
@@ -165,8 +164,8 @@
                                         <binding destination="38" name="value" keyPath="values.FocusFrontmostApplicationShortcut" id="60"/>
                                     </connections>
                                 </customView>
-                                <textField verticalHuggingPriority="750" id="29">
-                                    <rect key="frame" x="11" y="46" width="217" height="17"/>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29">
+                                    <rect key="frame" x="11" y="44" width="217" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="behind the frontmost application:" id="30">
                                         <font key="font" metaFont="system"/>
@@ -174,8 +173,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="31">
-                                    <rect key="frame" x="11" y="16" width="217" height="17"/>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                                    <rect key="frame" x="11" y="14" width="217" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="behind the frontmost window:" id="32">
                                         <font key="font" metaFont="system"/>
@@ -183,8 +182,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <customView id="34" customClass="SRRecorderControl">
-                                    <rect key="frame" x="234" y="13" width="149" height="22"/>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34" customClass="SRRecorderControl">
+                                    <rect key="frame" x="234" y="13" width="147" height="22"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="allowedFlags">
@@ -198,7 +197,7 @@
                             </subviews>
                         </view>
                     </box>
-                    <button verticalHuggingPriority="750" id="49">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49">
                         <rect key="frame" x="305" y="60" width="47" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="roundRect" title="Reset" bezelStyle="roundedRect" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
@@ -209,7 +208,7 @@
                             <action selector="resetBackdropColor:" target="-2" id="51"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="57">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57">
                         <rect key="frame" x="17" y="185" width="404" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Shroud must be running to respond to these shortcuts." id="58">
@@ -218,11 +217,11 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" boxType="separator" id="62">
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="62">
                         <rect key="frame" x="20" y="45" width="398" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </box>
-                    <textField verticalHuggingPriority="750" id="112">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="112">
                         <rect key="frame" x="19" y="304" width="229" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="To hide or show Shroud:" id="115">
@@ -231,7 +230,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView id="113" customClass="SRRecorderControl">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="113" customClass="SRRecorderControl">
                         <rect key="frame" x="254" y="300" width="149" height="22"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
@@ -248,11 +247,12 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="68"/>
             </connections>
+            <point key="canvasLocation" x="139" y="144"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="38"/>
         <customObject id="65" customClass="SUUpdater"/>
     </objects>
     <resources>
-        <image name="NSCaution" width="128" height="128"/>
+        <image name="NSCaution" width="32" height="32"/>
     </resources>
 </document>

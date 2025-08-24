@@ -37,7 +37,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="533">
+                            <menuItem title="Settings…" keyEquivalent="," id="533">
                                 <connections>
                                     <action selector="orderFrontPreferencesPanel:" target="494" id="538"/>
                                 </connections>
