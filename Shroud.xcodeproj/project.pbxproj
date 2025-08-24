@@ -940,6 +940,7 @@
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
 				INFOPLIST_FILE = "Shroud-Info.plist";
 				INSTALL_PATH = /;
+				MARKETING_VERSION = 1.2.2d1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.sabi.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Shroud;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -963,6 +964,7 @@
 				GCC_PREFIX_HEADER = Shroud_Prefix.pch;
 				INFOPLIST_FILE = "Shroud-Info.plist";
 				INSTALL_PATH = /;
+				MARKETING_VERSION = 1.2.2d1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.sabi.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Shroud;
 				PROVISIONING_PROFILE_SPECIFIER = "";
